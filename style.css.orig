@@ -1,0 +1,89 @@
+<<<<<<< HEAD
+.restaurant-pic {
+	height: 50vh;
+	background: url('https://i.ytimg.com/vi/7mphrlxJl5k/maxresdefault.jpg');
+	background-size: cover;
+	background-position: 0 40%;
+}
+
+.restaurant-info {
+	height: 50vh;
+}
+
+.reservation {
+	height: 25vh;
+}
+
+/* add a deli pattern background*/
+.reservation-form-container {
+	position: relative;
+	height: 100%;
+	background: url('http://ih1.redbubble.net/image.80745362.8983/flat,800x800,075,t.u4.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.reservation-form {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.restaurant-locator {
+	height: 50vh;
+}
+div.dropdown {
+	
+	float: right;
+	right: -110%;
+
+}
+input [type=text] {
+	float: left;
+	left: 70%;
+}
+
+button {
+	margin-right: -10%;
+	margin-top: 5%;
+}
+.mySlides {
+		background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+ 
+=======
+body {
+	background-image: url("toms-restaurant.jpg");
+	background-attachment: : fixed;
+	background-repeat: no-repeat;
+}
+form {
+	height: 100%;
+
+}
+.jumbotron .jumbotron-fluid {
+	min-height: 300%;
+}
+.sidebar {
+	background-color: #e5e4d7;
+	margin: 10px;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 110%;
+	width: 300px;
+	float: left;
+	height: 600px;
+}
+li {
+    background-color: #DF1766
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+>>>>>>> 793979eafe845808da01d5401312bb203addbea8
