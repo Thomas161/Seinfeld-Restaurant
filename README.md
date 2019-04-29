@@ -1,10 +1,16 @@
-# This is my Javascript project that i completed for General Assembly
+# Mock Restaurant
 
-The Project uses the Firebase cloud platform, there exists 2 databases one for reservations and the other for guest feedback, that handle the raw storage to back end.
+This was my first major project, it was a restaurant simulated app. As a massive fan of Seinfeld i built a fake Seinfeld restaurant using Javascript.
 
-I also implemented the google maps API in order to provide a topographical location for fake restaurant.
+## Features
 
-Other logic include clearing data on submit, and redirecting to home page.
+Google maps API's
+
+Social Media routing/links
+
+Simple boostrapping
+
+Firebase database platform
 
 
 
