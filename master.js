@@ -13,7 +13,7 @@
  var database= firebase.database();
  var ref = database.ref('Info');//info is the node, traversing tree
 ref.on('value', gotData, errData);
-
+ref.delete('Info');
   function display(){
 
   var name = $('#patron').val();
@@ -45,14 +45,15 @@ ref.on('value', gotData, errData);
  }
    
 function removeIfRequired() {
-  var ada = this.database().ref('Info');
-  add.remove().
+  var del = firebase.database().ref('Info/');
+  del.remove().
     then( ()=> {
       console.log('Successfully deleted the records');
       }).
     catch( (error)=> {
       console.log('got an error in deleting records', error);
      })
+  console.log('removed objects',del);
    }
  
 
