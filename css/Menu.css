@@ -1,0 +1,24 @@
+body {
+    background-color: #eee;
+    background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px
+}
+
+h1 {
+    font-weight: bolder;
+    font-family: fantasy;
+    font-size: 80px;
+    box-shadow: 0 5px 2px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: 50px;
+    padding-bottom: : 100px;
+    color: white;
+    font-weight: bold;
+    background-color: brown;
+}
+
+input {
+    position: relative;
+    left: 5%;
+}

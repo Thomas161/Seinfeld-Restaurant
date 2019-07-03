@@ -6,7 +6,21 @@
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+	
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+	 crossorigin="anonymous"></script>
+	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+	
+	<script src="master.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="moment.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -16,9 +30,12 @@
 	<!-- navbar -->
 	<div id="navbar" class="navbar-collapse navbar-inverse collapse navbar-fixed-top">
 		<a href="#" class="navbar-brand">Tom's Restaurant - 2880 Broadway, New York, NY 10025, USA</a>
-		<a target="_blank" href="https://www.facebook.com/TomsDiner.original/"><img alt="find us on facebook" src="FB-icon.jpg" border=0></a> 
-		<a target="_blank" href="https://twitter.com/tomsrestaurant1?lang=en"><img alt="follow me on twitter" src="twitter-icon.png" border=0></a>
-			<a target="_blank" href="https://www.instagram.com/explore/locations/216013022/toms-restaurant/"><img alt="follow me on instagram" src="instagram.png" border=0></a>
+		<a target="_blank" href="https://www.facebook.com/TomsDiner.original/">
+			<img alt="find us on facebook" src="icons/FB-icon.jpg" border=0></a> 
+		<a target="_blank" href="https://twitter.com/tomsrestaurant1?lang=en">
+			<img alt="follow me on twitter" src="icons/twitter-icon.png" border=0></a>
+			<a target="_blank" href="https://www.instagram.com/explore/locations/216013022/toms-restaurant/">
+				<img alt="follow me on instagram" src="icons/instagram.png" border=0></a>
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="feedback.html">Feedback</a></li>
 			<li><a href="Menu.html" >Menu</a></li></li>
@@ -42,18 +59,11 @@
 <div class="dropdown">
 	
 <form id ="locked"> 
-<style>
-#patron{
-	font-size: 1.4em;
-}
-#datetime24{
-	font-size: 1.4em;
-}
-</style>
-<h1 style="align: left; float: left; color: #5211E8; font-weight: bolder;">Reservations</h1>					    
-	<p>	<input type="text" placeholder="name" id="patron" onkeyup="myValidate(this);" value="" style="height:50px; width: 330px"></p>
-	<p> <input type="text" id="datetime24" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY     HH : mm" name="datetime" onkeyup="myValdez(this);" placeholder="DD-MM-YYYY HH:mm" style="height:50px;  width: 330px"> </p>
-	<input style="background-color: #97FF00; height:30px; position: relative; float: right" type="button" value="submit" onClick="checker(); complete(); " id="newPosts"/>
+
+<h1>Reservations</h1>					    
+	<p>	<input type="text" placeholder="name" id="patron" onkeyup="myValidate(this);" value=""></p>
+	<p> <input type="datetime-local" id="datetime24" name="datetime"> </p>
+	<input type="button" value="submit" onClick="checker(); complete(); " id="newPosts"/>
 </form>
 
 </form>
@@ -66,32 +76,25 @@
 </div>
 <div>
 	<br/>
+	<button class="btn btn-info" onclick="removeIfRequired()">Purge Backend Records</button>
 	<br/>
-	<ul style="padding-bottom: 40%" id="lister" ></ul>	
+	<ul>
+		<li id="lister"></li>
+	</ul>	
 
-<style>
-#lister{
-font-size: 2em;
-}
-</style>
 </div>
+</html>
 
-		
-<br/>
+<!-- <script>
+	$('input').on('click',function () {
+		('#lister').remove();
+	})
 
-  <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+</script> -->
 
-  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
-  <script src="master.js"></script>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script src="moment.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 

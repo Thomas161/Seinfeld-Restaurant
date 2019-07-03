@@ -31,3 +31,25 @@
 .restaurant-locator {
 	height: 50vh;
 }
+
+#lister {
+	font-size: 2em;
+}
+#patron {
+	font-size: 1.4em;
+}
+h1 {
+	align: left;
+	 float: left;
+	  color: #5211E8; 
+	  font-weight: bolder;
+}
+#newPosts {
+	background-color: #97FF00;
+	 height:30px; 
+	 position: relative;
+	  float: right
+}
+#datetime24 {
+	height: 40px;
+}

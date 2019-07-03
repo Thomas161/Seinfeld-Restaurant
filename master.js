@@ -42,37 +42,53 @@ ref.on('value', gotData, errData);
     display();
    }
      
+ }
+   
+function removeIfRequired() {
+  var ada = this.database().ref('Info');
+  add.remove().
+    then( ()=> {
+      console.log('Successfully deleted the records');
+      }).
+    catch( (error)=> {
+      console.log('got an error in deleting records', error);
+     })
    }
+ 
 
 
   var person, reservation;
 
 function gotData(data){
 
-  // var cleaner = selectAll('.cleanse');
-  // for(var i =0; i < cleanse.length; i++){
-    // cleaner[i].remove();
-  // }
-
- // console.log(data.val());
   var id = data.val();
- // var reservation = data.val();
+
   var keys = Object.keys(id);
- // var keys = Object.keys(reservation);
+
  console.log(keys);
   for(var propName in keys){
      var k =keys[propName];
      var person = id[k].person;
     var reservation = id[k].reservation;
+    
     console.log(person);
     var ul = document.getElementById('lister');
     var li = document.createElement("li");
+    var x = document.createElement('span');
+    x.textContent = 'x';
     console.log(id);
     li.appendChild(document.createTextNode(person));
     li.appendChild(document.createTextNode(reservation)); 
+    li.appendChild(x);
    // li.class("document");
      ul.appendChild(li);
      // li.class('cleanse');
+    
+    x.addEventListener('click', (e) => {
+      e.stopPropagation();
+      let id = e.target.parentElement;
+      db.collection('Info').doc(id).delete();
+    })
    }
   
 
@@ -89,45 +105,39 @@ function myValidate(input){
   input.value = input.value.replace(vz, "");
 
 }
- function myValdez(input){
-  var vds = /\d{2}[-\s]\d{2}[-\s]\d{4}[-\s]\d{2}[:\s]\d{2}\s\s\s\s/;
-  input.value = input.value.replace(vds);
 
-}
 function complete(){
-  //var frm = document.getElementByName("finished");
  document.getElementById("patron").value = '';
  document.getElementById("datetime24").value = '';
 }
 
-  //console.log(reset());
- // frm.reset();//uncaught error, reset not defined
- // return false;
-// input.value = input.value.reset(destination);
 
+// $('input').click(function () {
+//   ('#lister').remove();
+// })
 
-
-// function display() {
-// var data = {
-  // var name = ("patron").value;
-  // var name = ("datetime24").value;
+// function remove(e) {
+//   //use an event
+//   var li = e.target;
+//   //select the li elements
+//   var listItems = document.querySelectorAll("li");
+//   //target the ul
+//   var ul = document.getElementById("candidate");
+//   //remove the li from ul
+//   ul.parentNode.removeChild(li);
 // }
-// ref.push(data);
-// }
+
+// document.getElementById("ul").addEventListener("click", function(e) {
+//   var tgt = e.target;
+//   if (tgt.tagName == "li") {
+//     tgt.parentNode.removeChild(tgt); // or tgt.remove();
+//   }
+// });
 
 
-// function layout(){
-  // var name = document.getElementById('patron').value;
-   // var time = document.getElementById('datetime24').value;
-	
-    // ref.push(time);
 
 
-//ref.push(data());
 
-//function layout(){
-  //var time = document.getElementById('datetime24').value;
-  //ref.push(time);
 
 
 

@@ -1,0 +1,51 @@
+body {
+    background-image: url('../pictures/scale.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#subject {
+    border-radius: 25px;
+    padding: 60px;
+}
+
+h1 {
+    color: white;
+    font-family: papyrus;
+    font-size: 5em;
+}
+
+#firstname {
+    color: white;
+}
+
+#button {
+    background-color: #97FF00;
+    color: black;
+    width: 90px;
+    font-weight: bold;
+    height: 50px;
+    position: right;
+}
+
+#typo {
+    background-color: #97FF00;
+    color: black;
+    width: 90px;
+    font-weight: bold;
+    height: 50px;
+    position: right;
+}
+
+#fname {
+    width: 400px;
+    height: 55px;
+    font-size: 2em;
+}
+
+#email {
+    width: 400px;
+    height: 55px;
+    font-size: 2em;
+}
