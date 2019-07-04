@@ -1,16 +1,17 @@
 # Mock Restaurant
 
-This was my first major project, it was a restaurant simulated app. As a massive fan of Seinfeld i built a fake Seinfeld restaurant using Javascript that is integrated with Firbase Realtime DB.
+This was my first major project, it was a restaurant simulated app. As a massive fan of Seinfeld i built a fake Seinfeld restaurant book app using Javascript that is integrated with Firbase Realtime DB.
 
-## Features
+## Storage
 
-Google maps API's
+Project stored in Google Cloud Bucket
 
-Social Media routing/links
+### Top level directory shown if run in shell
+```python
+gsutil ls gs://my-seinfeld-app
+```
 
-Simple boostrapping
-
-Firebase database platform
+ 
 
 
 
