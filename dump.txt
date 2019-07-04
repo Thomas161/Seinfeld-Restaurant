@@ -1,0 +1,31 @@
+// $('.input').click(function () {
+//   ('#lister').remove();
+// })
+
+// function remove(e) {
+//   //use an event
+//   var li = e.target;
+//   //select the li elements
+//   var listItems = document.querySelectorAll("li");
+//   //target the ul
+//   var ul = document.getElementById("candidate");
+//   //remove the li from ul
+//   ul.parentNode.removeChild(li);
+// }
+
+// document.getElementById("ul").addEventListener("click", function(e) {
+//   var tgt = e.target;
+//   if (tgt.tagName == "li") {
+//     tgt.parentNode.removeChild(tgt); // or tgt.remove();
+//   }
+// });
+
+
+// function deleteItem(){
+//      var e = document.querySelector(".ul-list li");
+//      for (const i in e) {
+//        i.addEventListener("click", function() {
+//          this.parentNode.removeChild(this);
+//        });
+//      }
+//    };

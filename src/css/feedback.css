@@ -49,3 +49,8 @@ h1 {
     height: 55px;
     font-size: 2em;
 }
+textarea {
+font-size: 2em;
+height:150px; 
+width:500px;
+}
