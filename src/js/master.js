@@ -1,51 +1,64 @@
- //DATABASE CONFIG AND METHODS
+//  if(document.addEventListener){
 
- var config = {
-    apiKey: "AIzaSyDeDgV6YIjgWecHUTwNFP3nu6oPw899gls",
-    authDomain: "master-project-fd122.firebaseapp.com",
-    databaseURL: "https://master-project-fd122.firebaseio.com",
-    projectId: "master-project-fd122",
-    storageBucket: "",
-    messagingSenderId: "462770541013"
-  };
-  firebase.initializeApp(config);
+//  }
 
- var database= firebase.database();
- var ref = database.ref('Info');//info is the node, traversing tree
-ref.on('value', gotData, errData);
+//DATABASE CONFIG AND METHODS
 
-  function display(){
-  var name = $('#patron').val();
+var config = {
+  apiKey: "AIzaSyDeDgV6YIjgWecHUTwNFP3nu6oPw899gls",
+  authDomain: "master-project-fd122.firebaseapp.com",
+  databaseURL: "https://master-project-fd122.firebaseio.com",
+  projectId: "master-project-fd122",
+  storageBucket: "",
+  messagingSenderId: "462770541013",
+};
+firebase.initializeApp(config);
+
+var database = firebase.database();
+var ref = database.ref("Info"); //info is the node, traversing tree
+ref.on("value", gotData, errData);
+
+function display() {
+  var name = $("#patron").val();
   console.log(name);
-   var time = $('#datetime24').val();
-   console.log(time);
+  var time = $("#datetime24").val();
+  console.log(time);
 
-   var newPosts = {
-    "person" : name,
-    "reservation": time
-   }
-   ref.push(newPosts);
- }
+  var newPosts = {
+    person: name,
+    reservation: time,
+  };
+  ref.push(newPosts);
+}
 
- ref.on("value", function(snapshot){
+ref.on("value", function (snapshot) {
   console.log(snapshot.key);
   console.log(snapshot.val());
-})
+});
 
- function checker(){
-   if(document.getElementById('patron').value == "" & document.getElementById('datetime24').value == ""){
-     alert('no good dawg, gotta submit something');
-      document.getElementById('patron').style.borderColor = "red";
-      document.getElementById('datetime24').style.borderColor = "red";
-   } else {
-    display();
-   }     
- }
- 
+function checker() {
+  let a = document.getElementById("patron").value;
+  let b = document.getElementById("datetime24").value;
+
+  if (
+    a == "" &&
+    a == null &&
+    a == undefined &&
+    b == "" &&
+    b == null &&
+    b == undefined
+  ) {
+    try {
+      throw "error";
+    } catch (err) {
+      return err;
+    }
+  } else return display();
+}
+
 var person, reservation;
 
 function gotData(data) {
-
   var id = data.val();
   var keys = Object.keys(id);
 
@@ -54,11 +67,11 @@ function gotData(data) {
     var k = keys[propName];
     var person = id[k].person;
     var reservation = id[k].reservation;
-    
+
     console.log(person);
-    var ul = document.getElementById('lister');
+    var ul = document.getElementById("lister");
     var li = document.createElement("li");
-  
+
     console.log(id);
     li.appendChild(document.createTextNode(person));
     li.appendChild(document.createTextNode(reservation));
@@ -66,40 +79,22 @@ function gotData(data) {
     // li.class("document");
     ul.appendChild(li);
     // li.class('cleanse');
-    
   }
 }
 
-
-function errData(err){
+function errData(err) {
   console.log("Error");
   console.log(err);
 }
 
 //VALIDATION METHODS FOR USER INPUT
 
-function myValidate(input){
+function myValidate(input) {
   var vz = /[^a-z]/gi;
   input.value = input.value.replace(vz, "");
-
 }
 
-function complete(){
- document.getElementById("patron").value = '';
- document.getElementById("datetime24").value = '';
+function complete() {
+  document.getElementById("patron").value = "";
+  document.getElementById("datetime24").value = "";
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
