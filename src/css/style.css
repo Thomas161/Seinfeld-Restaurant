@@ -1,59 +1,69 @@
 .restaurant-pic {
-	height: 50vh;
-	background: url('https://i.ytimg.com/vi/7mphrlxJl5k/maxresdefault.jpg');
-	background-size: cover;
-	background-position: 0 40%;
+  height: 50vh;
+  background: url("https://i.ytimg.com/vi/7mphrlxJl5k/maxresdefault.jpg");
+  background-size: cover;
+  background-position: 0 40%;
 }
 
 .restaurant-info {
-	height: 50vh;
+  height: 50vh;
 }
 
 .reservation {
-	height: 25vh;
+  height: 25vh;
 }
 
 /* add a deli pattern background*/
 .reservation-form-container {
-	position: relative;
-	height: 100%;
-	background: url('http://ih1.redbubble.net/image.80745362.8983/flat,800x800,075,t.u4.jpg');
-	background-size: cover;
-	background-position: center;
+  position: relative;
+  height: 100%;
+  background: url("http://ih1.redbubble.net/image.80745362.8983/flat,800x800,075,t.u4.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .reservation-form {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .restaurant-locator {
-	height: 50vh;
+  height: 50vh;
 }
 
 #lister {
-	font-size: 2em;
+  font-size: 2em;
 }
 #patron {
-	font-size: 1.4em;
-	height: 50px;
+  font-size: 1.4em;
+  height: 50px;
 }
 h1 {
-	align: left;
-	 float: left;
-	  color: black;
-	  font-weight: bolder;
-	  border: solid;
+  align: left;
+  float: left;
+  color: black;
+  font-weight: bolder;
+  border: solid;
 }
 
 #datetime24 {
-	height: 40px;
+  height: 40px;
 }
 #map {
-	padding-bottom: 40%;
+  padding-bottom: 40%;
 }
-#contains{
-	height: 260px;
-	 opacity: 0.6;
+#contains {
+  height: 260px;
+  opacity: 0.6;
+}
+
+#navbar {
+  height: 100%;
+  width: 320px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: black;
 }
