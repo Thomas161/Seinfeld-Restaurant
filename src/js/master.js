@@ -26,40 +26,42 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (count > 0) tl.stop();
     else count++;
   };
-  
 
-  function display() {
-    var name = $("#patron").val();
-    console.log(name);
-    var time = $("#datetime24").val();
-    console.log(time);
-  }
+  // (function checkNull() {
+  //   if (el && el2) {
+  //     el.addEventListener("onkeyup", myValidateNameAndDate, false);
+  //     el2.addEventListener("onkeyup", myValidateNameAndDate, false);
+  //   } else {
+  //     return false;
+  //   }
+  // });
 
+  // function display(e) {
+  //   var name = $("#patron").val();
+  //   var time = $("#datetime24").val();
+  //   if (name && time !== myValidateNameAndDate) {
+  //     console.log("Perfect");
+  //   } else {
+  //     console.log("Error");
+  //   }
+  //   e.preventDefault();
+  // }
 
-  function validateInput() {
-    let a = document.getElementById("patron").value;
-    let b = document.getElementById("datetime24").value;
-    if (
-      a == "" &&
-      a == null &&
-      a == undefined && 
-      a.length < 3 &&
-      b == "" &&
-      b == null &&
-      b == undefined
-    ) {
-      try {
-        this.style.border = "3px solid red";
-        document.getElementsByName('button').disabled = true;
-        throw "error";
-      } catch (err) {
-        return err;
-      }
-    } else {
-      this.style.border = "3px solid green";
-      document.getElementsByName('button').diabled =false;
-      return display();
-  }
+  // function validateInput() {
+  //   if (!myValidateNameAndDate()) {
+  //     try {
+  //       this.style.border = "3px solid red";
+  //       document.getElementsByName("button").disabled = true;
+  //       throw "error";
+  //     } catch (err) {
+  //       return err;
+  //     }
+  //   } else {
+  //     this.style.border = "3px solid green";
+  //     document.getElementsByName("button").diabled = false;
+  //     return display();
+  //   }
+  // }
 
   // var person, reservation;
 
@@ -81,58 +83,69 @@ document.addEventListener("DOMContentLoaded", function (event) {
   //     li.appendChild(document.createTextNode(person));
   //     li.appendChild(document.createTextNode(reservation));
 
-      // li.class("document");
-      ul.appendChild(li);
-      // li.class('cleanse');
+  // li.class("document");
+  // ul.appendChild(li);
+  // li.class('cleanse');
+
+  /**Error helper function */
+  //   function errData(err) {
+  //     console.log("Error");
+  //     console.log(err);
+  //   }
+
+  /**Validate name and date inputs */
+  var name, date, inputName, inputDate;
+  name = new RegExp(/^[a-zA-Z]{3,}$/);
+  date = new RegExp(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  inputName = $("#patron").val();
+  inputDate = $("#datetime24").val();
+
+  function myValidateNameAndDate(e) {
+    if (name == inputName && date == inputDate) {
+      console.log("true");
+      // return true;
+    } else {
+      console.log("false");
+      // return false;
     }
+    e.preventDefault();
   }
 
-/**Error helper function */
-//   function errData(err) {
-//     console.log("Error");
-//     console.log(err);
-//   }
-
-/**Validate name and date inputs */
-//   function myValidate(input) {
-//     var vz = /[^a-z]/gi;
-//     input.value = input.value.replace(vz, "");
-//   }
-
-/**Clear fields on submit */
-  // function clearFields() {
-  //   document.getElementById("patron").value = "";
-  //   document.getElementById("datetime24").value = "";
-  // }
+  document
+    .getElementById("submitButton")
+    .addEventListener("click", myValidateNameAndDate, false);
 });
 
+/**Clear fields on submit */
+// function clearFields() {
+//   document.getElementById("patron").value = "";
+//   document.getElementById("datetime24").value = "";
+// }
 
 /**Firebase plugged in => comeback to later */
-  //DATABASE CONFIG AND METHODS
+//DATABASE CONFIG AND METHODS
 
-  // var config = {
-  //   apiKey: "AIzaSyDeDgV6YIjgWecHUTwNFP3nu6oPw899gls",
-  //   authDomain: "master-project-fd122.firebaseapp.com",
-  //   databaseURL: "https://master-project-fd122.firebaseio.com",
-  //   projectId: "master-project-fd122",
-  //   storageBucket: "",
-  //   messagingSenderId: "462770541013",
-  // };
-  // firebase.initializeApp(config);
+// var config = {
+//   apiKey: "AIzaSyDeDgV6YIjgWecHUTwNFP3nu6oPw899gls",
+//   authDomain: "master-project-fd122.firebaseapp.com",
+//   databaseURL: "https://master-project-fd122.firebaseio.com",
+//   projectId: "master-project-fd122",
+//   storageBucket: "",
+//   messagingSenderId: "462770541013",
+// };
+// firebase.initializeApp(config);
 
-  // var database = firebase.database();
-  // var ref = database.ref("Info"); //info is the node, traversing tree
-  // ref.on("value", gotData, errData);
+// var database = firebase.database();
+// var ref = database.ref("Info"); //info is the node, traversing tree
+// ref.on("value", gotData, errData);
 
+// var newPosts = {
+//   person: name,
+//   reservation: time,
+// };
+// ref.push(newPosts);
+//
 
-    // var newPosts = {
-    //   person: name,
-    //   reservation: time,
-    // };
-    // ref.push(newPosts);
-  }
-
-  // ref.on("value", function (snapshot) {
-  //   console.log(snapshot.key);
-  //   console.log(snapshot.val());
-  // });
+// ref.on("value", function (snapshot) {
+//   console.log(snapshot.key);
+//   console.log(snapshot.val());

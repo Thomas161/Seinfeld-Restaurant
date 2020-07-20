@@ -28,12 +28,16 @@
 	<div id="flex container">
 	<div class="container">
 	
-<form id ="locked"> 
+<form id ="locked" method="POST"> 
 
 	<h1 class="one">Giddy Up!</h1>					    
-	<p>	<input type="text" placeholder="name" id="patron" onkeyup="myValidate(this);" value=""></p>
-	<p> <input type="datetime-local" id="datetime24" name="datetime"> </p>
-	<input class="btn btn-info btn-lg" type="button" value="submit" onClick="checker(); complete();"/>
+	<input type="text" placeholder="name" id="patron"/>
+	<br>
+	<br>
+ <input type="text" id="datetime24" name="datetime" placeholder="dd/mm/yyyy"/>
+ <br>
+ <br>
+	<button type="button" id="submitButton">Submit</button>
 </form>
 
 </div>
