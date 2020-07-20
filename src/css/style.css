@@ -1,19 +1,17 @@
-/* .restaurant-pic {
-  height: 50vh;
-  background: url("https://i.ytimg.com/vi/7mphrlxJl5k/maxresdefault.jpg");
-  background-size: cover;
-  background-position: 0 40%;
-} */
+#flex-container {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
 
-/* add a deli pattern background*/
 .container {
   position: fixed;
-  height: 307px;
+  height: 306px;
   left: 300px;
   width: 100%;
-  background: url("http://ih1.redbubble.net/image.80745362.8983/flat,800x800,075,t.u4.jpg");
-  background-size: cover;
-  background-position: center;
+  background: url("/src/pictures/kramer-seinfeld.jpg");
+  background-size: contain;
+  border: 3px solid #ffffff;
 }
 .container2 {
   position: fixed;
@@ -22,6 +20,7 @@
   width: 100%;
   top: 306px;
   background-color: dodgerblue;
+  border: 3px solid #ffffff;
 }
 li {
   list-style-type: none;
@@ -29,12 +28,42 @@ li {
   position: relative;
 }
 
-#navbar {
+.container3 {
   height: 100%;
   width: 300px;
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
-  background-color: black;
+  background-color: slategray;
+  border: 3px solid #ffffff;
+}
+/* .mask {
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+
+  background: url("src/pictures/kramer-seinfeld.jpg");
+  background-position: 0 50%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+
+  font-size: 150px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: -10px;
+  padding: 0 15px;
+} */
+.one {
+  color: goldenrod;
+  font-size: 3em;
+  /* background-position: 0 25%; */
+  text-shadow: 0 0 15px rgba(221, 221, 221, 0.2);
+  transition: text-shadow 0.35s linear;
+}
+.one:hover {
+  text-shadow: 0 0 10px rgba(221, 221, 221, 1), 0 0 0 #ddd;
 }
