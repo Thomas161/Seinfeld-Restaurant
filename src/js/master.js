@@ -36,16 +36,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
   //   }
   // });
 
-  // function display(e) {
-  //   var name = $("#patron").val();
-  //   var time = $("#datetime24").val();
-  //   if (name && time !== myValidateNameAndDate) {
-  //     console.log("Perfect");
-  //   } else {
-  //     console.log("Error");
-  //   }
-  //   e.preventDefault();
-  // }
+  function display(e) {
+    var name = $("#patron").val();
+    var time = $("#datetime24").val();
+    if (name && time !== myValidateNameAndDate(e)) {
+      console.log("Perfect");
+    } else {
+      console.log("Error");
+    }
+    e.preventDefault();
+  }
 
   // function validateInput() {
   //   if (!myValidateNameAndDate()) {
@@ -94,19 +94,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
   //   }
 
   /**Validate name and date inputs */
-  var name, date, inputName, inputDate;
-  name = new RegExp(/^[a-zA-Z]{3,}$/);
-  date = new RegExp(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
-  inputName = $("#patron").val();
-  inputDate = $("#datetime24").val();
 
   function myValidateNameAndDate(e) {
-    if (name == inputName && date == inputDate) {
-      console.log("true");
-      // return true;
+    var name,
+      date,
+      inputName,
+      inputDate,
+      nameResult,
+      dateResult,
+      emptyName,
+      emptyDate;
+    inputName = $("#patron").val();
+    inputDate = $("#datetime24").val();
+    name = new RegExp(/^[a-zA-Z]{3,}$/);
+    date = new RegExp(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    nameResult = name.test(inputName);
+    dateResult = date.test(inputDate);
+    emptyName = null;
+    emptyDate = null;
+    if (
+      nameResult &&
+      dateResult &&
+      inputName != emptyName &&
+      inputDate != emptyDate
+    ) {
+      console.log("true input matches expression");
+      document.getElementById("submitButton").disabled = false;
+
+      return true;
     } else {
-      console.log("false");
-      // return false;
+      console.log("false they dont match");
+      document.getElementById("submitButton").disabled = true;
+      return false;
     }
     e.preventDefault();
   }
@@ -114,13 +133,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
   document
     .getElementById("submitButton")
     .addEventListener("click", myValidateNameAndDate, false);
-});
 
-/**Clear fields on submit */
-// function clearFields() {
-//   document.getElementById("patron").value = "";
-//   document.getElementById("datetime24").value = "";
-// }
+  document
+    .getElementById("submitButton")
+    .addEventListener("click", clearFields, false);
+
+  /**Clear fields on submit */
+  function clearFields() {
+    document.getElementById("patron").value = "";
+    document.getElementById("datetime24").value = "";
+  }
+});
 
 /**Firebase plugged in => comeback to later */
 //DATABASE CONFIG AND METHODS
