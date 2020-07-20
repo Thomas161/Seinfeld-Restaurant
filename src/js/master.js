@@ -33,12 +33,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
     console.log(name);
     var time = $("#datetime24").val();
     console.log(time);
+  }
 
 
   function validateInput() {
     let a = document.getElementById("patron").value;
     let b = document.getElementById("datetime24").value;
-
     if (
       a == "" &&
       a == null &&
@@ -50,12 +50,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     ) {
       try {
         this.style.border = "3px solid red";
+        document.getElementsByName('button').disabled = true;
         throw "error";
       } catch (err) {
         return err;
       }
     } else {
       this.style.border = "3px solid green";
+      document.getElementsByName('button').diabled =false;
       return display();
   }
 
