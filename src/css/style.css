@@ -9,8 +9,8 @@
   height: 306px;
   left: 300px;
   width: 100%;
-  background: url("/src/pictures/kramer-seinfeld.jpg");
-  background-size: contain;
+  background: url("/Users/tommydates/Desktop/Seinfeld-Restaurant/src/pictures/toms-restaurant.jpg");
+  background-size: cover;
   border: 3px solid #ffffff;
 }
 .container2 {
@@ -60,4 +60,8 @@ li {
 
 .iframe {
   left: 10px;
+}
+
+#submitButton {
+  /* visibility: hidden; */
 }
