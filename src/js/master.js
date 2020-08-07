@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       return true;
     } else {
       alert("can't submit nothing, or invalid details");
-      // document.getElementById("submitButton").disabled = true;
       return false;
     }
     e.preventDefault();
