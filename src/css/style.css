@@ -105,12 +105,18 @@ input {
 }
 
 #myList {
-  list-style-type: none;
-  display: block;
-  margin: 10px;
+  position: absolute;
+  width: 300px;
+  height: 347px;
+  margin: 15px;
+}
+.listStyle {
   position: absolute;
   width: 300px;
   height: 40px;
   background: slategray;
   color: beige;
+  list-style-type: none;
+  display: block;
+  margin: 10px;
 }

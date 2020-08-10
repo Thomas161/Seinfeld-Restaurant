@@ -40,13 +40,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
       emptyName,
       emptyDate,
       reservation,
-      node,
-      textNodeName,
-      textNodeDate;
+      node;
     reservation = document.getElementById("myList");
     node = document.createElement("li");
-    textNodeName = $("#patron").val();
-    textNodeDate = $("#datetime24").val();
+    let totalReservation = {
+      textNodeName: $("#patron").val(),
+      textNodeDate: $("#datetime24").val(),
+    };
     inputName = $("#patron").val();
     inputDate = $("#datetime24").val();
     name = new RegExp(/^[a-zA-Z]{3,}$/);
@@ -63,11 +63,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     ) {
       console.log("true input matches expression");
       reservation.appendChild(
-        document.createTextNode(textNodeName + "<button>Delete</button>")
+        document.createTextNode(
+          ` ${totalReservation.textNodeName} || ${totalReservation.textNodeDate}\n`
+        )
       );
-      reservation.appendChild(
-        document.createTextNode(`${textNodeDate} <button>Delete</button>`)
-      );
+      $("#submitButton").submit(function () {
+        $(".container2").addClass("listStyle");
+      });
 
       return true;
     } else {
