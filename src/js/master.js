@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       reservation.appendChild(
         document.createTextNode(`${textNodeDate} <button>Delete</button>`)
       );
+
       return true;
     } else {
       alert("can't submit nothing, or invalid details");
