@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   /**Validate name and date inputs */
 
   function myValidateNameAndDate(e) {
+    e.preventDefault();
     var name,
       date,
       inputName,
@@ -61,14 +62,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
       inputDate != emptyDate
     ) {
       console.log("true input matches expression");
-      reservation.appendChild(document.createTextNode(textNodeName));
-      reservation.appendChild(document.createTextNode(textNodeDate));
+      reservation.appendChild(
+        document.createTextNode(textNodeName + "<button>Delete</button>")
+      );
+      reservation.appendChild(
+        document.createTextNode(`${textNodeDate} <button>Delete</button>`)
+      );
       return true;
     } else {
       alert("can't submit nothing, or invalid details");
       return false;
     }
-    e.preventDefault();
   }
 
   document

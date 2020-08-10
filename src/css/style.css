@@ -1,3 +1,10 @@
+body {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  background: beige;
+}
+
 #flex-container {
   display: flex;
   flex-direction: row;
@@ -8,17 +15,17 @@
   position: fixed;
   height: 306px;
   left: 300px;
-  width: 100%;
-  background: url("/Users/tommydates/Desktop/Seinfeld-Restaurant/src/pictures/toms-restaurant.jpg");
+  width: 828px;
+  /* background: url("/Users/tommydates/Desktop/Seinfeld-Restaurant/src/pictures/toms-restaurant.jpg"); */
   background-size: cover;
   border: 3px solid #ffffff;
 }
 .container2 {
   position: fixed;
-  height: 600px;
+  height: 385px;
   left: 300px;
-  width: 100%;
-  top: 306px;
+  width: 827px;
+  top: 490px;
   background-color: dodgerblue;
   border: 3px solid #ffffff;
 }
@@ -38,15 +45,40 @@ li {
   background-color: black;
   border: 3px solid #ffffff;
 }
-
-.one {
-  color: goldenrod;
-  font-size: 3em;
-  text-shadow: 0 0 15px rgba(221, 221, 221, 0.2);
-  transition: text-shadow 0.35s linear;
+#formContainer {
+  position: absolute;
+  width: 250px;
+  top: 284px;
+  height: 173px;
+  background-color: springgreen;
 }
-.one:hover {
-  text-shadow: 0 0 10px rgba(221, 221, 221, 1), 0 0 0 #ddd;
+#masterForm {
+  position: absolute;
+  padding: 10px;
+}
+input {
+  width: 200px;
+  height: 30px;
+}
+
+.banner {
+  background-color: slategrey;
+  height: 249px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  margin: 0;
+  color: transparent;
+  font-size: 120px;
+  transform: rotate(14deg);
+  background-image: url("/Users/tommydates/Desktop/Seinfeld-Restaurant/src/pictures/toms-restaurant.jpg");
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -moz-background-clip: text;
 }
 
 .fa:hover {
