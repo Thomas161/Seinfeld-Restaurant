@@ -109,6 +109,7 @@ input {
   width: 300px;
   height: 347px;
   margin: 15px;
+  visibility: hidden;
 }
 .listStyle {
   position: absolute;

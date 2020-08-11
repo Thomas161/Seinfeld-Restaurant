@@ -28,11 +28,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   };
 
   //global variables
-  let reservation = document.getElementById("myList");
-  let totalReservation = {
-    textNodeName: $("#patron").val(),
-    textNodeDate: $("#datetime24").val(),
-  };
+
   /**Validate name and date inputs */
 
   function myValidateNameAndDate(e) {
@@ -44,7 +40,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
       nameResult,
       dateResult,
       emptyName,
-      emptyDate;
+      emptyDate,
+      deleteButton,
+      updateButton,
+      reservation;
+    reservation = document.getElementById("myList");
+    let totalReservation = {
+      textNodeName: $("#patron").val(),
+      textNodeDate: $("#datetime24").val(),
+    };
+    deleteButton = document.createElement("button");
+    deleteButton.innerHTML = "DELETE";
+    deleteButton.style =
+      "width:70px; height:30px; background:pink; color: blue";
+    deleteButton.id = "delete";
+    updateButton = document.createElement("button");
+    updateButton.innerHTML = "Update";
+    updateButton.style =
+      "width:70px; height:30px; background:gold; color: maroon";
+    updateButton.id = "update";
     inputName = $("#patron").val();
     inputDate = $("#datetime24").val();
     name = new RegExp(/^[a-zA-Z]{3,}$/);
@@ -65,10 +79,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
           ` ${totalReservation.textNodeName} || ${totalReservation.textNodeDate}\n`
         )
       );
+      reservation.style.visibility = "visible";
       reservation
-        .appendChild(deleteButtons())
+        .appendChild(deleteButton)
         .addEventListener("click", removeBooking, false);
-      reservation.appendChild(updateButtons());
+      reservation.appendChild(updateButton);
 
       return true;
     } else {
@@ -97,29 +112,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
   function removeBooking(evt) {
     evt.preventDefault();
     console.log("button working");
-    // let { textNodeName, textNodeDate } = totalReservation;
-    // reservation.removeChild(document.removeChild(textNodeName, textNodeDate));
+    let pre = document.getElementById("myList");
+    pre.remove();
   }
 
-  /**CRUD Buttons */
+  /**Update Booking */
 
-  function deleteButtons() {
-    let deleteButton;
-    deleteButton = document.createElement("button");
-    deleteButton.innerHTML = "DELETE";
-    deleteButton.style =
-      "width:70px; height:30px; background:pink; color: blue";
-    deleteButton.id = "delete";
-  }
-
-  function updateButtons() {
-    let updateButton;
-    updateButton = document.createElement("button");
-    updateButton.innerHTML = "Update";
-    updateButton.style =
-      "width:70px; height:30px; background:gold; color: maroon";
-    updateButton.id = "update";
-  }
   /**Clear fields on submit */
   function clearFields() {
     document.getElementById("patron").value = "";
