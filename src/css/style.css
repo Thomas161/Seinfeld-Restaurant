@@ -82,6 +82,15 @@ h1 {
   -moz-background-clip: text;
   -moz-background-clip: text;
 }
+
+#formContainer {
+  position: absolute;
+  visibility: hidden;
+  width: 250px;
+  top: 100px;
+  height: 173px;
+  background-color: springgreen;
+}
 /* For mobile phones: */
 /* .container, .container2, .container3 { */
 /* width:100%; */
@@ -149,14 +158,8 @@ h1 {
   margin: 20px;
   font-size: 2em;
 } */
-/* #formContainer {
-  position: absolute;
-  width: 250px;
-  top: 100px;
-  height: 173px;
-  background-color: springgreen;
-}
-#masterForm {
+
+/* #masterForm {
   position: absolute;
   padding: 10px;
 }

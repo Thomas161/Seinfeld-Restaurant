@@ -28,10 +28,15 @@
 			<h1>Giddy Up!</h1>
 		</section>
 		<section id="containerMiddle">
+			<div id="showCheckbox">
+			<label for="">Eat In</label><input type="checkbox" unchecked id="eatIn">
+			<label for="">Takeaway</label><input type="checkbox" unchecked id="takeaway">
+		</div>
 			 <div id="formContainer">
 <form id ="masterForm" method="POST"> 
 <input type="text" placeholder="name" id="patron"/>
- <input type="text" id="datetime24" name="datetime" placeholder="dd/mm/yyyy"/>
+ <input type="email" id="emailInput" placeholder="email..."/>
+ <br>
 	<input type="button" id="submitButton" value="Submit"/>
 </form>
 </div> 

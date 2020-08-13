@@ -101,6 +101,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
     .getElementById("submitButton")
     .addEventListener("click", clearFields, false);
 
+  document.getElementById("eatIn").addEventListener("dblclick", eatIn, false);
+
+  // document
+  //   .getElementById("takeaway")
+  //   .addEventListener("click", takeaway, false);
+
   var checkDeleteId = document.getElementById("delete");
   var checkUpdateId = document.getElementById("update");
   if (checkDeleteId && checkUpdateId) {
@@ -120,6 +126,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
     console.log("button working");
     let pre = document.getElementById("myList");
     pre.remove();
+  }
+
+  function eatIn(evt) {
+    evt.preventDefault();
+    let checkedBox = document.getElementById("eatIn");
+    console.log(checkedBox);
+    if (checkedBox.checked == true) {
+      alert("checked");
+    } else {
+      alert("not checked");
+    }
   }
 
   /**Update Booking */
