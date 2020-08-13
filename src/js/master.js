@@ -2,21 +2,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var count = 0;
   var tl = new TimelineMax();
   var cont, cont2, cont3;
-  cont = document.querySelector(".container");
-  cont2 = document.querySelector(".container2");
-  cont3 = document.querySelector(".container3");
-  tl.fromTo(cont, 0.9, { y: -400 }, { y: 0, ease: Power2.easeOut });
+  cont = document.querySelector("#containerTop");
+  cont2 = document.querySelector("#containerMiddle");
+  cont3 = document.querySelector("#containerBottom");
+  tl.fromTo(cont, 0.75, { x: 960 }, { x: 0, ease: Power2.easeOut, delay: 0.5 });
   tl.fromTo(
     cont2,
-    0.9,
-    { y: 400 },
-    { y: 0, ease: Power2.easeOut, delay: -0.3 }
+    0.75,
+    { x: 960 },
+    { x: 0, ease: Power2.easeOut, delay: -0.3 }
   );
 
   tl.fromTo(
     cont3,
-    0.9,
-    { x: -400 },
+    0.75,
+    { x: 960 },
     { x: 0, ease: Power2.easeOut, delay: -0.3 }
   );
 

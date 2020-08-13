@@ -1,6 +1,6 @@
-/* * {
-  box-sizing: border-box;
-} */
+body {
+  background: #a2d7d8;
+}
 
 .container {
   margin: 0px auto;
@@ -11,17 +11,17 @@
   position: absolute;
   width: 960px;
   float: left;
-  top: 30px;
+  top: 15px;
   height: 240px;
-  background: #69d2e7;
+  background: #ff4c65;
 }
 #containerMiddle {
   position: absolute;
   margin-top: 5px;
   width: 960px;
   float: left;
-  top: 368px;
-  height: 265px;
+  top: 255px;
+  height: 405px;
   background: #e0e4cc;
 }
 #containerBottom {
@@ -31,7 +31,7 @@
   float: left;
   top: 690px;
   height: 200px;
-  background: #ff4c65;
+  background: #1352a2;
 }
 
 @media screen and (max-width: 959px) {
@@ -65,6 +65,22 @@
   .container {
     width: 320px;
   }
+}
+
+h1 {
+  position: absolute;
+  left: 53px;
+  top: 37px;
+  margin: 0;
+  color: transparent;
+  font-size: 120px;
+  transform: rotate(10deg);
+  background-image: url("/Users/tommydates/Desktop/Seinfeld-Restaurant/src/pictures/toms-restaurant.jpg");
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -moz-background-clip: text;
 }
 /* For mobile phones: */
 /* .container, .container2, .container3 { */
