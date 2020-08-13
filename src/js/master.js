@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       console.log("true input matches expression");
       reservation.appendChild(
         document.createTextNode(
-          ` ${totalReservation.textNodeName} || ${totalReservation.textNodeDate}\n`
+          ` ${totalReservation.textNodeName}||${totalReservation.textNodeDate}`
         )
       );
       reservation.style.visibility = "visible";
@@ -102,11 +102,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
     .addEventListener("click", clearFields, false);
 
   var checkDeleteId = document.getElementById("delete");
-  if (checkDeleteId) {
+  var checkUpdateId = document.getElementById("update");
+  if (checkDeleteId && checkUpdateId) {
     document.addEventListener("click", removeBooking, false);
+    document.addEventListener("click", newReservation, false);
   } else {
     return null;
   }
+
+  document
+    .getElementById("update")
+    .addEventListener("click", newReservation, false);
 
   /**Remove bookings */
   function removeBooking(evt) {
@@ -117,6 +123,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
 
   /**Update Booking */
+
+  function newReservation() {
+    let newName, newDate;
+    newName = prompt("Change Name : ");
+    newDate = prompt("Change Date : ");
+    updatedReservation(newName, newDate);
+  }
+  function updatedReservation(newName, newDate) {
+    document.getElementById("patron").innerHTML = newName;
+    document.getElementById("datetime24").innerHTML = newDate;
+  }
 
   /**Clear fields on submit */
   function clearFields() {
