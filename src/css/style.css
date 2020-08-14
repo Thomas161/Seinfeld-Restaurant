@@ -93,8 +93,11 @@ h1 {
 
 .showMenu {
   position: absolute;
-  width: 600px;
   display: none;
+  width: 689px;
+  left: 33px;
+  top: 42px;
+  height: 202px;
   list-style-type: none;
 }
 #bevs,
@@ -118,14 +121,14 @@ h1 {
   position: absolute;
   margin-right: 4px;
   left: 195px;
-  width: 150px;
+  width: 153px;
   background: red;
   color: #fff;
 }
 #bevs {
   position: absolute;
 
-  left: 500px;
+  left: 507px;
   width: 150px;
   background: red;
   color: #fff;
@@ -133,7 +136,7 @@ h1 {
 #sweets {
   position: absolute;
   margin-right: 4px;
-  left: 347px;
+  left: 353px;
   width: 150px;
   background: red;
   color: #fff;
