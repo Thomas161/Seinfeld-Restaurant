@@ -9,7 +9,6 @@
 	 crossorigin="anonymous"></script>
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.1/gsap.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="../js/master.js"></script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,13 +24,44 @@
 <body>
 	<div class="container">
 		<section id="containerTop">
-			<h1>Giddy Up!</h1>
+			<h1>Tom's Restaurant!</h1>
 		</section>
 		<section id="containerMiddle">
 			<div id="showCheckbox">
-			<label for="">Eat In</label><input type="checkbox" id="eatIn" onclick="updateCheckbox(this)"/>
-			<label for="">Takeaway</label><input type="checkbox"  id="takeaway"/>
-			<p id="pText" style="display: none;">eating in</p>
+			<label for="">Eat In</label><button onclick="eatInOption()">Eat In</button><input type="checkbox" id="eatIn"/>
+			<label for="">Takeaway</label><button onclick="takeawayOption()">Takeaway</button><input type="checkbox"  id="takeaway"/>
+		<ul class="showMenu">
+	<div id="starters">
+			<h4>Starters</h4>
+			<li>Cob Salad</li>
+			<li>Chicken Soup</li>
+			<li>Fries</li>
+			</div>
+			<div id="allDay">
+				<h4>All Day</h4>
+			<li>Club Sandwich</li>
+			<li>Beef Brisket</li>
+			<li>Calzone</li>
+			<li>Tuna Melt</li>
+			<li>Art Vandelay</li>
+			<li>Rueben Sandwich</li>
+			<li>Smoky BBQ Ribs</li>
+		</div>
+		<div id="sweets">
+			<h4>Sweets</h4>
+			<li>NY Cheesecake</li>
+			<li>Key Lime Pie</li>
+			<li>Sweet Potato Pie</li>
+			<li>Brownie</li>
+		</div>
+		<div id="bevs">
+			<h4>Beverages</h4>
+			<li>Coffee</li>
+			<li>Tea</li>
+			<li>Sodas (Pepsi, Lemonade, CoolAid, Dr. Pepper )</li>
+		</div>
+		</ul>
+	
 		</div>
 			 <div id="formContainer">
 <form id ="masterForm" method="POST"> 
@@ -78,11 +108,36 @@
 		<source src="https://www.drodd.com/seinfeld-audio/not_men.wav" type="audio/mpeg">
   </audio>
 	</div> -->
+<script>
+	function eatInOption() {
 
+	document.getElementById("eatIn").checked = true;
+	document.querySelector('.showMenu').style.display = 'block';
+	document.getElementById('takeaway').checked = false;
+	}
+
+	function takeawayOption(){
+	
+		document.getElementById('takeaway').checked = true;
+		document.querySelector('.showMenu').style.display = 'block';
+		document.getElementById('eatIn').checked = false;
+	}
+
+    // let text = document.getElementById("pText");
+    // console.log(checkedBox);
+    // if (checkedBox.checked == true) {
+    //   console.log("checked");
+    //   text.style.display = "block";
+    // } else {
+    //   console.log("unchecked");
+    //   text.style.display = "none";
+    // }
+  
+</script>
 	
 		
 	
-		
+	<script src="../js/master.js"></script>
 	</body>
 </html>
 

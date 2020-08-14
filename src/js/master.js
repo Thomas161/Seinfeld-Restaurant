@@ -90,26 +90,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 
-  // document
-  //   .getElementById("takeaway")
-  //   .addEventListener("click", takeaway, false);
-
   /**Validate if defined/undefined */
   let checkDeleteId = document.getElementById("delete");
   let checkUpdateId = document.getElementById("update");
-  let checkEatInCheckbox = document.getElementById("eatIn");
   let checkSubmitButton = document.getElementById("submitButton");
   let checkUpdateButton = document.getElementById("update");
   if (
     checkDeleteId &&
     checkUpdateId &&
-    checkEatInCheckbox &&
     checkSubmitButton &&
     checkUpdateButton
   ) {
     document.addEventListener("click", removeBooking, false);
-    document.addEventListener("click", newReservation, false);
-    document.addEventListener("click", updateCheckbox, false);
     document.addEventListener("click", myValidateNameAndDate, false);
     document.addEventListener("click", clearFields, false);
     document.addEventListener("click", newReservation, false);
@@ -123,20 +115,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     console.log("button working");
     let pre = document.getElementById("myList");
     pre.remove();
-  }
-
-  function updateCheckbox(evt) {
-    evt.preventDefault();
-    let checkedBox = document.getElementById("eatIn");
-    let text = document.getElementById("pText");
-    // console.log(checkedBox);
-    if (checkedBox.checked == true) {
-      console.log("checked");
-      text.style.display = "block";
-    } else {
-      console.log("unchecked");
-      text.style.display = "none";
-    }
   }
 
   /**Update Booking */

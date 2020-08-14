@@ -70,11 +70,10 @@ body {
 h1 {
   position: absolute;
   left: 53px;
-  top: 37px;
+  top: 4px;
   margin: 0;
   color: transparent;
-  font-size: 120px;
-  transform: rotate(10deg);
+  font-size: 89px;
   background-image: url("/Users/tommydates/Desktop/Seinfeld-Restaurant/src/pictures/toms-restaurant.jpg");
   background-size: cover;
   background-clip: text;
@@ -91,10 +90,54 @@ h1 {
   height: 173px;
   background-color: springgreen;
 }
-/* For mobile phones: */
-/* .container, .container2, .container3 { */
-/* width:100%; */
-/* }  */
+
+.showMenu {
+  position: absolute;
+  width: 600px;
+  display: none;
+  list-style-type: none;
+}
+#bevs,
+#sweets,
+#allDay,
+#starters {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 12px;
+}
+#starters {
+  position: absolute;
+  margin-right: 4px;
+  width: 150px;
+  background: red;
+  color: #fff;
+}
+#allDay {
+  position: absolute;
+  margin-right: 4px;
+  left: 195px;
+  width: 150px;
+  background: red;
+  color: #fff;
+}
+#bevs {
+  position: absolute;
+
+  left: 500px;
+  width: 150px;
+  background: red;
+  color: #fff;
+}
+#sweets {
+  position: absolute;
+  margin-right: 4px;
+  left: 347px;
+  width: 150px;
+  background: red;
+  color: #fff;
+}
 
 /* .container {
   position: absolute;
