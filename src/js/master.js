@@ -32,20 +32,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
   function myValidateNameAndDate(e) {
     e.preventDefault();
     var name,
-      date,
+      address,
+      email,
       inputName,
-      inputDate,
+      inputAddress,
+      inputEmail,
       nameResult,
-      dateResult,
+      emailResult,
+      addressResult,
       emptyName,
-      emptyDate,
+      emptyEmail,
+      emptyAddress,
       deleteButton,
       updateButton,
       reservation;
     reservation = document.getElementById("myList");
     let totalReservation = {
-      textNodeName: $("#patron").val(),
-      textNodeDate: $("#datetime24").val(),
+      textNodeName: $("#person").val(),
+      textNodeEmail: $("#emailInput").val(),
+      textNodeAddress: $("#address").val(),
     };
     deleteButton = document.createElement("button");
     deleteButton.innerHTML = "DELETE";
@@ -57,24 +62,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
     updateButton.style =
       "width:70px; height:30px; background:gold; color: maroon";
     updateButton.id = "update";
-    inputName = $("#patron").val();
-    inputDate = $("#datetime24").val();
+    inputName = $("#person").val();
+    inputEmail = $("#emailInput").val();
+    inputAddress = $("#address").val();
     name = new RegExp(/^[a-zA-Z]{3,}$/);
-    date = new RegExp(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    email = new RegExp(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/);
+    address = new RegExp(
+      /\d{1,}) [a-zA-Z0-9\s]+(\.)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{4}/
+    );
     nameResult = name.test(inputName);
-    dateResult = date.test(inputDate);
+    emailResult = email.test(inputEmail);
+    addressResult = address.test(inputAddress);
     emptyName = null;
-    emptyDate = null;
+    emptyAddress = null;
+    emptyEmail = null;
     if (
       nameResult &&
-      dateResult &&
+      emailResult &&
+      addressResult &&
       inputName != emptyName &&
-      inputDate != emptyDate
+      inputEmail != emptyEmail &&
+      inputAddress != emptyAddress
     ) {
       console.log("true input matches expression");
+      let { textNodeName, textNodeEmail, textNodeAddress } = totalReservation;
       reservation.appendChild(
         document.createTextNode(
-          ` ${totalReservation.textNodeName}||${totalReservation.textNodeDate}`
+          ` ${textNodeName}||${textNodeEmail}||${textNodeAddress}`
         )
       );
       reservation.style.visibility = "visible";

@@ -117,11 +117,11 @@ h1 {
 #formContainer {
   position: absolute;
   display: none;
-  width: 100%;
-  top: 142px;
+  width: 960px;
+  top: 349px;
   height: 331px;
   background-color: springgreen;
-  left: 0;
+  margin: 0px auto;
 }
 
 .showMenu {
@@ -175,8 +175,8 @@ h1 {
   color: #fff;
 }
 .showMenu2 {
-  position: relative;
-  display: none;
+  position: absolute;
+  /* display: none; */
   width: 800px;
   left: 208px;
   top: 0px;
@@ -187,7 +187,7 @@ h1 {
 #sweets,
 #allDay,
 #starters {
-  position: relative;
+  position: absolute;
   justify-content: center;
   align-items: center;
   padding: 5px;
