@@ -177,10 +177,10 @@ h1 {
 .showMenu2 {
   position: absolute;
   /* display: none; */
-  width: 800px;
+  width: 719px;
   left: 208px;
-  top: 0px;
-  height: 202px;
+  top: 67px;
+  height: 248px;
   list-style-type: none;
 }
 #bevs,

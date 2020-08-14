@@ -88,36 +88,36 @@
 <ul class="showMenu2">
 	<div id="starters2">
 			<h4>Starters</h4>
-			<label>Cob Salad <input type="checkbox" class="items" value="7" /></label>
-			<label>Chicken Soup <input type="checkbox" class="items" value="8" /></label>
-			<label>Fries <input type="checkbox" class="items" value="4" /></label>
+			<label>Cob Salad <input type="checkbox" class="items" value="7" onclick="calculate()" /></label>
+			<label>Chicken Soup <input type="checkbox" class="items" value="8" onclick="calculate()" /></label>
+			<label>Fries <input type="checkbox" class="items" value="4" onclick="calculate()"/></label>
 			</div>
 			<div id="allDay2">
 				<h4>All Day</h4>
-				<label>Club Sandwich <input type="checkbox" class="items" value="8" /></label>
-				<label>Beef Brisket <input type="checkbox" class="items" value="11" /></label>
-				<label>Calzone <input type="checkbox" class="items" value="8" /></label>
-				<label>Tuna Melt <input type="checkbox" class="items" value="8" /></label>
-				<label>Art Vandelay <input type="checkbox" class="items" value="12" /></label>
-				<label>Reuben Sandwich <input type="checkbox" class="items" value="9" /></label>
-				<label>Smoky BBQ Ribs<input type="checkbox" class="items" value="10" /></label>
+				<label>Club Sandwich <input type="checkbox" class="items" value="8" onclick="calculate()"/></label>
+				<label>Beef Brisket <input type="checkbox" class="items" value="11" onclick="calculate()"/></label>
+				<label>Calzone <input type="checkbox" class="items" value="8" onclick="calculate()"/></label>
+				<label>Tuna Melt <input type="checkbox" class="items" value="8" onclick="calculate()"/></label>
+				<label>Art Vandelay <input type="checkbox" class="items" value="12" onclick="calculate()"/></label>
+				<label>Reuben Sandwich <input type="checkbox" class="items" value="9" onclick="calculate()"/></label>
+				<label>Smoky BBQ Ribs<input type="checkbox" class="items" value="10" onclick="calculate()"/></label>
 		</div>
 		<div id="sweets2">
 			<h4>Sweets</h4>
-			<label>NY Cheesecake <input type="checkbox" class="items" value="7" /></label>
-			<label>Key Lime Pie <input type="checkbox" class="items" value="6" /></label>
-			<label>Sweet Potato Pie <input type="checkbox" class="items" value="6" /></label>
-			<label>Brownie<input type="checkbox" class="items" value="4" /></label>
+			<label>NY Cheesecake <input type="checkbox" class="items" value="7" onclick="calculate()"/></label>
+			<label>Key Lime Pie <input type="checkbox" class="items" value="6" onclick="calculate()"/></label>
+			<label>Sweet Potato Pie <input type="checkbox" class="items" value="6" onclick="calculate()"/></label>
+			<label>Brownie<input type="checkbox" class="items" value="4" onclick="calculate()" /></label>
 		</div>
 		<div id="bevs2">
 			<h4>Beverages</h4>
-			<label>Coffee <input type="checkbox" class="items" value="2" /></label>
-			<label>Tea<input type="checkbox" class="items" value="2" /></label>
-			<label>Sodas (Dr. Pepper, Pepsi, Lemonade, CoolAid)<input type="checkbox" class="items" value="2.5" /></label>
+			<label>Coffee <input type="checkbox" class="items" value="2" onclick="calculate()" /></label>
+			<label>Tea<input type="checkbox" class="items" value="2" onclick="calculate()"/></label>
+			<label>Sodas (Dr. Pepper, Pepsi, Lemonade, CoolAid)<input type="checkbox" class="items" value="2.5" onclick="calculate()" /></label>
 		</div>
 		</ul>
-		<button id="totalOrderButton">Entire value</button>
-		<p id="totalOrder">$</p>
+		<span id="payment-total" style="text-decoration:underline;">$</span>
+		<input id="totalOrder"  type="text" value="0"/>
 	
 		</div>
 
@@ -144,54 +144,17 @@
 		document.getElementById('eatIn').checked = false;
 	}
 
-	window.onload=function(){
-		var inputs = document.getElementsByClassName('items'),
-		 total  = document.getElementById('totalOrder');
-	// console.log('What is this ',inputs); HTML Collection
- for (var i=0; i < inputs.length; i++) {
-	 inputs[i].onchange = function(){
-		var add = this.value * (this.checked ? 1 : -1);
-		console.log('What is this ', add);
-		console.log(total.innerHTML= total.innerHTML+= add);
-	
 
-		// if(isNaN(add)){
-		// 	console.log(add);
-		// }
-	    // console.log(  total.innerHTML = parseFloat(total.innerHTML) + add);
-
-    
-  }
-}
+function calculate(){
+	let el, i =0;
+	let total = 0;
+	while(el =document.getElementsByClassName('items')[i++]){
+		if(el.checked){
+			total = total + Number(el.value);
+		}
+		document.getElementById('totalOrder').value=total;
 	}
-
-
-	// function iterateCheckedItems () {
-	// 	let checks = document.getElementsByClassName('items');
-	// 	let numberChecked = 0;
-	// 	console.log(numberChecked);
-	// 	for(var i =0; i < checks.length;i++){
-	// 		if(checks[i].checked){
-	// 			numberChecked++;
-	// 		}
-	// 		console.log(numberChecked);
-	// 			let abc = document.getElementById('totalOrder').innerHTML =checks[i];
-	// 			document.appendChild(abc);
-			
-	// 			console.log(checks[i]);
-	// 		}
-	// 	}
-
-
-    // let text = document.getElementById("pText");
-    // console.log(checkedBox);
-    // if (checkedBox.checked == true) {
-    //   console.log("checked");
-    //   text.style.display = "block";
-    // } else {
-    //   console.log("unchecked");
-    //   text.style.display = "none";
-    // }
+}
   
 </script>
 	
