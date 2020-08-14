@@ -12,7 +12,7 @@ body {
   width: 960px;
   float: left;
   top: 15px;
-  height: 240px;
+  height: 162px;
   background: #ff4c65;
 }
 #containerMiddle {
@@ -20,8 +20,8 @@ body {
   margin-top: 5px;
   width: 960px;
   float: left;
-  top: 255px;
-  height: 405px;
+  top: 179px;
+  height: 496px;
   background: #e0e4cc;
 }
 #containerBottom {
@@ -34,6 +34,21 @@ body {
   background: #1352a2;
 }
 
+#icon-container {
+  position: absolute;
+  top: 111px;
+  left: 8px;
+  width: 200px;
+  height: 27px;
+}
+#icon-container a {
+  position: relative;
+  font-size: 28px;
+  padding-right: 11px;
+}
+a:hover {
+  transform: scale(1.6);
+}
 @media screen and (max-width: 959px) {
   .container {
     width: 100%;
@@ -81,22 +96,40 @@ h1 {
   -moz-background-clip: text;
   -moz-background-clip: text;
 }
+#showCheckbox {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+#eatInButton {
+  position: relative;
+  background-color: royalblue;
+  color: #fff;
+}
+
+#takeawayButton {
+  position: relative;
+  background-color: turquoise;
+  color: #fff;
+}
 
 #formContainer {
   position: absolute;
-  visibility: hidden;
-  width: 250px;
-  top: 100px;
-  height: 173px;
+  display: none;
+  width: 100%;
+  top: 142px;
+  height: 331px;
   background-color: springgreen;
+  left: 0;
 }
 
 .showMenu {
   position: absolute;
   display: none;
   width: 689px;
-  left: 33px;
-  top: 42px;
+  left: 208px;
+  top: 158px;
   height: 202px;
   list-style-type: none;
 }
@@ -141,147 +174,52 @@ h1 {
   background: red;
   color: #fff;
 }
-
-/* .container {
-  position: absolute;
-  margin: 0px auto;
-  height: 353px;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  background: url("/Users/tommydates/Desktop/Seinfeld-Restaurant/src/pictures/toms-restaurant.jpg");
-  opacity: 0.7;
-  background-size: cover;
-  border: 3px solid #ffffff;
-}
-.container2 {
-  position: absolute;
-  margin: 0px auto;
-  margin-top: 3px;
-  height: 294px;
-  left: 0;
-  width: 100vw;
-  top: 352px;
-  background-color: dodgerblue;
-  border: 3px solid #ffffff;
-}
-
-.container3 {
-  margin: 0px auto;
-  margin-top: 3px;
-  height: 250px;
-  width: 100vw;
-  position: absolute;
-  left: 0;
-  top: 770px;
-  background-color: black;
-  border: 3px solid #ffffff;
-}
-#maps {
-  position: fixed;
-  left: 20px;
-  top: 55px;
-  bottom: 0;
-  right: 0;
-  margin: 0 auto;
-  height: 154px;
-  width: 304px;
-}
-#icon-container {
-  position: fixed;
-  justify-content: center;
-  align-items: center;
-  top: 95px;
-  left: 59px;
-  bottom: 0;
-  right: 0;
-  height: 63px;
-  width: 200px;
-}
-
-#icon-container > .fa {
-  top: 20px;
-  margin: 20px;
-  font-size: 2em;
-} */
-
-/* #masterForm {
-  position: absolute;
-  padding: 10px;
-}
-input {
-  width: 200px;
-  height: 30px;
-}
-
-li {
-  list-style-type: none;
-  font-size: 2em;
+.showMenu2 {
   position: relative;
-} */
-
-/* .banner {
-
-  width: 100vw;
-  left: 0;
-  top: 0;
-  height: 249px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-/* .banner h1 {
-  margin: 0;
-  color: transparent;
-  font-size: 120px;
-  transform: rotate(14deg);
-  background-image: url("/Users/tommydates/Desktop/Seinfeld-Restaurant/src/pictures/toms-restaurant.jpg");
-  background-size: cover;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -moz-background-clip: text;
-} */
-
-/* .fa:hover {
-  transform: scale(1.5);
-}
-
-
-.iframe {
-  left: 10px;
-}
-
-#audioSection {
-  position: absolute;
-  top: 40px;
-  left: 410px;
-  width: 300px;
-  height: 232px;
-  background-color: slategrey;
-  border-radius: 15px;
-}
-
-#myList {
-  position: absolute;
-  width: 364px;
-  height: 347px;
-  margin: 15px;
-  visibility: hidden;
-}
-.listStyle {
-  position: absolute;
-  width: 300px;
-  height: 40px;
-  background: slategray;
-  color: beige;
+  display: none;
+  width: 800px;
+  left: 208px;
+  top: 0px;
+  height: 202px;
   list-style-type: none;
-  display: block;
-  margin: 10px;
-} */
-
-/* #delete{
+}
+#bevs,
+#sweets,
+#allDay,
+#starters {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 12px;
+}
+#starters2 {
   position: absolute;
-  width:40px;
-  height:100px;
-} */
+  margin-right: 4px;
+  width: 150px;
+  background: red;
+  color: #fff;
+}
+#allDay2 {
+  position: absolute;
+  margin-right: 4px;
+  left: 195px;
+  width: 153px;
+  background: red;
+  color: #fff;
+}
+#bevs2 {
+  position: absolute;
+  left: 507px;
+  width: 150px;
+  background: red;
+  color: #fff;
+}
+#sweets2 {
+  position: absolute;
+  margin-right: 4px;
+  left: 353px;
+  width: 150px;
+  background: red;
+  color: #fff;
+}
