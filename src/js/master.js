@@ -27,8 +27,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     else count++;
   };
 
-  //global variables
-
   /**Validate name and date inputs */
 
   function myValidateNameAndDate(e) {
@@ -92,33 +90,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 
-  /**Event Listeners */
-  document
-    .getElementById("submitButton")
-    .addEventListener("click", myValidateNameAndDate, false);
-
-  document
-    .getElementById("submitButton")
-    .addEventListener("click", clearFields, false);
-
-  document.getElementById("eatIn").addEventListener("dblclick", eatIn, false);
-
   // document
   //   .getElementById("takeaway")
   //   .addEventListener("click", takeaway, false);
 
-  var checkDeleteId = document.getElementById("delete");
-  var checkUpdateId = document.getElementById("update");
-  if (checkDeleteId && checkUpdateId) {
+  /**Validate if defined/undefined */
+  let checkDeleteId = document.getElementById("delete");
+  let checkUpdateId = document.getElementById("update");
+  let checkEatInCheckbox = document.getElementById("eatIn");
+  let checkSubmitButton = document.getElementById("submitButton");
+  let checkUpdateButton = document.getElementById("update");
+  if (
+    checkDeleteId &&
+    checkUpdateId &&
+    checkEatInCheckbox &&
+    checkSubmitButton &&
+    checkUpdateButton
+  ) {
     document.addEventListener("click", removeBooking, false);
+    document.addEventListener("click", newReservation, false);
+    document.addEventListener("click", updateCheckbox, false);
+    document.addEventListener("click", myValidateNameAndDate, false);
+    document.addEventListener("click", clearFields, false);
     document.addEventListener("click", newReservation, false);
   } else {
     return null;
   }
-
-  document
-    .getElementById("update")
-    .addEventListener("click", newReservation, false);
 
   /**Remove bookings */
   function removeBooking(evt) {
@@ -128,29 +125,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
     pre.remove();
   }
 
-  function eatIn(evt) {
+  function updateCheckbox(evt) {
     evt.preventDefault();
     let checkedBox = document.getElementById("eatIn");
-    console.log(checkedBox);
+    let text = document.getElementById("pText");
+    // console.log(checkedBox);
     if (checkedBox.checked == true) {
-      alert("checked");
+      console.log("checked");
+      text.style.display = "block";
     } else {
-      alert("not checked");
+      console.log("unchecked");
+      text.style.display = "none";
     }
   }
 
   /**Update Booking */
 
-  function newReservation() {
-    let newName, newDate;
-    newName = prompt("Change Name : ");
-    newDate = prompt("Change Date : ");
-    updatedReservation(newName, newDate);
-  }
-  function updatedReservation(newName, newDate) {
-    document.getElementById("patron").innerHTML = newName;
-    document.getElementById("datetime24").innerHTML = newDate;
-  }
+  // function newReservation() {
+  //   let newName, newDate;
+  //   newName = prompt("Change Name : ");
+  //   newDate = prompt("Change Date : ");
+  //   updatedReservation(newName, newDate);
+  // }
+  // function updatedReservation(newName, newDate) {
+  //   document.getElementById("patron").innerHTML = newName;
+  //   document.getElementById("datetime24").innerHTML = newDate;
+  // }
 
   /**Clear fields on submit */
   function clearFields() {

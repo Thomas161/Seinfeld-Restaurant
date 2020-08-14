@@ -29,8 +29,9 @@
 		</section>
 		<section id="containerMiddle">
 			<div id="showCheckbox">
-			<label for="">Eat In</label><input type="checkbox" unchecked id="eatIn">
-			<label for="">Takeaway</label><input type="checkbox" unchecked id="takeaway">
+			<label for="">Eat In</label><input type="checkbox" id="eatIn" onclick="updateCheckbox(this)"/>
+			<label for="">Takeaway</label><input type="checkbox"  id="takeaway"/>
+			<p id="pText" style="display: none;">eating in</p>
 		</div>
 			 <div id="formContainer">
 <form id ="masterForm" method="POST"> 
