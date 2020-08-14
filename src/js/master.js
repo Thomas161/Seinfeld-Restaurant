@@ -42,11 +42,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
       addressResult,
       emptyName,
       emptyEmail,
-      emptyAddress,
-      deleteButton,
-      updateButton,
-      reservation;
-    reservation = document.getElementById("myList");
+      emptyAddress;
+    // deleteButton,
+    // updateButton,
+    // reservation;
+    // reservation = document.getElementById("myList");
     let totalReservation = {
       textNodeName: $("#person").val(),
       textNodeEmail: $("#emailInput").val(),
@@ -67,9 +67,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     inputAddress = $("#address").val();
     name = new RegExp(/^[a-zA-Z]{3,}$/);
     email = new RegExp(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/);
-    address = new RegExp(
-      /\d{1,}) [a-zA-Z0-9\s]+(\.)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{4}/
-    );
+    address = new RegExp(/^\d+\s[A-z]+\s[A-z]+/);
     nameResult = name.test(inputName);
     emailResult = email.test(inputEmail);
     addressResult = address.test(inputAddress);
@@ -85,17 +83,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
       inputAddress != emptyAddress
     ) {
       console.log("true input matches expression");
-      let { textNodeName, textNodeEmail, textNodeAddress } = totalReservation;
-      reservation.appendChild(
-        document.createTextNode(
-          ` ${textNodeName}||${textNodeEmail}||${textNodeAddress}`
-        )
-      );
-      reservation.style.visibility = "visible";
-      reservation
-        .appendChild(deleteButton)
-        .addEventListener("click", removeBooking, false);
-      reservation.appendChild(updateButton);
+      // let { textNodeName, textNodeEmail, textNodeAddress } = totalReservation;
+      // reservation.appendChild(
+      //   document.createTextNode(
+      //     ` ${textNodeName}||${textNodeEmail}||${textNodeAddress}`
+      //   )
+      // );
+      // reservation.style.visibility = "visible";
+      // reservation
+      //   .appendChild(deleteButton)
+      //   .addEventListener("click", removeBooking, false);
+      // reservation.appendChild(updateButton);
 
       return true;
     } else {
@@ -105,20 +103,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
 
   /**Validate if defined/undefined */
-  let checkDeleteId = document.getElementById("delete");
-  let checkUpdateId = document.getElementById("update");
+  // let checkDeleteId = document.getElementById("delete");
+  // let checkUpdateId = document.getElementById("update");
   let checkSubmitButton = document.getElementById("submitButton");
-  let checkUpdateButton = document.getElementById("update");
+  // let checkUpdateButton = document.getElementById("update");
   if (
-    checkDeleteId &&
-    checkUpdateId &&
-    checkSubmitButton &&
-    checkUpdateButton
+    // checkDeleteId &&
+    // checkUpdateId &&
+    checkSubmitButton != null
+    // checkUpdateButton
   ) {
-    document.addEventListener("click", removeBooking, false);
+    // document.addEventListener("click", removeBooking, false);
     document.addEventListener("click", myValidateNameAndDate, false);
     document.addEventListener("click", clearFields, false);
-    document.addEventListener("click", newReservation, false);
+    // document.addEventListener("click", newReservation, false);
   } else {
     return null;
   }
@@ -146,7 +144,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   /**Clear fields on submit */
   function clearFields() {
-    document.getElementById("patron").value = "";
-    document.getElementById("datetime24").value = "";
+    document.getElementById("person").value = "";
+    document.getElementById("emailInput").value = "";
+    document.getElementById("address").value = "";
   }
 });

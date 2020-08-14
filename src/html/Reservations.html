@@ -72,17 +72,25 @@
 		</div>
 		</ul>
 	
-		</section>
+	
 			 <div id="formContainer">
 <form id ="masterForm" method="POST"> 
 <input type="text" placeholder="name" id="person"/>
 <br>
+<br>
 <input type="text" placeholder="address" id="address" >
+<br>
 <br>
  <input type="email" id="emailInput" placeholder="email..."/>
  <br>
+ <br>
+ <span id="payment-total" style="text-decoration:underline;">$</span>
+		<input id="totalOrder"  type="text" value="0"/>
+		<br>
+<br>
+		<input type="button" id="submitButton" value="Submit"/>
 
-	<input type="button" id="submitButton" value="Submit"/>
+
 
 </form>
 <ul class="showMenu2">
@@ -116,10 +124,10 @@
 			<label>Sodas (Dr. Pepper, Pepsi, Lemonade, CoolAid)<input type="checkbox" class="items" value="2.5" onclick="calculate()" /></label>
 		</div>
 		</ul>
-		<span id="payment-total" style="text-decoration:underline;">$</span>
-		<input id="totalOrder"  type="text" value="0"/>
-	
+		
 		</div>
+
+	
 
 		</section>
 		<section id="containerBottom">

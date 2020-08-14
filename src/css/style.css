@@ -118,7 +118,7 @@ h1 {
   position: absolute;
   display: none;
   width: 960px;
-  top: 349px;
+  top: 154px;
   height: 331px;
   background-color: springgreen;
   margin: 0px auto;
@@ -130,7 +130,7 @@ h1 {
   width: 689px;
   left: 208px;
   top: 158px;
-  height: 202px;
+  height: 253px;
   list-style-type: none;
 }
 #bevs,
@@ -149,6 +149,7 @@ h1 {
   width: 150px;
   background: red;
   color: #fff;
+  padding: 8px;
 }
 #allDay {
   position: absolute;
@@ -157,10 +158,11 @@ h1 {
   width: 153px;
   background: red;
   color: #fff;
+  padding: 8px;
 }
 #bevs {
   position: absolute;
-
+  padding: 8px;
   left: 507px;
   width: 150px;
   background: red;
@@ -173,24 +175,26 @@ h1 {
   width: 150px;
   background: red;
   color: #fff;
+  padding: 8px;
 }
 .showMenu2 {
   position: absolute;
   /* display: none; */
   width: 719px;
   left: 208px;
-  top: 67px;
-  height: 248px;
+  top: 30px;
+  height: 280px;
   list-style-type: none;
+  border-radius: 12px;
 }
-#bevs,
-#sweets,
-#allDay,
-#starters {
+#bevs2,
+#sweets2,
+#allDay2,
+#starters2 {
   position: absolute;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  padding: 8px;
   border-radius: 12px;
 }
 #starters2 {
@@ -222,4 +226,12 @@ h1 {
   width: 150px;
   background: red;
   color: #fff;
+}
+
+#payment-total {
+  font-size: 24px;
+  color: orangered;
+}
+#masterForm {
+  padding: 10px;
 }
