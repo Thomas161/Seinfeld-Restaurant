@@ -14,6 +14,15 @@ body {
   top: 15px;
   height: 162px;
   background: #ff4c65;
+  animation: pulse 5s;
+}
+@keyframes pulse {
+  0% {
+    background: #fff;
+  }
+  100% {
+    background: #ff4c65;
+  }
 }
 #containerMiddle {
   position: absolute;
@@ -23,6 +32,15 @@ body {
   top: 179px;
   height: 496px;
   background: #e0e4cc;
+  animation: pulse2 5s;
+}
+@keyframes pulse2 {
+  0% {
+    background: slategray;
+  }
+  100% {
+    background: #e0e4cc;
+  }
 }
 #containerBottom {
   position: absolute;

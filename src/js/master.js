@@ -1,23 +1,24 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   var count = 0;
   var tl = new TimelineMax();
-  var cont, cont2, cont3;
+  var cont, cont2, cont3, tommy;
   cont = document.querySelector("#containerTop");
   cont2 = document.querySelector("#containerMiddle");
   cont3 = document.querySelector("#containerBottom");
-  tl.fromTo(cont, 0.75, { x: 960 }, { x: 0, ease: Power2.easeOut, delay: 0.5 });
-  tl.fromTo(
-    cont2,
-    0.75,
-    { x: 960 },
-    { x: 0, ease: Power2.easeOut, delay: -0.3 }
-  );
-
+  tommy = document.getElementById("tom");
+  tl.fromTo(cont2, 1, { y: -460 }, { y: 0, ease: Power1.easeOut, delay: -0.5 });
+  tl.fromTo(cont, 1, { y: -460 }, { y: 0, ease: Power1.easeOut, delay: 0.5 });
   tl.fromTo(
     cont3,
-    0.75,
-    { x: 960 },
-    { x: 0, ease: Power2.easeOut, delay: -0.3 }
+    1,
+    { autoAlpha: 0 },
+    { autoAlpha: 1, ease: Power1.easeOut, delay: -0.5 }
+  );
+  tl.fromTo(
+    tommy,
+    1.7,
+    { x: -25, opacity: 0 },
+    { x: 0, opacity: 1, delay: -0.5 }
   );
 
   event.preventDefault();
