@@ -1,18 +1,20 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   var count = 0;
   var tl = new TimelineMax();
-  var cont, cont2, cont3, tommy;
+  var cont, cont2, cont3, tommy, kramer, seinfeld;
   cont = document.querySelector("#containerTop");
   cont2 = document.querySelector("#containerMiddle");
   cont3 = document.querySelector("#containerBottom");
   tommy = document.getElementById("tom");
-  tl.fromTo(cont2, 1, { y: -460 }, { y: 0, ease: Power1.easeOut, delay: -0.5 });
-  tl.fromTo(cont, 1, { y: -460 }, { y: 0, ease: Power1.easeOut, delay: 0.5 });
+  kramer = document.getElementById("imageContainer");
+  seinfeld = document.getElementById("imageContainer2");
+  tl.fromTo(cont2, 1, { y: -860 }, { y: 0, ease: Power1.easeOut });
+  tl.fromTo(cont, 1, { y: -460 }, { y: 0, ease: Power1.easeOut, delay: 0.9 });
   tl.fromTo(
     cont3,
     1,
     { autoAlpha: 0 },
-    { autoAlpha: 1, ease: Power1.easeOut, delay: -0.5 }
+    { autoAlpha: 1, ease: Power1.easeOut, delay: 0.5 }
   );
   tl.fromTo(
     tommy,
@@ -20,6 +22,54 @@ document.addEventListener("DOMContentLoaded", function (event) {
     { x: -25, opacity: 0 },
     { x: 0, opacity: 1, delay: -0.5 }
   );
+  (function playBackReverseFooterImages() {
+    var footerTimeline = new TimelineMax();
+    footerTimeline.fromTo(
+      kramer,
+      0.9,
+      { scaleX: 0, x: 960, transformOrigin: "left" },
+      { scaleX: 1, x: 0, ease: Power1.easeIn }
+    );
+    footerTimeline.to(kramer, 0.9, {
+      scaleX: 0,
+      x: -960,
+      transformOrigin: "right",
+      delay: 2,
+    });
+    footerTimeline.fromTo(
+      seinfeld,
+      0.9,
+      { scaleX: 0, x: 960, transformOrigin: "left" },
+      { scaleX: 1, x: 0, ease: Power1.easeIn, delay: -0.2 }
+    );
+
+    footerTimeline.to(kramer, 0.9, {
+      scaleX: 0,
+      x: -960,
+      transformOrigin: "right",
+      delay: 2,
+    });
+    footerTimeline.delay(3).repeat(-1);
+  })();
+
+  cont.addEventListener("mouseover", function () {
+    cont.style.transform = "scale(1.15)";
+  });
+  cont.addEventListener("mouseout", function () {
+    cont.style.transform = "scale(1)";
+  });
+  cont2.addEventListener("mouseover", function () {
+    cont2.style.transform = "scale(1.15)";
+  });
+  cont2.addEventListener("mouseout", function () {
+    cont2.style.transform = "scale(1)";
+  });
+  cont3.addEventListener("mouseover", function () {
+    cont3.style.transform = "scale(1.15)";
+  });
+  cont3.addEventListener("mouseout", function () {
+    cont3.style.transform = "scale(1)";
+  });
 
   event.preventDefault();
 

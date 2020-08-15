@@ -6,7 +6,6 @@ body {
   margin: 0px auto;
   width: 960px;
 }
-
 #containerTop {
   position: absolute;
   width: 960px;
@@ -14,10 +13,18 @@ body {
   top: 15px;
   height: 162px;
   background: #ff4c65;
+  box-shadow: 10px 10px 5px #aaaaaa;
   animation: pulse 5s;
 }
+
 @keyframes pulse {
   0% {
+    background: #fff;
+  }
+  50% {
+    background: #fff;
+  }
+  75% {
     background: #fff;
   }
   100% {
@@ -30,10 +37,13 @@ body {
   width: 960px;
   float: left;
   top: 179px;
-  height: 496px;
+  height: 555px;
   background: #e0e4cc;
+
+  box-shadow: 10px 10px 5px #aaaaaa;
   animation: pulse2 5s;
 }
+
 @keyframes pulse2 {
   0% {
     background: slategray;
@@ -47,9 +57,10 @@ body {
   margin-top: 5px;
   width: 960px;
   float: left;
-  top: 690px;
-  height: 200px;
-  background: #1352a2;
+  top: 748px;
+  height: 156px;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  background-size: cover;
 }
 
 #icon-container {
@@ -106,7 +117,8 @@ h1 {
   top: 4px;
   margin: 0;
   color: transparent;
-  font-size: 89px;
+  font-family: "Pacifico", cursive;
+  font-size: 80px;
   background-image: url("/Users/tommydates/Desktop/Seinfeld-Restaurant/src/pictures/toms-restaurant.jpg");
   background-size: cover;
   background-clip: text;
@@ -252,4 +264,56 @@ h1 {
 }
 #masterForm {
   padding: 10px;
+}
+
+#imageContainer {
+  position: absolute;
+  overflow: hidden;
+  opacity: 0.75;
+  width: 960px;
+  height: 156px;
+  left: 0;
+  top: 0;
+}
+
+#imageContainer2 {
+  position: absolute;
+  overflow: hidden;
+  opacity: 0.75;
+  width: 960px;
+  height: 156px;
+  left: 0;
+  top: 0;
+}
+#imageContainer img {
+  position: absolute;
+  opacity: 0.75;
+  width: 960px;
+  height: 156px;
+  left: 0;
+  top: 0;
+}
+#imageContainer2 img {
+  position: absolute;
+  opacity: 0.75;
+  width: 960px;
+  height: 156px;
+  left: 0;
+  top: 0;
+}
+article {
+  position: absolute;
+  left: 700px;
+  top: 38px;
+}
+#copyright {
+  font-family: "Bangers", cursive;
+  color: #ffd900;
+  font-size: 37px;
+  border-color: tomato solid 2.5px;
+}
+
+#maps {
+  position: absolute;
+  z-index: 1;
 }
