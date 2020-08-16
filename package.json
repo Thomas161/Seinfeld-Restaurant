@@ -1,0 +1,26 @@
+{
+  "name": "Seinfeld-Restaurant",
+  "version": "1.0.0",
+  "description": "![Larry David](larry.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thomas161/Seinfeld-Restaurant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thomas161/Seinfeld-Restaurant/issues"
+  },
+  "homepage": "https://github.com/Thomas161/Seinfeld-Restaurant#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
