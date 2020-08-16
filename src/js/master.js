@@ -26,30 +26,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var footerTimeline = new TimelineMax();
     footerTimeline.fromTo(
       kramer,
-      0.9,
-      { scaleX: 0, x: 960, transformOrigin: "left" },
-      { scaleX: 1, x: 0, ease: Power1.easeIn }
+      1,
+      { scaleX: 0, transformOrigin: "center center" },
+      { scaleX: 1, y: 0, ease: Power1.easeIn }
     );
-    footerTimeline.to(kramer, 0.9, {
+    footerTimeline.to(kramer, 1, {
       scaleX: 0,
-      x: -960,
-      transformOrigin: "right",
+      y: 0,
       delay: 2,
     });
     footerTimeline.fromTo(
       seinfeld,
-      0.9,
-      { scaleX: 0, x: 960, transformOrigin: "left" },
-      { scaleX: 1, x: 0, ease: Power1.easeIn, delay: -0.2 }
+      1,
+      { scaleX: 0, transformOrigin: "center center" },
+      {
+        scaleX: 1,
+        y: 0,
+        ease: Power1.easeIn,
+        delay: 2,
+      }
     );
 
-    footerTimeline.to(kramer, 0.9, {
+    footerTimeline.to(kramer, 1, {
       scaleX: 0,
-      x: -960,
-      transformOrigin: "right",
+      y: 0,
       delay: 2,
     });
-    footerTimeline.delay(3).repeat(-1);
+    footerTimeline.delay(6).repeat(-1);
   })();
 
   cont.addEventListener("mouseover", function () {
