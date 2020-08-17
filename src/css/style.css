@@ -85,6 +85,17 @@ a:hover {
   #containerTop {
     width: 34%;
   }
+  h1 {
+    font-size: 80px;
+  }
+  #formContainer,
+  #masterForm {
+    width: 33%;
+  }
+  #row {
+    width: 570px;
+  }
+
   #containerMiddle {
     width: 33%;
   }
@@ -96,6 +107,9 @@ a:hover {
 @media screen and (max-width: 640px) {
   #containerTop {
     width: 100%;
+  }
+  h1 {
+    font-size: 60px;
   }
   #containerMiddle {
     width: 100%;
@@ -109,6 +123,9 @@ a:hover {
   .container {
     width: 320px;
   }
+  h1 {
+    font-size: 35px;
+  }
 }
 
 h1 {
@@ -119,7 +136,7 @@ h1 {
   color: transparent;
   font-family: "Pacifico", cursive;
   font-size: 80px;
-  background-image: url("/Users/tommydates/Desktop/Seinfeld-Restaurant/src/pictures/toms-restaurant.jpg");
+  background-image: url("../pictures/toms-restaurant.jpg");
   background-size: cover;
   background-clip: text;
   -webkit-background-clip: text;
@@ -263,7 +280,7 @@ h1 {
   color: orangered;
 }
 #masterForm {
-  padding: 10px;
+  padding: 5px;
 }
 
 #imageContainer {
@@ -316,4 +333,89 @@ article {
 #maps {
   position: absolute;
   z-index: 1;
+}
+#row {
+  position: absolute;
+  width: 890px;
+  height: 320px;
+  margin: 0px auto;
+}
+
+.column {
+  position: relative;
+  float: left;
+  /* margin: 5px; */
+  width: 16%;
+  background-color: #aaa;
+  height: 250px; /* Should be removed. Only for demonstration */
+}
+#person,
+#address,
+#emailInput {
+  position: relative;
+  display: block;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: 10px;
+
+  border: mediumorchid solid 4px;
+}
+
+.column-1 {
+  position: relative;
+  display: block;
+  width: 16%;
+  float: left;
+  /* margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: 5px; */
+
+  background-color: #aaa;
+}
+.column-2 {
+  position: relative;
+  display: block;
+  width: 16%;
+  float: left;
+  /* margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: 5px; */
+  background-color: #aaa;
+}
+.column-3 {
+  position: relative;
+  display: block;
+  width: 16%;
+  float: left;
+  /* margin-left: auto; */
+  /* margin-right: auto;
+  margin-bottom: auto;
+  margin-top: 5px; */
+
+  background-color: #aaa;
+}
+.column-4 {
+  position: relative;
+  /* display: block; */
+  width: 16%;
+  float: left;
+  /* margin-left: auto; */
+  /* margin-right: auto;
+  margin-bottom: auto;
+  margin-top: 5px; */
+
+  background-color: #aaa;
+}
+
+#totalOrder {
+  position: absolute;
+  width: 100px;
+}
+.column-4 {
+  position: relative;
+  height: 80px;
 }
