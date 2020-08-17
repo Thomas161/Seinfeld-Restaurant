@@ -339,6 +339,8 @@ article {
   width: 890px;
   height: 320px;
   margin: 0px auto;
+  margin: 10px;
+  background-color: #d40e52;
 }
 
 .column {
@@ -346,7 +348,6 @@ article {
   float: left;
   /* margin: 5px; */
   width: 16%;
-  background-color: #aaa;
   height: 250px; /* Should be removed. Only for demonstration */
 }
 #person,
@@ -372,8 +373,6 @@ article {
   margin-right: auto;
   margin-bottom: auto;
   margin-top: 5px; */
-
-  background-color: #aaa;
 }
 .column-2 {
   position: relative;
@@ -384,7 +383,6 @@ article {
   margin-right: auto;
   margin-bottom: auto;
   margin-top: 5px; */
-  background-color: #aaa;
 }
 .column-3 {
   position: relative;
@@ -395,8 +393,6 @@ article {
   /* margin-right: auto;
   margin-bottom: auto;
   margin-top: 5px; */
-
-  background-color: #aaa;
 }
 .column-4 {
   position: relative;
@@ -407,8 +403,6 @@ article {
   /* margin-right: auto;
   margin-bottom: auto;
   margin-top: 5px; */
-
-  background-color: #aaa;
 }
 
 #totalOrder {
@@ -418,4 +412,12 @@ article {
 .column-4 {
   position: relative;
   height: 80px;
+}
+h4 {
+  font-family: "Fugaz One", cursive;
+  font-size: 21px;
+}
+label {
+  font-family: "Rock Salt", cursive;
+  font-size: 14px;
 }
