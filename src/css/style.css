@@ -8,7 +8,7 @@ body {
 .container {
   display: grid;
   grid-template: auto 1fr auto / auto 1fr auto;
-  height: 100vh;
+  height: 120vh;
   width: 100%;
 }
 
@@ -22,11 +22,15 @@ header {
   grid-column: 1 / 4;
 }
 main {
-  background: url("../pictures/kramer-seinfeld.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 70vh;
   grid-column: 2 / 3;
+}
+#kramer {
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(2.5px);
+  height: 100%;
+  width: 100%;
 }
 .right-sidebar {
   background: yellow;
@@ -36,7 +40,7 @@ main {
 footer {
   background: wheat;
   padding: 2rem;
-  height: 10vh;
+  height: 30vh;
   text-align: center;
   grid-column: 1 / 4;
 }
@@ -61,6 +65,42 @@ nav img {
 #shoppingCart:hover {
   cursor: pointer;
   transform: scale(1.16);
+}
+#footerContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+#copyright {
+  font-family: "Bangers", cursive;
+  color: darkolivegreen;
+  font-size: 37px;
+  border-color: tomato solid 2.5px;
+  position: relative;
+  width: 50%;
+}
+#maps {
+  position: relative;
+  width: 50%;
+}
+#menuGrid {
+  display: grid;
+  grid-template: auto 1fr auto / auto 1fr auto;
+  position: absolute;
+  column-gap: 10px;
+  row-gap: 10px;
+  z-index: 1;
+}
+#one {
+  grid-column: 1/1;
+}
+#two {
+  grid-column: 2/2;
+}
+#three {
+  grid-column: 3/3;
+}
+#four {
+  grid-column: 4/4;
 }
 /* #socialNetworkIcons {
   position: relative;
