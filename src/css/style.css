@@ -14,15 +14,18 @@ body {
 
 #tom {
   font-family: "Special Elite", cursive;
+  font-size: 30px;
+  position: absolute;
+  top: 6px;
 }
 header {
   background: lightpink;
-  height: 20vh;
+  height: 13vh;
   padding: 2rem;
   grid-column: 1 / 4;
 }
 main {
-  height: 70vh;
+  height: 100vh;
   grid-column: 2 / 3;
 }
 #kramer {
@@ -89,6 +92,8 @@ nav img {
   column-gap: 10px;
   row-gap: 10px;
   z-index: 1;
+  left: 29px;
+  margin-top: 12px;
 }
 #one {
   grid-column: 1/1;
