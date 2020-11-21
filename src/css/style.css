@@ -1,12 +1,62 @@
 body {
   background: #a2d7d8;
+  padding: 0;
+  margin: 0;
 }
 
 .container {
-  margin: 0px auto;
-  width: 960px;
+  display: grid;
+  grid-template: auto 1fr auto / auto 1fr auto;
+  height: 100vh;
+  width: 100%;
 }
-#containerTop {
+
+header {
+  background: lightpink;
+  height: 20vh;
+  padding: 2rem;
+  grid-column: 1 / 4;
+}
+main {
+  background: coral;
+  height: 70vh;
+  grid-column: 2 / 3;
+}
+.right-sidebar {
+  background: yellow;
+  grid-column: 3 / 4;
+  padding: 2rem;
+}
+footer {
+  background: wheat;
+  padding: 2rem;
+  height: 10vh;
+  text-align: center;
+  grid-column: 1 / 4;
+}
+nav {
+  background: darkolivegreen;
+}
+nav a,
+nav img {
+  display: block;
+  margin: 11px;
+  padding: 5px;
+  align-items: center;
+}
+#facebookLogo,
+#twitterLogo,
+#instagramLogo {
+  font-size: 30px;
+}
+#shoppingCart:hover {
+  cursor: pointer;
+  transform: scale(1.16);
+}
+/* #socialNetworkIcons {
+  position: relative;
+} */
+/* #containerTop {
   position: absolute;
   width: 960px;
   float: left;
@@ -227,14 +277,14 @@ h1 {
 .showMenu2 {
   position: absolute;
   /* display: none; */
-  width: 719px;
-  left: 208px;
-  top: 30px;
-  height: 280px;
-  list-style-type: none;
-  border-radius: 12px;
-}
-#bevs2,
+/* width: 719px; */
+/* left: 208px; */
+/* top: 30px; */
+/* height: 280px; */
+/* list-style-type: none; */
+/* border-radius: 12px; */
+/* }x */
+/* #bevs2,
 #sweets2,
 #allDay2,
 #starters2 {
@@ -273,8 +323,8 @@ h1 {
   width: 150px;
   background: red;
   color: #fff;
-}
-
+} */
+/* 
 #payment-total {
   font-size: 24px;
   color: orangered;
@@ -290,9 +340,9 @@ h1 {
   height: 156px;
   left: 0;
   top: 0;
-}
+} */
 
-#imageContainer2 {
+/* #imageContainer2 {
   position: absolute;
   opacity: 0.75;
   width: 960px;
@@ -341,16 +391,16 @@ article {
   margin: 0px auto;
   margin: 10px;
   background-color: #d40e52;
-}
-
+} */
+/* 
 .column {
   position: relative;
   float: left;
   /* margin: 5px; */
-  width: 16%;
-  height: 250px; /* Should be removed. Only for demonstration */
-}
-#person,
+/* width: 16%; */
+/*height: 250px;  Should be removed. Only for demonstration */
+/* }/ */
+/* #person,
 #address,
 #emailInput {
   position: relative;
@@ -368,43 +418,43 @@ article {
   position: relative;
   display: block;
   width: 16%;
-  float: left;
-  /* margin-left: auto;
+  float: left; */
+/* margin-left: auto;
   margin-right: auto;
   margin-bottom: auto;
   margin-top: 5px; */
-}
-.column-2 {
+/* } */
+/* .column-2 {
   position: relative;
   display: block;
   width: 16%;
-  float: left;
-  /* margin-left: auto;
+  float: left; */
+/* margin-left: auto;
   margin-right: auto;
   margin-bottom: auto;
   margin-top: 5px; */
-}
+/* }
 .column-3 {
   position: relative;
   display: block;
   width: 16%;
-  float: left;
-  /* margin-left: auto; */
-  /* margin-right: auto;
+  float: left; */
+/* margin-left: auto; */
+/* margin-right: auto;
   margin-bottom: auto;
   margin-top: 5px; */
-}
-.column-4 {
-  position: relative;
-  /* display: block; */
-  width: 16%;
-  float: left;
-  /* margin-left: auto; */
-  /* margin-right: auto;
+/* } */
+/* .column-4 { */
+/* position: relative; */
+/* display: block; */
+/* width: 16%; */
+/* float: left; */
+/* margin-left: auto; */
+/* margin-right: auto;
   margin-bottom: auto;
   margin-top: 5px; */
-}
-
+/* } */
+/* 
 #totalOrder {
   position: absolute;
   width: 100px;
@@ -420,4 +470,4 @@ h4 {
 label {
   font-family: "Rock Salt", cursive;
   font-size: 14px;
-}
+}  */
