@@ -8,7 +8,7 @@ body {
 .container {
   display: grid;
   grid-template: auto 1fr auto / auto 1fr auto;
-  height: 120vh;
+  height: 100vh;
   width: 100%;
 }
 
@@ -127,6 +127,24 @@ nav img {
 h4 {
   font-size: 15px;
 }
-small {
+.priceItem {
   color: #000;
+}
+.add-cart {
+  transition: 0.3s ease-in-out;
+  text-align: center;
+}
+.cart1,
+.cart2,
+.cart3,
+.cart4,
+.cart5,
+.cart6,
+.cart7,
+.cart8,
+.cart9,
+.cart10,
+.cart11:hover {
+  color: slateblue;
+  cursor: pointer;
 }
