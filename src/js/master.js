@@ -6,6 +6,69 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // cont2 = document.querySelector("#containerMiddle");
   // cont3 = document.querySelector("#containerBottom");
   const tommy = document.getElementById("tom");
+  let cartItems = document.querySelectorAll(".add-cart");
+  let productDescription = [
+    {
+      name: "Coffee",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Soda",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Tea",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Water",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Donut",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Croissant",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Cookie",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Sandwich",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Calzone",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Pizza Slice",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Coffee",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Big Salad",
+      price: 3,
+      inCart: 0,
+    },
+  ];
   // kramer = document.getElementById("imageContainer");
   // seinfeld = document.getElementById("imageContainer2");
   // tl.fromTo(cont2, 1, { y: -860 }, { y: 0, ease: Power1.easeOut });
@@ -75,6 +138,35 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (count > 0) tl.stop();
     else count++;
   };
+
+  for (let i = 0; i < cartItems.length; i++) {
+    // console.log("Loop item", cartItems[i]);
+    cartItems[i].addEventListener("click", () => {
+      // console.log(e.target);
+      console.log("added to cart");
+      cartNumbers();
+    });
+  }
+
+  (function onloadCartNumbers() {
+    let getItemToStore = localStorage.getItem("cartNumbers");
+
+    if (getItemToStore) {
+      document.querySelector(".cartLi span").textContent = getItemToStore;
+    }
+  })();
+  function cartNumbers() {
+    let getItemToStore = localStorage.getItem("cartNumbers");
+
+    getItemToStore = parseInt(getItemToStore);
+    if (getItemToStore) {
+      localStorage.setItem("cartNumbers", getItemToStore + 1);
+      document.querySelector(".cartLi span").textContent = getItemToStore + 1;
+    } else {
+      localStorage.setItem("cartNumbers", 1);
+      document.querySelector(".cartLi span").textContent = 1;
+    }
+  }
 });
 
 /**Validate name and date inputs */

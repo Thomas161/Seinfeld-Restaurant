@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Monk's Café</title>
     <!-- <link rel="stylesheet" href="path/to/pe-icon-set-food/css/pe-icon-set-food.css"> -->
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <!-- <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script> -->
     <script
       src="https://code.jquery.com/jquery-3.1.0.min.js"
       integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
@@ -47,6 +47,8 @@
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script src="../js/master.js"></script>
   </head>
 
   <body>
@@ -54,9 +56,9 @@
       <header>
         <h1 id="tom">Tom's Restaurant!</h1>
         <ul id="listItemCart">
-          <li>
+          <li class="cartLi">
             <a href="cart.html">
-              <ion-icon name="basket"></ion-icon><span>0</span>
+              <img src="../icons/Shopping cart.svg" alt="" /><span>0</span>
             </a>
           </li>
         </ul>
@@ -356,7 +358,5 @@ function calculate(){
 }
   
 </script> -->
-
-    <script src="../js/master.js"></script>
   </body>
 </html>
