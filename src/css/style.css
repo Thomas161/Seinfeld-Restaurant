@@ -43,8 +43,8 @@ main {
 }
 footer {
   background: wheat;
-  padding: 2rem;
-  height: 30vh;
+  padding: 16px;
+  height: 35vh;
   text-align: center;
   grid-column: 1 / 4;
 }
@@ -88,7 +88,8 @@ nav img {
 }
 #menuGrid {
   display: grid;
-  grid-template: auto 1fr auto / auto 1fr auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   position: absolute;
   column-gap: 10px;
   row-gap: 10px;
@@ -108,7 +109,7 @@ nav img {
 #four {
   grid-column: 4/4;
 }
-#basket {
+.hydrated {
   font-size: 40px;
   color: steelblue;
 }
@@ -117,8 +118,6 @@ nav img {
   width: 50%;
   right: 0;
   list-style-type: none;
-  text-align: center;
-  background-color: olivedrab;
 }
 
 .imageItem {
@@ -145,6 +144,6 @@ h4 {
 .cart9,
 .cart10,
 .cart11:hover {
-  color: slateblue;
+  color: #fff;
   cursor: pointer;
 }
