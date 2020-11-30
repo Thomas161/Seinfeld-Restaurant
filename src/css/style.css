@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 body {
   background: #a2d7d8;
   padding: 0;
@@ -21,7 +22,7 @@ body {
 }
 header {
   background: lightpink;
-  height: 13vh;
+  height: 11vh;
   padding: 2rem;
   grid-column: 1 / 4;
 }
@@ -34,6 +35,55 @@ header {
   text-transform: uppercase;
   color: #fff;
   text-align: center;
+  font-family: "Bebas Neue", cursive;
+}
+#cartPage:hover {
+  background-color: #555;
+}
+
+.cartContainer {
+  width: 700px;
+
+  justify-content: space-around;
+
+  left: 39%;
+
+  top: 26%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.cartHeader {
+  width: 90%;
+  border-bottom: 6px solid slategrey;
+  justify-content: flex-start;
+  display: flex;
+  margin: 0 auto;
+}
+.cartName {
+  width: 45%;
+  display: flex;
+  align-items: center;
+}
+.cartPrice {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+.cartQuantity {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+#mainMenu {
+  position: absolute;
+  right: 30px;
+  width: 10%;
+  background-color: rgb(55, 155, 55);
+  box-shadow: 0 5px 0 gold;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
 }
 #cartPage:hover {
   background-color: #555;
