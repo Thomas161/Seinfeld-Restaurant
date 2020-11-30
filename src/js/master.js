@@ -6,13 +6,13 @@ let cartItems = document.querySelectorAll(".add-cart");
 let productDescription = [
   {
     name: "Coffee",
-    tag: "cafe",
+    tag: "coffee",
     price: 3,
     inCart: 0,
   },
   {
     name: "Soda",
-    tag: "pepsi",
+    tag: "soda",
     price: 3,
     inCart: 0,
   },
@@ -24,7 +24,7 @@ let productDescription = [
   },
   {
     name: "Water",
-    tag: "H20",
+    tag: "sparkling",
     price: 3,
     inCart: 0,
   },
@@ -36,38 +36,38 @@ let productDescription = [
   },
   {
     name: "Croissant",
-    tag: "pastry",
+    tag: "croissant",
     price: 4,
     inCart: 0,
   },
   {
     name: "Cookie",
-    tag: "cookie",
+    tag: "cookie1",
     price: 3.5,
     inCart: 0,
   },
   {
     name: "Sandwich",
-    tag: "sandwich",
+    tag: "club",
     price: 3,
     inCart: 0,
   },
   {
     name: "Calzone",
-    tag: "foldover",
+    tag: "calzone",
     price: 6.5,
     inCart: 0,
   },
   {
     name: "Pizza Slice",
-    tag: "slice",
+    tag: "pizza",
     price: 6,
     inCart: 0,
   },
 
   {
     name: "Big Salad",
-    tag: "salad",
+    tag: "bigsalad",
     price: 4,
     inCart: 0,
   },
@@ -151,19 +151,24 @@ function totalCost(productDescription) {
 
 function displayProducts() {
   let cartItemsStored = localStorage.getItem("productsInCart");
-  console.log(
-    "Items stored that will be stored on DOM",
-    JSON.parse(cartItemsStored)
-  );
-
+  cartItemsStored = JSON.parse(cartItemsStored);
   let productContainer = document.querySelector(".productsList");
+  console.log(cartItemsStored);
+
   if (cartItemsStored && productContainer) {
     productContainer.innerHTML = "";
-    Object.values(cartItemsStored).map((i) => {
-      productContainer.innerHTML += `<div class="productsList"><span>${i.name}</span></div>`;
+    Object.values(cartItemsStored).map((v) => {
+      productContainer.innerHTML += `
+      <div >
+      <span class="product">${v.name}<img src="./items/${v.tag}.jpg" alt="no_image"/></span>
+      </div>
+      <div class="price">$${v.price}</div>
+      
+      <div class="quantity">${v.inCart}</div>`;
     });
   }
 }
+
 onloadCartNumbers();
 displayProducts();
 // window.localStorage.clear();

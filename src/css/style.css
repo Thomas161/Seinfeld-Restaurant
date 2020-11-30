@@ -85,6 +85,31 @@ header {
   text-align: center;
   font-family: "Bebas Neue", cursive;
 }
+
+.productsList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 6px solid slategrey;
+}
+
+.product {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  border-bottom: 6px solid slategrey;
+}
+.price {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  border-bottom: 6px solid slategrey;
+}
+.quantity {
+  width: 15%;
+  display: flex;
+  align-items: center;
+}
 #cartPage:hover {
   background-color: #555;
 }
