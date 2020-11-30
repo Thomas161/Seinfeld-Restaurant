@@ -6,69 +6,69 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let productDescription = [
     {
       name: "Coffee",
-      tag: "Coffee",
+      tag: "cafe",
       price: 3,
       inCart: 0,
     },
     {
       name: "Soda",
-      tag: "Soda",
+      tag: "pepsi",
       price: 3,
       inCart: 0,
     },
     {
       name: "Tea",
-      tag: "Tea",
+      tag: "tea",
       price: 3,
       inCart: 0,
     },
     {
       name: "Water",
-      tag: "Water",
+      tag: "H20",
       price: 3,
       inCart: 0,
     },
     {
       name: "Donut",
-      tag: "Donut",
-      price: 3,
+      tag: "donut",
+      price: 3.5,
       inCart: 0,
     },
     {
       name: "Croissant",
-      tag: "Croissant",
-      price: 3,
+      tag: "pastry",
+      price: 4,
       inCart: 0,
     },
     {
       name: "Cookie",
-      tag: "Cookie",
-      price: 3,
+      tag: "cookie",
+      price: 3.5,
       inCart: 0,
     },
     {
       name: "Sandwich",
-      tag: "Sandwich",
+      tag: "sandwich",
       price: 3,
       inCart: 0,
     },
     {
       name: "Calzone",
-      tag: "Calzone",
-      price: 3,
+      tag: "foldover",
+      price: 6.5,
       inCart: 0,
     },
     {
       name: "Pizza Slice",
-      tag: "Pizza Slice",
-      price: 3,
+      tag: "slice",
+      price: 6,
       inCart: 0,
     },
 
     {
       name: "Big Salad",
-      tag: "Big Salad",
-      price: 3,
+      tag: "salad",
+      price: 4,
       inCart: 0,
     },
   ];
@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       // console.log(e.target);
       console.log("added to cart");
       cartNumbers(productDescription[i]);
+      totalCost(productDescription[i]);
     });
   }
 
@@ -113,25 +114,42 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
 
   function setItems(productDescription) {
-    let cartItems = localStorage.getItem("productsInCart");
-    console.log("In cart", cartItems);
-    cartItems = JSON.parse(cartItems);
+    let items = localStorage.getItem("productsInCart");
+    console.log("In cart", items);
+    items = JSON.parse(items);
 
-    if (cartItems != null) {
-      if (cartItems[productDescription.tag] == undefined) {
-        cartItems = {
-          ...cartItems,
+    if (items != null) {
+      if (items[productDescription.tag] == undefined) {
+        items = {
+          ...items,
           [productDescription.tag]: productDescription,
         };
       }
-      cartItems[productDescription.tag].inCart += 1;
+      items[productDescription.tag].inCart += 1;
     } else {
       productDescription.inCart = 1;
-      cartItems = {
+      items = {
         [productDescription.tag]: productDescription,
       };
     }
-    localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+    localStorage.setItem("productsInCart", JSON.stringify(items));
+  }
+
+  function totalCost(productDescription) {
+    // console.log("Price", productDescription.price);
+
+    let cartCost = localStorage.getItem("totalCost");
+    let prices = productDescription.price;
+    console.log(typeof cartCost); //string
+    if (cartCost != null) {
+      cartCost = parseInt(cartCost); //string to int
+      localStorage.setItem(
+        "totalCost",
+        parseFloat(cartCost + prices).toFixed(2)
+      );
+    } else {
+      localStorage.setItem("totalCost", parseFloat(prices).toFixed(2));
+    }
   }
 });
 

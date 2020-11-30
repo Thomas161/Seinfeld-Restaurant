@@ -25,6 +25,20 @@ header {
   padding: 2rem;
   grid-column: 1 / 4;
 }
+#cartPage {
+  position: absolute;
+  right: 30px;
+  width: 10%;
+  background-color: red;
+  box-shadow: 0 5px 0 gold;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+}
+#cartPage:hover {
+  background-color: #555;
+}
+
 main {
   height: 100vh;
   grid-column: 2 / 3;
