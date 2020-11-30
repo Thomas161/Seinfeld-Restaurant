@@ -1,136 +1,79 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   var count = 0;
   var tl = new TimelineMax();
-  // var cont, cont2, cont3, tommy, kramer, seinfeld;
-  // cont = document.querySelector("#containerTop");
-  // cont2 = document.querySelector("#containerMiddle");
-  // cont3 = document.querySelector("#containerBottom");
   const tommy = document.getElementById("tom");
   let cartItems = document.querySelectorAll(".add-cart");
   let productDescription = [
     {
       name: "Coffee",
+      tag: "Coffee",
       price: 3,
       inCart: 0,
     },
     {
       name: "Soda",
+      tag: "Soda",
       price: 3,
       inCart: 0,
     },
     {
       name: "Tea",
+      tag: "Tea",
       price: 3,
       inCart: 0,
     },
     {
       name: "Water",
+      tag: "Water",
       price: 3,
       inCart: 0,
     },
     {
       name: "Donut",
+      tag: "Donut",
       price: 3,
       inCart: 0,
     },
     {
       name: "Croissant",
+      tag: "Croissant",
       price: 3,
       inCart: 0,
     },
     {
       name: "Cookie",
+      tag: "Cookie",
       price: 3,
       inCart: 0,
     },
     {
       name: "Sandwich",
+      tag: "Sandwich",
       price: 3,
       inCart: 0,
     },
     {
       name: "Calzone",
+      tag: "Calzone",
       price: 3,
       inCart: 0,
     },
     {
       name: "Pizza Slice",
+      tag: "Pizza Slice",
       price: 3,
       inCart: 0,
     },
-    {
-      name: "Coffee",
-      price: 3,
-      inCart: 0,
-    },
+
     {
       name: "Big Salad",
+      tag: "Big Salad",
       price: 3,
       inCart: 0,
     },
   ];
-  // kramer = document.getElementById("imageContainer");
-  // seinfeld = document.getElementById("imageContainer2");
-  // tl.fromTo(cont2, 1, { y: -860 }, { y: 0, ease: Power1.easeOut });
-  // tl.fromTo(cont, 1, { y: -460 }, { y: 0, ease: Power1.easeOut, delay: 0.9 });
-  // tl.fromTo(
-  //   cont3,
-  //   1,
-  //   { autoAlpha: 0 },
-  //   { autoAlpha: 1, ease: Power1.easeOut, delay: 0.5 }
-  // );
+
   tl.fromTo(tommy, 1.7, { x: -25, opacity: 0 }, { x: 0, opacity: 1, delay: 1 });
-  // (function playBackReverseFooterImages() {
-  //   var footerTimeline = new TimelineMax();
-  //   footerTimeline.fromTo(
-  //     kramer,
-  //     1,
-  //     { scaleX: 0, transformOrigin: "center center" },
-  //     { scaleX: 1, y: 0, ease: Power1.easeIn }
-  //   );
-  //   footerTimeline.to(kramer, 1, {
-  //     scaleX: 0,
-  //     y: 0,
-  //     delay: 2,
-  //   });
-  //   footerTimeline.fromTo(
-  //     seinfeld,
-  //     1,
-  //     { scaleX: 0, transformOrigin: "center center" },
-  //     {
-  //       scaleX: 1,
-  //       y: 0,
-  //       ease: Power1.easeIn,
-  //       delay: 2,
-  //     }
-  //   );
-
-  //   footerTimeline.to(kramer, 1, {
-  //     scaleX: 0,
-  //     y: 0,
-  //     delay: 2,
-  //   });
-  //   footerTimeline.delay(6).repeat(-1);
-  // })();
-
-  // cont.addEventListener("mouseover", function () {
-  //   cont.style.transform = "scale(1.15)";
-  // });
-  // cont.addEventListener("mouseout", function () {
-  //   cont.style.transform = "scale(1)";
-  // });
-  // cont2.addEventListener("mouseover", function () {
-  //   cont2.style.transform = "scale(1.15)";
-  // });
-  // cont2.addEventListener("mouseout", function () {
-  //   cont2.style.transform = "scale(1)";
-  // });
-  // cont3.addEventListener("mouseover", function () {
-  //   cont3.style.transform = "scale(1.15)";
-  // });
-  // cont3.addEventListener("mouseout", function () {
-  //   cont3.style.transform = "scale(1)";
-  // });
 
   event.preventDefault();
 
@@ -144,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     cartItems[i].addEventListener("click", () => {
       // console.log(e.target);
       console.log("added to cart");
-      cartNumbers();
+      cartNumbers(productDescription[i]);
     });
   }
 
@@ -155,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       document.querySelector(".cartLi span").textContent = getItemToStore;
     }
   })();
-  function cartNumbers() {
+  function cartNumbers(productDescription) {
     let getItemToStore = localStorage.getItem("cartNumbers");
 
     getItemToStore = parseInt(getItemToStore);
@@ -166,6 +109,29 @@ document.addEventListener("DOMContentLoaded", function (event) {
       localStorage.setItem("cartNumbers", 1);
       document.querySelector(".cartLi span").textContent = 1;
     }
+    setItems(productDescription);
+  }
+
+  function setItems(productDescription) {
+    let cartItems = localStorage.getItem("productsInCart");
+    console.log("In cart", cartItems);
+    cartItems = JSON.parse(cartItems);
+
+    if (cartItems != null) {
+      if (cartItems[productDescription.tag] == undefined) {
+        cartItems = {
+          ...cartItems,
+          [productDescription.tag]: productDescription,
+        };
+      }
+      cartItems[productDescription.tag].inCart += 1;
+    } else {
+      productDescription.inCart = 1;
+      cartItems = {
+        [productDescription.tag]: productDescription,
+      };
+    }
+    localStorage.setItem("productsInCart", JSON.stringify(cartItems));
   }
 });
 
