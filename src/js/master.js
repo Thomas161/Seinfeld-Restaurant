@@ -159,12 +159,19 @@ function displayProducts() {
     productContainer.innerHTML = "";
     Object.values(cartItemsStored).map((v) => {
       productContainer.innerHTML += `
-      <div >
-      <span class="product">${v.name}<img src="./items/${v.tag}.jpg" alt="no_image"/></span>
-      </div>
-      <div class="price">$${v.price}</div>
+      <div class="row">
+      <div class="col-sm-6">
+      <div class="card">
       
-      <div class="quantity">${v.inCart}</div>`;
+        <div class="card-body">
+          <h5 class="card-title">${v.name}</h5>
+          <img src="./css/items/${v.tag}.jpg"/> 
+          <p class="card-text">$${v.price}</p>
+          <p class="quantity">${v.inCart}</p>
+         </div>
+         </div>
+        </div>
+      </div>`;
     });
   }
 }
