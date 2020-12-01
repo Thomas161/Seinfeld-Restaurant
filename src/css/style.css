@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Coiny&display=swap");
 body {
   background: #a2d7d8;
   padding: 0;
@@ -43,11 +44,8 @@ header {
 
 .cartContainer {
   width: 700px;
-
   justify-content: space-around;
-
   left: 39%;
-
   top: 26%;
   transform: translate(-50%, -50%);
   position: absolute;
@@ -64,44 +62,37 @@ header {
   text-align: center;
   font-family: "Bebas Neue", cursive;
 }
+.totalOrder {
+  position: absolute;
+  width: 7%;
+  left: 78%;
+  top: -11px;
+}
 
 .productsList {
   position: relative;
   max-width: 600px;
   width: 600px;
+  height: 400px;
   /* top: 20px; */
   margin: auto;
   left: 20%;
   display: flex;
   flex-wrap: wrap;
-}
-
-.product {
-  width: 30%;
-  display: flex;
-  align-items: center;
-}
-.price {
-  width: 15%;
-  display: flex;
-  align-items: center;
-}
-.quantity {
-  width: 15%;
-  display: flex;
-  align-items: center;
+  overflow: auto;
 }
 
 .row {
   float: left;
-  width: 33%;
-
+  width: 30%;
+  text-align: center;
   background: beige;
   margin: 2px;
 }
 .column {
   color: #fff;
   background: chocolate;
+  font-family: "Coiny", cursive;
 }
 #cartPage:hover {
   background-color: #555;
@@ -125,10 +116,12 @@ main {
 }
 footer {
   background: wheat;
-  padding: 16px;
-  height: 35vh;
+  padding: 8px;
+  height: 100%;
   text-align: center;
   grid-column: 1 / 4;
+  bottom: 0;
+  position: inherit;
 }
 nav {
   height: 100%;
@@ -153,8 +146,10 @@ nav img {
   transform: scale(1.16);
 }
 #footerContainer {
+  bottom: 0;
   display: flex;
   flex-wrap: wrap;
+  position: sticky;
 }
 .cartLi span {
   background-color: teal;

@@ -154,6 +154,8 @@ function displayProducts() {
   cartItemsStored = JSON.parse(cartItemsStored);
   let productContainer = document.querySelector(".productsList");
   console.log(cartItemsStored);
+  let cartCost = localStorage.getItem("totalCost");
+  let totalOrder = document.querySelector(".totalOrder");
 
   if (cartItemsStored && productContainer) {
     productContainer.innerHTML = "";
@@ -171,13 +173,21 @@ function displayProducts() {
           <i class="fas fa-angle-double-left"></i>
           <span>${v.inCart}</span>
           <i class="fas fa-angle-double-right"></i>
+         
           </div>
-          <p class="total">${v.inCart * v.price}</p>
+          <div>
+          <p class="total">$${v.inCart * v.price}</p>
+          </div>
          </div>
          </div>
         </div>
       </div>`;
     });
+
+    totalOrder.innerHTML += `<div class="basketTotal">
+    <h4 class="basketTotalTitle">Basket Total</h4>
+    <h4 class="basketTotal">$${cartCost}</h4>
+    </div>`;
   }
 }
 
