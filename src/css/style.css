@@ -22,7 +22,7 @@ body {
 }
 header {
   background: lightpink;
-  height: 11vh;
+  height: 22vh;
   padding: 2rem;
   grid-column: 1 / 4;
 }
@@ -66,10 +66,14 @@ header {
 }
 
 .productsList {
-  width: 100%;
+  position: relative;
+  max-width: 600px;
+  width: 600px;
+  /* top: 20px; */
+  margin: auto;
+  left: 20%;
   display: flex;
   flex-wrap: wrap;
-  border-bottom: 6px solid slategrey;
 }
 
 .product {
@@ -86,6 +90,18 @@ header {
   width: 15%;
   display: flex;
   align-items: center;
+}
+
+.row {
+  float: left;
+  width: 33%;
+
+  background: beige;
+  margin: 2px;
+}
+.column {
+  color: #fff;
+  background: chocolate;
 }
 #cartPage:hover {
   background-color: #555;

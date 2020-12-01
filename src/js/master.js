@@ -160,14 +160,19 @@ function displayProducts() {
     Object.values(cartItemsStored).map((v) => {
       productContainer.innerHTML += `
       <div class="row">
-      <div class="col-sm-6">
+      <div class="column">
       <div class="card">
       
         <div class="card-body">
           <h5 class="card-title">${v.name}</h5>
-          <img src="./css/items/${v.tag}.jpg"/> 
+        
           <p class="card-text">$${v.price}</p>
-          <p class="quantity">${v.inCart}</p>
+          <div class="quantity">
+          <i class="fas fa-angle-double-left"></i>
+          <span>${v.inCart}</span>
+          <i class="fas fa-angle-double-right"></i>
+          </div>
+          <p class="total">${v.inCart * v.price}</p>
          </div>
          </div>
         </div>
