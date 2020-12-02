@@ -1,12 +1,19 @@
 document.addEventListener("DOMContentLoaded", function (event) {
+  event.preventDefault();
   var count = 0;
   var tl = new TimelineMax();
   const tommy = document.getElementById("tom");
   let cartItems = document.querySelectorAll(".add-cart");
+  let trolley = document.querySelector(".cartLi");
 
   tl.fromTo(tommy, 1.7, { x: -25, opacity: 0 }, { x: 0, opacity: 1, delay: 1 });
-
-  // event.preventDefault();
+  tl.fromTo(
+    trolley,
+    2.5,
+    { opacity: 0, x: -25 },
+    { opacity: 1, x: 200, delay: -0.3, ease: "power3.out" }
+  );
+  tl.fromTo(trolley, 1.5, { y: 30 }, { x: 0, delay: -0.9 });
 
   checkLoop = () => {
     if (count > 0) tl.stop();
