@@ -5,15 +5,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const tommy = document.getElementById("tom");
   let cartItems = document.querySelectorAll(".add-cart");
   let trolley = document.querySelector(".cartLi");
+  let box = document.querySelectorAll(".box");
 
   tl.fromTo(tommy, 1.7, { x: -25, opacity: 0 }, { x: 0, opacity: 1, delay: 1 });
   tl.fromTo(
     trolley,
     2.5,
     { opacity: 0, x: -25 },
-    { opacity: 1, x: 200, delay: -0.3, ease: "power3.out" }
+    { opacity: 1, x: 200, ease: "power3.out" }
   );
-  tl.fromTo(trolley, 1.5, { y: 30 }, { x: 0, delay: -0.9 });
+  tl.fromTo(
+    box,
+    1.6,
+    { transformOrigin: "center", scale: 0.2 },
+    { scale: 1, stagger: -0.2, delay: -0.6 }
+  );
+  tl.fromTo(trolley, 2, { y: 30 }, { x: 0 });
 
   checkLoop = () => {
     if (count > 0) tl.stop();
