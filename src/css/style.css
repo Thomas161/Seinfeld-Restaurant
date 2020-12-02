@@ -226,3 +226,9 @@ h4 {
   background: cornflowerblue;
   float: left;
 }
+.clearOrderContainer {
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  background: limegreen;
+}

@@ -118,10 +118,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         
           <p class="card-text">$${v.price}</p>
           <div class="quantity">
-          <i class="fas fa-angle-double-left" onclick="${decreaseAmounts()}"></i>
-          <span>${v.inCart}</span>
-          <i class="fas fa-angle-double-right" onclick="${increasingAmounts()}"></i>
+          <i class="fas fa-angle-double-left"></i>
          
+          <span>${v.inCart}</span>
+          <i class="fas fa-angle-double-right"></i>
           </div>
           <div>
           <p class="total">$${v.inCart * v.price}</p>
@@ -132,6 +132,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
       </div>`;
       });
 
+      // `<div class="clearOrderContainer">
+      // <button onclick="function ${removeAllItemsAndHistory}">Delete</button>
+      // </div>`;
+
       totalOrder.innerHTML += `<div class="basketTotal">
     <h4 class="basketTotalTitle">Basket Total</h4>
     <h4 class="basketTotal">$${cartCost}</h4>
@@ -141,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // let inc = document.querySelector(".fas fa-angle-double-left");
   // console.log("increase arrow", inc);//null renders before data
 
-  function increasingAmounts() {
+  (function increasingAmounts() {
     let cartItemsStored = localStorage.getItem("productsInCart");
     cartItemsStored = JSON.parse(cartItemsStored);
     // let objToArr = Object.entries(cartItemsStored);
@@ -149,16 +153,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
       console.log([Number(v)], cartItemsStored[v]);
     });
     return objToArr;
-    // console.log(cartItemsStored);
-    // Object.values(cartItemsStored).map((i) => {
-    //   console.log(i.inCart + "" + i.price);
-    // });
-  }
+  })();
 
-  // let decreaseProduct = document.querySelector(".fas fa-angle-double-left");
-  // decreaseProduct.addEventListener("click", decreaseAmounts);
-
-  function decreaseAmounts() {
+  (function decreaseAmounts() {
     let cartItemsStored = localStorage.getItem("productsInCart");
     cartItemsStored = JSON.parse(cartItemsStored);
     // let objToArr = Object.entries(cartItemsStored);
@@ -166,7 +163,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
       console.log([Number(v)], cartItemsStored[v]);
     });
     return objToArr;
-  }
+  })();
+
+  // function removeAllItemsAndHistory() {
+  //   console.log("delete");
+  // }
 
   onloadCartNumbers();
   displayProducts();
