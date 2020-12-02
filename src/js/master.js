@@ -151,10 +151,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const increasingAmounts = () => {
     let cartItemsStored = localStorage.getItem("productsInCart");
     cartItemsStored = JSON.parse(cartItemsStored);
-    console.log(cartItemsStored);
+    // console.log(cartItemsStored);
     for (const [key, value] of Object.entries(cartItemsStored)) {
       console.log("In cart currently", key, " value " + value.inCart); //number
-      currentInCart.innerHTML = Number(value.inCart) + 1;
+      const tempVal = 100;
+      if (value.inCart < tempVal) {
+        currentInCart.innerHTML = value.inCart + 1;
+      }
     }
     // let objToArr = Object.values(cartItemsStored).map((v) => {
     // console.log("In cart currently", Number(v.inCart)); //number
@@ -169,12 +172,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
     cartItemsStored = JSON.parse(cartItemsStored);
     console.log(cartItemsStored);
     // let objToArr = Object.entries(cartItemsStored);
-    let objToArr = Object.values(cartItemsStored).map((v) => {
-      console.log("In cart currently", Number(v.inCart));
-      currentInCart.innerHTML -= Number(v.inCart - 1);
-    });
+    for (const [key, value] of Object.entries(cartItemsStored)) {
+      console.log("In cart currently", key, " value " + value.inCart); //number
+      if (value.inCart >= 1) return (currentInCart.innerHTML = value.inCart--);
+    }
     console.log("decrease");
-    return objToArr;
   };
   let left = document.getElementById("leftArrow");
   // console.log(left);
