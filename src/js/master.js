@@ -118,9 +118,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         
           <p class="card-text">$${v.price}</p>
           <div class="quantity">
-          <i class="fas fa-angle-double-left"></i>
+          <i class="fas fa-angle-double-left" onclick="${decreaseAmounts()}"></i>
           <span>${v.inCart}</span>
-          <i class="fas fa-angle-double-right"></i>
+          <i class="fas fa-angle-double-right" onclick="${increasingAmounts()}"></i>
          
           </div>
           <div>
@@ -138,27 +138,35 @@ document.addEventListener("DOMContentLoaded", function (event) {
     </div>`;
     }
   }
+  // let inc = document.querySelector(".fas fa-angle-double-left");
+  // console.log("increase arrow", inc);//null renders before data
 
-  // let increaseProduct = document.querySelector(".fas fa-angle-double-left");
+  function increasingAmounts() {
+    let cartItemsStored = localStorage.getItem("productsInCart");
+    cartItemsStored = JSON.parse(cartItemsStored);
+    // let objToArr = Object.entries(cartItemsStored);
+    let objToArr = Object.keys(cartItemsStored).map((v) => {
+      console.log([Number(v)], cartItemsStored[v]);
+    });
+    return objToArr;
+    // console.log(cartItemsStored);
+    // Object.values(cartItemsStored).map((i) => {
+    //   console.log(i.inCart + "" + i.price);
+    // });
+  }
 
-  // increaseProduct.addEventListener("click", increasingAmounts);
   // let decreaseProduct = document.querySelector(".fas fa-angle-double-left");
   // decreaseProduct.addEventListener("click", decreaseAmounts);
 
-  // function increasingAmounts() {
-  //   let cartItemsStored = localStorage.getItem("productsInCart");
-  //   cartItemsStored = JSON.parse(cartItemsStored);
-  //   Object.values(cartItemsStored).map((i) => {
-  //     console.log(i.inCart + "" + i.price);
-  //   });
-  // }
-  // function decreaseAmounts() {
-  //   let cartItemsStored = localStorage.getItem("productsInCart");
-  //   cartItemsStored = JSON.parse(cartItemsStored);
-  //   Object.values(cartItemsStored).map((i) => {
-  //     console.log(i.inCart + "" + i.price);
-  //   });
-  // }
+  function decreaseAmounts() {
+    let cartItemsStored = localStorage.getItem("productsInCart");
+    cartItemsStored = JSON.parse(cartItemsStored);
+    // let objToArr = Object.entries(cartItemsStored);
+    let objToArr = Object.keys(cartItemsStored).map((v) => {
+      console.log([Number(v)], cartItemsStored[v]);
+    });
+    return objToArr;
+  }
 
   onloadCartNumbers();
   displayProducts();
