@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   event.preventDefault();
+
   var count = 0;
   var tl = new TimelineMax();
   const tommy = document.getElementById("tom");
@@ -101,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let cartItemsStored = localStorage.getItem("productsInCart");
     cartItemsStored = JSON.parse(cartItemsStored);
     let productContainer = document.querySelector(".productsList");
-    console.log(cartItemsStored);
+    // console.log(cartItemsStored);
     let cartCost = localStorage.getItem("totalCost");
     let totalOrder = document.querySelector(".totalOrder");
 
@@ -132,6 +133,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
       </div>`;
       });
 
+      const increasingAmounts = () => {
+        let cartItemsStored = localStorage.getItem("productsInCart");
+        cartItemsStored = JSON.parse(cartItemsStored);
+        // let objToArr = Object.entries(cartItemsStored);
+        let objToArr = Object.keys(cartItemsStored).map((v) => {
+          console.log([Number(v)], cartItemsStored[v]);
+        });
+        return objToArr;
+      };
+
+      const decreaseAmounts = () => {
+        let cartItemsStored = localStorage.getItem("productsInCart");
+        cartItemsStored = JSON.parse(cartItemsStored);
+        // let objToArr = Object.entries(cartItemsStored);
+        let objToArr = Object.keys(cartItemsStored).map((v) => {
+          console.log([Number(v)], cartItemsStored[v]);
+        });
+        return objToArr;
+      };
+
       // `<div class="clearOrderContainer">
       // <button onclick="function ${removeAllItemsAndHistory}">Delete</button>
       // </div>`;
@@ -142,29 +163,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
     </div>`;
     }
   }
-  // let inc = document.querySelector(".fas fa-angle-double-left");
-  // console.log("increase arrow", inc);//null renders before data
 
-  (function increasingAmounts() {
-    let cartItemsStored = localStorage.getItem("productsInCart");
-    cartItemsStored = JSON.parse(cartItemsStored);
-    // let objToArr = Object.entries(cartItemsStored);
-    let objToArr = Object.keys(cartItemsStored).map((v) => {
-      console.log([Number(v)], cartItemsStored[v]);
-    });
-    return objToArr;
-  })();
+  let dec = document.querySelector(".fas fa-angle-double-left");
+  let inc = document.querySelector(".fas fa-angle-double-right");
 
-  (function decreaseAmounts() {
-    let cartItemsStored = localStorage.getItem("productsInCart");
-    cartItemsStored = JSON.parse(cartItemsStored);
-    // let objToArr = Object.entries(cartItemsStored);
-    let objToArr = Object.keys(cartItemsStored).map((v) => {
-      console.log([Number(v)], cartItemsStored[v]);
-    });
-    return objToArr;
-  })();
+  if (dec == null || inc == null) {
+    console.log("error");
+  } else {
+    dec.addEventListener("click", decreaseAmounts);
+    inc.addEventListener("click", increasingAmounts);
+  }
 
+  // console.log();
+  // });
   // function removeAllItemsAndHistory() {
   //   console.log("delete");
   // }
