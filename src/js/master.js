@@ -3,75 +3,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var tl = new TimelineMax();
   const tommy = document.getElementById("tom");
   let cartItems = document.querySelectorAll(".add-cart");
-  let productDescription = [
-    {
-      name: "Coffee",
-      tag: "coffee",
-      price: 3,
-      inCart: 0,
-    },
-    {
-      name: "Soda",
-      tag: "soda",
-      price: 3,
-      inCart: 0,
-    },
-    {
-      name: "Tea",
-      tag: "tea",
-      price: 3,
-      inCart: 0,
-    },
-    {
-      name: "Water",
-      tag: "sparkling",
-      price: 3,
-      inCart: 0,
-    },
-    {
-      name: "Donut",
-      tag: "donut",
-      price: 3.5,
-      inCart: 0,
-    },
-    {
-      name: "Croissant",
-      tag: "croissant",
-      price: 4,
-      inCart: 0,
-    },
-    {
-      name: "Cookie",
-      tag: "cookie1",
-      price: 3.5,
-      inCart: 0,
-    },
-    {
-      name: "Sandwich",
-      tag: "club",
-      price: 3,
-      inCart: 0,
-    },
-    {
-      name: "Calzone",
-      tag: "calzone",
-      price: 6.5,
-      inCart: 0,
-    },
-    {
-      name: "Pizza Slice",
-      tag: "pizza",
-      price: 6,
-      inCart: 0,
-    },
-
-    {
-      name: "Big Salad",
-      tag: "bigsalad",
-      price: 4,
-      inCart: 0,
-    },
-  ];
 
   tl.fromTo(tommy, 1.7, { x: -25, opacity: 0 }, { x: 0, opacity: 1, delay: 1 });
 
@@ -194,26 +125,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 
-  let increaseProduct = document.querySelector(".fas fa-angle-double-left");
+  // let increaseProduct = document.querySelector(".fas fa-angle-double-left");
 
-  increaseProduct.addEventListener("click", increasingAmounts);
-  let decreaseProduct = document.querySelector(".fas fa-angle-double-left");
-  decreaseProduct.addEventListener("click", decreaseAmounts);
+  // increaseProduct.addEventListener("click", increasingAmounts);
+  // let decreaseProduct = document.querySelector(".fas fa-angle-double-left");
+  // decreaseProduct.addEventListener("click", decreaseAmounts);
 
-  function increasingAmounts() {
-    let cartItemsStored = localStorage.getItem("productsInCart");
-    cartItemsStored = JSON.parse(cartItemsStored);
-    Object.values(cartItemsStored).map((i) => {
-      console.log(i.inCart + "" + i.price);
-    });
-  }
-  function decreaseAmounts() {
-    let cartItemsStored = localStorage.getItem("productsInCart");
-    cartItemsStored = JSON.parse(cartItemsStored);
-    Object.values(cartItemsStored).map((i) => {
-      console.log(i.inCart + "" + i.price);
-    });
-  }
+  // function increasingAmounts() {
+  //   let cartItemsStored = localStorage.getItem("productsInCart");
+  //   cartItemsStored = JSON.parse(cartItemsStored);
+  //   Object.values(cartItemsStored).map((i) => {
+  //     console.log(i.inCart + "" + i.price);
+  //   });
+  // }
+  // function decreaseAmounts() {
+  //   let cartItemsStored = localStorage.getItem("productsInCart");
+  //   cartItemsStored = JSON.parse(cartItemsStored);
+  //   Object.values(cartItemsStored).map((i) => {
+  //     console.log(i.inCart + "" + i.price);
+  //   });
+  // }
 
   onloadCartNumbers();
   displayProducts();

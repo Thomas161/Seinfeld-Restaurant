@@ -19,27 +19,13 @@ body {
   font-size: 30px;
   position: absolute;
   top: 6px;
-  width: 50%;
+  width: 46%;
 }
 header {
   background: lightpink;
   height: 22vh;
   padding: 2rem;
   grid-column: 1 / 4;
-}
-#cartPage {
-  position: absolute;
-  right: 30px;
-  width: 10%;
-  background-color: red;
-  box-shadow: 0 5px 0 gold;
-  text-transform: uppercase;
-  color: #fff;
-  text-align: center;
-  font-family: "Bebas Neue", cursive;
-}
-#cartPage:hover {
-  background-color: #555;
 }
 
 .cartContainer {
@@ -51,17 +37,6 @@ header {
   position: absolute;
 }
 
-#mainMenu {
-  position: absolute;
-  right: 30px;
-  width: 10%;
-  background-color: rgb(55, 155, 55);
-  box-shadow: 0 5px 0 gold;
-  text-transform: uppercase;
-  color: #fff;
-  text-align: center;
-  font-family: "Bebas Neue", cursive;
-}
 .totalOrder {
   position: absolute;
   width: 7%;
@@ -95,7 +70,7 @@ header {
   font-family: "Coiny", cursive;
 }
 #cartPage:hover {
-  background-color: #555;
+  transform: scale(1.19);
 }
 
 main {
@@ -108,6 +83,13 @@ main {
   filter: blur(2.5px);
   height: 100%;
   width: 100%;
+}
+.fa-home {
+  font-size: 48px;
+  color: red;
+  position: absolute;
+  right: 30px;
+  width: 10%;
 }
 .right-sidebar {
   background: yellow;
@@ -138,13 +120,7 @@ nav img {
 #instagramLogo {
   font-size: 30px;
 }
-#shoppingCart {
-  top: 10px;
-}
-#shoppingCart:hover {
-  cursor: pointer;
-  transform: scale(1.16);
-}
+
 #footerContainer {
   bottom: 0;
   display: flex;
@@ -198,9 +174,12 @@ nav img {
 }
 #listItemCart {
   position: absolute;
-  width: 50%;
-  right: 0;
+  width: 46%;
+  height: 145px;
+  right: 15px;
+  top: 0;
   list-style-type: none;
+  background: darkorange;
 }
 
 .imageItem {
