@@ -119,10 +119,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         
           <p class="card-text">$${v.price}</p>
           <div class="quantity">
-          <i class="fas fa-angle-double-left"></i>
+          <i id="leftArrow" class="fas fa-angle-double-left"></i>
          
-          <span>${v.inCart}</span>
-          <i class="fas fa-angle-double-right"></i>
+          <span id="currentlyInCart">${v.inCart}</span>
+          <i id="rightArrow" class="fas fa-angle-double-right"></i>
           </div>
           <div>
           <p class="total">$${v.inCart * v.price}</p>
@@ -132,26 +132,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         </div>
       </div>`;
       });
-
-      const increasingAmounts = () => {
-        let cartItemsStored = localStorage.getItem("productsInCart");
-        cartItemsStored = JSON.parse(cartItemsStored);
-        // let objToArr = Object.entries(cartItemsStored);
-        let objToArr = Object.keys(cartItemsStored).map((v) => {
-          console.log([Number(v)], cartItemsStored[v]);
-        });
-        return objToArr;
-      };
-
-      const decreaseAmounts = () => {
-        let cartItemsStored = localStorage.getItem("productsInCart");
-        cartItemsStored = JSON.parse(cartItemsStored);
-        // let objToArr = Object.entries(cartItemsStored);
-        let objToArr = Object.keys(cartItemsStored).map((v) => {
-          console.log([Number(v)], cartItemsStored[v]);
-        });
-        return objToArr;
-      };
 
       // `<div class="clearOrderContainer">
       // <button onclick="function ${removeAllItemsAndHistory}">Delete</button>
@@ -163,16 +143,46 @@ document.addEventListener("DOMContentLoaded", function (event) {
     </div>`;
     }
   }
+  onloadCartNumbers();
+  displayProducts();
 
-  let dec = document.querySelector(".fas fa-angle-double-left");
-  let inc = document.querySelector(".fas fa-angle-double-right");
+  let currentInCart = document.getElementById("currentlyInCart");
 
-  if (dec == null || inc == null) {
-    console.log("error");
-  } else {
-    dec.addEventListener("click", decreaseAmounts);
-    inc.addEventListener("click", increasingAmounts);
-  }
+  const increasingAmounts = () => {
+    let cartItemsStored = localStorage.getItem("productsInCart");
+    cartItemsStored = JSON.parse(cartItemsStored);
+    console.log(cartItemsStored);
+    for (const [key, value] of Object.entries(cartItemsStored)) {
+      console.log("In cart currently", key, " value " + value.inCart); //number
+      currentInCart.innerHTML = Number(value.inCart) + 1;
+    }
+    // let objToArr = Object.values(cartItemsStored).map((v) => {
+    // console.log("In cart currently", Number(v.inCart)); //number
+    // currentInCart.innerHTML += Number(v.inCart * v.price).toFixed(0);
+    // });
+    console.log("increase");
+    // return objToArr;
+  };
+
+  const decreaseAmounts = () => {
+    let cartItemsStored = localStorage.getItem("productsInCart");
+    cartItemsStored = JSON.parse(cartItemsStored);
+    console.log(cartItemsStored);
+    // let objToArr = Object.entries(cartItemsStored);
+    let objToArr = Object.values(cartItemsStored).map((v) => {
+      console.log("In cart currently", Number(v.inCart));
+      currentInCart.innerHTML -= Number(v.inCart - 1);
+    });
+    console.log("decrease");
+    return objToArr;
+  };
+  let left = document.getElementById("leftArrow");
+  // console.log(left);
+  let right = document.getElementById("rightArrow");
+  // console.log(right);
+
+  left.addEventListener("click", decreaseAmounts);
+  right.addEventListener("click", increasingAmounts);
 
   // console.log();
   // });
@@ -180,7 +190,5 @@ document.addEventListener("DOMContentLoaded", function (event) {
   //   console.log("delete");
   // }
 
-  onloadCartNumbers();
-  displayProducts();
   // window.localStorage.clear();
 });
