@@ -105,6 +105,11 @@ footer {
   bottom: 0;
   position: inherit;
 }
+
+#currentlyInCart {
+  position: relative;
+  width: 45px;
+}
 nav {
   height: 100%;
 }

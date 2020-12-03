@@ -121,7 +121,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
           <div class="quantity">
           <i id="leftArrow" class="fas fa-angle-double-left"></i>
          
-          <span id="currentlyInCart">${v.inCart}</span>
+          <input type="number" id="currentlyInCart" min="0" max="100" value="${
+            v.inCart
+          }"/>
           <i id="rightArrow" class="fas fa-angle-double-right"></i>
           </div>
           <div>
@@ -146,35 +148,37 @@ document.addEventListener("DOMContentLoaded", function (event) {
   onloadCartNumbers();
   displayProducts();
 
-  let currentInCart = document.getElementById("currentlyInCart");
-
   const increasingAmounts = () => {
     let cartItemsStored = localStorage.getItem("productsInCart");
     cartItemsStored = JSON.parse(cartItemsStored);
+    let currentInCart = document.getElementById("currentlyInCart");
+    let total = document.querySelector(".total");
+
     // console.log(cartItemsStored);
     for (const [key, value] of Object.entries(cartItemsStored)) {
       console.log("In cart currently", key, " value " + value.inCart); //number
-      const tempVal = 100;
-      if (value.inCart < tempVal) {
-        currentInCart.innerHTML = value.inCart + 1;
-      }
+      const num = value.price * ++value.inCart;
+      const inCartInc = value.inCart + 1;
+      // let tempVal = 0;
+      // console.log(num);
+      currentInCart.textContent = `${inCartInc}`;
+      total.textContent = `$${num}`;
+      // return num;
+      // increasingAmounts();
     }
-    // let objToArr = Object.values(cartItemsStored).map((v) => {
-    // console.log("In cart currently", Number(v.inCart)); //number
-    // currentInCart.innerHTML += Number(v.inCart * v.price).toFixed(0);
-    // });
-    console.log("increase");
+
     // return objToArr;
   };
 
   const decreaseAmounts = () => {
     let cartItemsStored = localStorage.getItem("productsInCart");
     cartItemsStored = JSON.parse(cartItemsStored);
+    let currentInCart = document.getElementById("currentlyInCart");
     console.log(cartItemsStored);
     // let objToArr = Object.entries(cartItemsStored);
     for (const [key, value] of Object.entries(cartItemsStored)) {
       console.log("In cart currently", key, " value " + value.inCart); //number
-      if (value.inCart >= 1) return (currentInCart.innerHTML = value.inCart--);
+      if (value.inCart >= 0) currentInCart.textContent = value.inCart - 1;
     }
     console.log("decrease");
   };
