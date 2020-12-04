@@ -1,6 +1,9 @@
-document.addEventListener("DOMContentLoaded", function (event) {
-  event.preventDefault();
-
+if (document.readyState == "loading") {
+  document.addEventListener("DOMContentLoaded", ready);
+} else {
+  ready();
+}
+function ready() {
   var count = 0;
   var tl = new TimelineMax();
   const tommy = document.getElementById("tom");
@@ -119,11 +122,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         
           <p class="card-text">$${v.price}</p>
           <div class="quantity">
-          <i id="leftArrow" class="fas fa-angle-double-left"></i>
+          <i id="leftArrow" class="fas fa-angle-double-left" ></i>
          
-          <input type="number" id="currentlyInCart" min="0" max="100" value="${
-            v.inCart
-          }"/>
+        <input id="currentlyInCart" value="${v.inCart}"/>
+         
           <i id="rightArrow" class="fas fa-angle-double-right"></i>
           </div>
           <div>
@@ -151,43 +153,50 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const increasingAmounts = () => {
     let cartItemsStored = localStorage.getItem("productsInCart");
     cartItemsStored = JSON.parse(cartItemsStored);
-    let currentInCart = document.getElementById("currentlyInCart");
-    let total = document.querySelector(".total");
-
+    let currentInCart = document.getElementById("currentlyInCart").value;
+    currentInCart = JSON.parse(currentInCart);
+    console.log(currentInCart); //number
+    const c = document.getElementsByClassName("total");
+    console.log(c);
     // console.log(cartItemsStored);
-    for (const [key, value] of Object.entries(cartItemsStored)) {
-      console.log("In cart currently", key, " value " + value.inCart); //number
-      const num = value.price * ++value.inCart;
-      const inCartInc = value.inCart + 1;
-      // let tempVal = 0;
-      // console.log(num);
-      currentInCart.textContent = `${inCartInc}`;
-      total.textContent = `$${num}`;
-      // return num;
-      // increasingAmounts();
-    }
+    for (const [value] of Object.entries(cartItemsStored)) {
+      // console.log("In cart currently", key, " value " + value.inCart); //number
+      let num = value.inCart++;
+      if (num <= 100) {
+        // console.log(typeof num); //number
+        let t = value.inCart * value.price;
+        // console.log(typeof t);
+        // console.log(num);
+        currentInCart.value = `${num}`;
+        // t = Math.round(t * 100) / 100;
 
+        document.getElementsByClassName("total")[0].textContent = `$${t}`;
+        // return num;
+        // increasingAmounts();
+        // }
+      }
+    }
     // return objToArr;
   };
 
-  const decreaseAmounts = () => {
-    let cartItemsStored = localStorage.getItem("productsInCart");
-    cartItemsStored = JSON.parse(cartItemsStored);
-    let currentInCart = document.getElementById("currentlyInCart");
-    console.log(cartItemsStored);
-    // let objToArr = Object.entries(cartItemsStored);
-    for (const [key, value] of Object.entries(cartItemsStored)) {
-      console.log("In cart currently", key, " value " + value.inCart); //number
-      if (value.inCart >= 0) currentInCart.textContent = value.inCart - 1;
-    }
-    console.log("decrease");
-  };
-  let left = document.getElementById("leftArrow");
+  // const decreaseAmounts = () => {
+  //   let cartItemsStored = localStorage.getItem("productsInCart");
+  //   cartItemsStored = JSON.parse(cartItemsStored);
+  //   let currentInCart = document.getElementById("currentlyInCart");
+  //   console.log(cartItemsStored);
+  //   // let objToArr = Object.entries(cartItemsStored);
+  //   for (const [key, value] of Object.entries(cartItemsStored)) {
+  //     console.log("In cart currently", key, " value " + value.inCart); //number
+  //     if (value.inCart >= 0) currentInCart.textContent = value.inCart - 1;
+  //   }
+  //   console.log("decrease");
+  // };
+  // let left = document.getElementById("leftArrow");
   // console.log(left);
   let right = document.getElementById("rightArrow");
   // console.log(right);
 
-  left.addEventListener("click", decreaseAmounts);
+  // left.addEventListener("click", decreaseAmounts);
   right.addEventListener("click", increasingAmounts);
 
   // console.log();
@@ -197,4 +206,4 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // }
 
   // window.localStorage.clear();
-});
+}
