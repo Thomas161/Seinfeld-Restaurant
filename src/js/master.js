@@ -30,6 +30,75 @@ function ready() {
     if (count > 0) tl.stop();
     else count++;
   };
+  let productDescription = [
+    {
+      name: "Coffee",
+      tag: "coffee",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Soda",
+      tag: "soda",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Tea",
+      tag: "tea",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Water",
+      tag: "sparkling",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Donut",
+      tag: "donut",
+      price: 3.5,
+      inCart: 0,
+    },
+    {
+      name: "Croissant",
+      tag: "croissant",
+      price: 4,
+      inCart: 0,
+    },
+    {
+      name: "Cookie",
+      tag: "cookie1",
+      price: 3.5,
+      inCart: 0,
+    },
+    {
+      name: "Sandwich",
+      tag: "club",
+      price: 3,
+      inCart: 0,
+    },
+    {
+      name: "Calzone",
+      tag: "calzone",
+      price: 6.5,
+      inCart: 0,
+    },
+    {
+      name: "Pizza Slice",
+      tag: "pizza",
+      price: 6,
+      inCart: 0,
+    },
+
+    {
+      name: "Big Salad",
+      tag: "bigsalad",
+      price: 4,
+      inCart: 0,
+    },
+  ];
 
   for (let i = 0; i < cartItems.length; i++) {
     // console.log("Loop item", cartItems[i]);
@@ -48,11 +117,17 @@ function ready() {
       document.querySelector(".cartLi span").textContent = getItemToStore;
     }
   }
-  function cartNumbers(productDescription) {
+  function cartNumbers(productDescription, action) {
     let getItemToStore = localStorage.getItem("cartNumbers");
 
     getItemToStore = parseInt(getItemToStore);
-    if (getItemToStore) {
+    let prodsInCart = localStorage.getItem("productsInCart");
+    prodsInCart = JSON.parse(prodsInCart);
+    if (action) {
+      localStorage.setItem("cartNumbers", productNumbers - 1);
+      document.querySelector(".cart span").textContent = productNumbers - 1;
+      console.log("action running");
+    } else if (getItemToStore) {
       localStorage.setItem("cartNumbers", getItemToStore + 1);
       document.querySelector(".cartLi span").textContent = getItemToStore + 1;
     } else {
@@ -84,13 +159,14 @@ function ready() {
     localStorage.setItem("productsInCart", JSON.stringify(items));
   }
 
-  function totalCost(productDescription) {
+  function totalCost(productDescription, action) {
     // console.log("Price", productDescription.price);
-
-    let cartCost = localStorage.getItem("totalCost");
     let prices = productDescription.price;
-    console.log(typeof cartCost); //string
-    if (cartCost != null) {
+    let cartCost = localStorage.getItem("totalCost");
+    if (action) {
+      cartCost = parseInt(cartCost);
+      localStorage.setItem("totalCost", cart - product.price);
+    } else if (cartCost != null) {
       cartCost = parseInt(cartCost); //string to int
       localStorage.setItem(
         "totalCost",
@@ -124,7 +200,7 @@ function ready() {
           <div class="quantity">
           <i id="leftArrow" class="fas fa-angle-double-left" ></i>
          
-        <input id="currentlyInCart" value="${v.inCart}"/>
+        <span>${v.inCart}</span>
          
           <i id="rightArrow" class="fas fa-angle-double-right"></i>
           </div>
@@ -145,65 +221,153 @@ function ready() {
     <h4 class="basketTotalTitle">Basket Total</h4>
     <h4 class="basketTotal">$${cartCost}</h4>
     </div>`;
+
+      // deleteButtons();
+      manageQuantity();
     }
   }
-  onloadCartNumbers();
-  displayProducts();
 
-  const increasingAmounts = () => {
+  const manageQuantity = () => {
+    let increaseButtons = document.querySelectorAll(".fa-angle-double-right");
+    let decreaseButtons = document.querySelectorAll(".fa-angle-double-left");
+    let currentQuantity = 0;
+    let currentProduct = "";
     let cartItemsStored = localStorage.getItem("productsInCart");
     cartItemsStored = JSON.parse(cartItemsStored);
-    let currentInCart = document.getElementById("currentlyInCart").value;
-    currentInCart = JSON.parse(currentInCart);
-    console.log(currentInCart); //number
-    const c = document.getElementsByClassName("total");
-    console.log(c);
-    // console.log(cartItemsStored);
-    for (const [value] of Object.entries(cartItemsStored)) {
-      // console.log("In cart currently", key, " value " + value.inCart); //number
-      let num = value.inCart++;
-      if (num <= 100) {
-        // console.log(typeof num); //number
-        let t = value.inCart * value.price;
-        // console.log(typeof t);
-        // console.log(num);
-        currentInCart.value = `${num}`;
-        // t = Math.round(t * 100) / 100;
+    for (let i = 0; i < increaseButtons.length; i++) {
+      decreaseButtons[i].addEventListener("click", () => {
+        console.log(cartItemsStored);
+        currentQuantity = decreaseButtons[i].parentElement.querySelector("span")
+          .textContent;
+        console.log(currentQuantity);
+        currentProduct = decreaseButtons[
+          i
+        ].parentElement.previousElementSibling.previousElementSibling
+          .querySelector("span")
+          .textContent.toLocaleLowerCase()
+          .replace(/ /g, "")
+          .trim();
+        console.log(currentProduct);
 
-        document.getElementsByClassName("total")[0].textContent = `$${t}`;
-        // return num;
-        // increasingAmounts();
-        // }
-      }
+        if (cartItemsStored[currentProduct].inCart > 1) {
+          cartItemsStored[currentProduct].inCart -= 1;
+          cartNumbers(cartItemsStored[currentProduct], "decrease");
+          totalCost(cartItemsStored[currentProduct], "decrease");
+          localStorage.setItem(
+            "productsInCart",
+            JSON.stringify(cartItemsStored)
+          );
+          displayCart();
+        }
+      });
+      increaseButtons[i].addEventListener("click", () => {
+        console.log(cartItems);
+        currentQuantity = increaseButtons[i].parentElement.querySelector("span")
+          .textContent;
+        console.log(currentQuantity);
+        currentProduct = increaseButtons[
+          i
+        ].parentElement.previousElementSibling.previousElementSibling
+          .querySelector("span")
+          .textContent.toLocaleLowerCase()
+          .replace(/ /g, "")
+          .trim();
+        console.log(currentProduct);
+
+        cartItemsStored[currentProduct].inCart += 1;
+        cartNumbers(cartItemsStored[currentProduct]);
+        totalCost(cartItemsStored[currentProduct]);
+        localStorage.setItem("productsInCart", JSON.stringify(cartItemsStored));
+        displayCart();
+      });
     }
-    // return objToArr;
   };
-
-  // const decreaseAmounts = () => {
-  //   let cartItemsStored = localStorage.getItem("productsInCart");
-  //   cartItemsStored = JSON.parse(cartItemsStored);
-  //   let currentInCart = document.getElementById("currentlyInCart");
-  //   console.log(cartItemsStored);
-  //   // let objToArr = Object.entries(cartItemsStored);
-  //   for (const [key, value] of Object.entries(cartItemsStored)) {
-  //     console.log("In cart currently", key, " value " + value.inCart); //number
-  //     if (value.inCart >= 0) currentInCart.textContent = value.inCart - 1;
-  //   }
-  //   console.log("decrease");
-  // };
-  // let left = document.getElementById("leftArrow");
-  // console.log(left);
-  let right = document.getElementById("rightArrow");
-  // console.log(right);
-
-  // left.addEventListener("click", decreaseAmounts);
-  right.addEventListener("click", increasingAmounts);
-
-  // console.log();
-  // });
-  // function removeAllItemsAndHistory() {
-  //   console.log("delete");
-  // }
-
-  // window.localStorage.clear();
+  onloadCartNumbers();
+  displayProducts();
 }
+// function deleteButtons() {
+//   let deleteButtons = document.querySelectorAll(".product ion-icon");
+//   let productNumbers = localStorage.getItem("cartNumbers");
+//   let cartCost = localStorage.getItem("totalCost");
+//   let cartItems = localStorage.getItem("productsInCart");
+//   cartItems = JSON.parse(cartItems);
+//   let productName;
+//   console.log(cartItems);
+
+//   for (let i = 0; i < deleteButtons.length; i++) {
+//     deleteButtons[i].addEventListener("click", () => {
+//       productName = deleteButtons[i].parentElement.textContent
+//         .toLocaleLowerCase()
+//         .replace(/ /g, "")
+//         .trim();
+
+//       localStorage.setItem(
+//         "cartNumbers",
+//         productNumbers - cartItems[productName].inCart
+//       );
+//       localStorage.setItem(
+//         "totalCost",
+//         cartCost - cartItems[productName].price * cartItems[productName].inCart
+//       );
+
+//       delete cartItems[productName];
+//       localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+
+//       displayCart();
+//       onLoadCartNumbers();
+//     });
+//   }
+// }
+
+// let currentInCart = document.getElementById("currentlyInCart").value;
+// currentInCart = JSON.parse(currentInCart);
+// console.log(currentInCart); //number
+
+// console.log(c);
+// console.log(cartItemsStored);
+// for (const [value] of Object.entries(cartItemsStored)) {
+// console.log("In cart currently", key, " value " + value.inCart); //number
+// let num = value.inCart++;
+// if (num <= 100) {
+// console.log(typeof num); //number
+// let t = value.inCart * value.price;
+// console.log(typeof t);
+// console.log(num);
+// currentInCart.value = `${num}`;
+// t = Math.round(t * 100) / 100;
+
+// document.getElementsByClassName("total")[0].textContent = `$${t}`;
+// return num;
+// increasingAmounts();
+// }
+// }
+// }
+// return objToArr;
+
+// const decreaseAmounts = () => {
+//   let cartItemsStored = localStorage.getItem("productsInCart");
+//   cartItemsStored = JSON.parse(cartItemsStored);
+//   let currentInCart = document.getElementById("currentlyInCart");
+//   console.log(cartItemsStored);
+//   // let objToArr = Object.entries(cartItemsStored);
+//   for (const [key, value] of Object.entries(cartItemsStored)) {
+//     console.log("In cart currently", key, " value " + value.inCart); //number
+//     if (value.inCart >= 0) currentInCart.textContent = value.inCart - 1;
+//   }
+//   console.log("decrease");
+// };
+// let left = document.getElementById("leftArrow");
+// console.log(left);
+// let right = document.getElementById("rightArrow");
+// console.log(right);
+
+// left.addEventListener("click", decreaseAmounts);
+// right.addEventListener("click", increasingAmounts);
+
+// console.log();
+// });
+// function removeAllItemsAndHistory() {
+//   console.log("delete");
+// }
+
+// window.localStorage.clear();
