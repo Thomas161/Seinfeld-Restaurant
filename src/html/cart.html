@@ -1,55 +1,45 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cart</title>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>Shopping Cart</title>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <h1 id="tom">Tom's Restaurant!</h1>
-        <a href="./Reservations.html"> <i class="fas fa-home"></i></a>
-        <p class="totalOrder"></p>
-      </header>
-      <div class="productsList"></div>
-      <div class="right-sidebar">
-        <nav>
-          <a
-            target="_blank"
-            href="https://www.facebook.com/TomsDiner.original/"
-          >
-            <img src="../icons/FB-icon.jpg" alt="" />
-          </a>
-          <a target="_blank" href="https://twitter.com/tomsrestaurant1?lang=en">
-            <img src="../icons/twitter-icon.png" alt="" />
-          </a>
-          <a
-            target="_blank"
-            href="https://www.instagram.com/explore/locations/216013022/toms-restaurant/"
-          >
-            <img src="../icons/instagram.png" alt="" />
-          </a>
-        </nav>
-      </div>
-      <footer>
-        <div id="footerContainer">
-          <iframe
-            id="maps"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3020.0247878781374!2d-73.96763018409052!3d40.80544907932186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f63b8a11212f%3A0x7e5d05fffaca6ff0!2sTom&#39;s!5e0!3m2!1sen!2sau!4v1509937814809"
-          ></iframe>
+    <header>
+      <div class="overlay"></div>
+      <nav>
+        <h2>SHOP</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
 
-          <p id="copyright">©Kramerica Industries</p>
-        </div>
-      </footer>
+    
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container-products">
+      <div class="product-header">
+        <h5 class="product-title">PRODUCT</h5>
+        <h5 class="price sm-hide">PRICE</h5>
+        <h5 class="quantity">QUANTITY</h5>
+        <h5 class="total">TOTAL</h5>
+      </div>
+      <div class="products"></div>
     </div>
-    <script type="text/javascript" src="../js/master.js" defer></script>
-    <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+    <script src="../js/master.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   </body>
 </html>
