@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
       href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
       rel="stylesheet"
     />
@@ -12,108 +16,87 @@
       href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" href="../css/style.css" />
     <title>Tom's Cart</title>
   </head>
   <body>
-    <header>
-      <div class="overlay"></div>
-      <nav>
-        <h2>SHOP</h2>
-        <ul>
-          <li class="cart">
-            <a href="cart.html">
-              <img
-                src="../icons/Shopping cart.svg"
-                alt="shop_cart_NOTFOUND"
-              /><span>0</span>
-            </a>
-          </li>
-        </ul>
+    <header class="page__header">
+      <nav class="navbar__menu">
+        <div id="title">
+          <h3>Tom's Takeaway</h3>
+          <ul id="navbar__list"></ul>
+        </div>
+        <!-- Navigation starts as empty UL that will be populated with JS -->
+        <!-- <div id="navLinks"></div> -->
       </nav>
     </header>
-
-    <div class="container">
-      <div class="image">
-        <img src="../items/water.jpg" alt="water" />
-        <h3>Water</h3>
-        <h3>$3</h3>
-        <a class="add-cart cart1" href="#">Add Cart</a>
-        <input type="hidden" value="3" />
+    <section id="section1" data-nav="Section 1" class="your-active-class">
+      <div class="landing__container">
+        <!-- <div class="row mt-4">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12">
+                <h4>Products</h4>
+              </div>
+            </div> -->
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody id="products">
+              <tr>
+                <td>Tea</td>
+                <td>$3</td>
+                <td>
+                  <button class="btn btn-success">Add to Cart</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <b id="total-price">Total: $0</b>
+          </div>
+        </div>
       </div>
-      <div class="image">
-        <img src="../items/tea.jpg" alt="tea" />
-        <h3>Tea</h3>
-        <h3>$3</h3>
-        <a class="add-cart cart2" href="#">Add Cart</a>
-        <input type="hidden" value="3" />
+    </section>
+    <section id="section2" data-nav="Section 2">
+      <div class="landing__container">
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody id="cart-items">
+              <tr>
+                <td>Tea</td>
+                <td>$3</td>
+                <td>
+                  <button class="btn btn-danger">Remove from Cart</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="image">
-        <img src="../items/coffee.jpg" alt="coffee" />
-        <h3>Coffee</h3>
-        <h3>$3</h3>
-        <a class="add-cart cart3" href="#">Add Cart</a>
-        <input type="hidden" value="3" />
-      </div>
-      <div class="image">
-        <img src="../items/soda.jpg" alt="soda" />
-        <h3>Soda</h3>
-        <h3>$3,50</h3>
-        <a class="add-cart cart4" href="#">Add Cart</a>
-        <input type="hidden" value="3.5" />
-      </div>
-      <div class="image">
-        <img src="../items/donut.jpg" alt="donut" />
-        <h3>Donut</h3>
-        <h3>$3,50</h3>
-        <a class="add-cart cart5" href="#">Add Cart</a>
-        <input type="hidden" value="3.5" />
-      </div>
-      <div class="image">
-        <img src="../items/croissant.jpg" alt="croissant" />
-        <h3>Croissant</h3>
-        <h3>$4,50</h3>
-        <a class="add-cart cart6" href="#">Add Cart</a>
-        <input type="hidden" value="4.5" />
-      </div>
-      <div class="image">
-        <img src="../items/cookie.jpg" alt="cookie" />
-        <h3>Cookie</h3>
-        <h3>$5</h3>
-        <a class="add-cart cart7" href="#">Add Cart</a>
-        <input type="hidden" value="5" />
-      </div>
-      <div class="image">
-        <img src="../items/bigsalad.jpg" alt="salad" />
-        <h3>Big Salad</h3>
-        <h3>$6</h3>
-        <a class="add-cart cart8" href="#">Add Cart</a>
-        <input type="hidden" value="6" />
-      </div>
-      <div class="image">
-        <img src="../items/calzone.jpg" alt="calzone" />
-        <h3>Calzone</h3>
-        <h3>$6,50</h3>
-        <a class="add-cart cart9" href="#">Add Cart</a>
-        <input type="hidden" value="6.5" />
-      </div>
-      <div class="image">
-        <img src="../items/pizza.jpg" alt="pizza" />
-        <h3>Pizza Slice</h3>
-        <h3>$4,50</h3>
-        <a class="add-cart cart10" href="#">Add Cart</a>
-        <input type="hidden" value="4.5" />
-      </div>
-      <div class="image">
-        <img src="../items/sandwich.jpg" alt="sandwich" />
-        <h3>Club Sandiwch</h3>
-        <h3>$5,50</h3>
-        <a class="add-cart cart11" href="#">Add Cart</a>
-        <input type="hidden" value="5.5" />
-      </div>
-    </div>
-
+    </section>
     <script src="../js/master.js"></script>
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   </body>
 </html>
