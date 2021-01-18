@@ -4,7 +4,7 @@
 /**Global Variables */
 const sections = document.querySelectorAll("section");
 console.log(sections.length);
-const homeButton = document.getElementById("button");
+const homeButton = document.getElementById("top");
 const navBar = document.querySelector("#navbar__list");
 const sec1 = document.getElementById("section1");
 const sec2 = document.getElementById("section2");
@@ -13,46 +13,57 @@ const products = [
   {
     name: "Tea",
     price: 3,
+    logo: "../items/tea.jpg",
   },
   {
     name: "Coffee",
     price: 3,
+    logo: "../items/coffee.jpg",
   },
   {
     name: "Soda",
     price: 3.5,
+    logo: "../items/soda.jpg",
   },
   {
     name: "Water",
     price: 2,
+    logo: "../items/water.jpg",
   },
   {
     name: "Cookie",
     price: 4,
+    logo: "../items/cookie.jpg",
   },
   {
     name: "Donut",
     price: 4,
+    logo: "../items/donut.jpg",
   },
   {
     name: "Croissant",
     price: 3,
+    logo: "../items/croissant.jpg",
   },
   {
-    name: "Sandiwch",
+    name: "Sandwich",
     price: 5,
+    logo: "../items/sandwich.jpg",
   },
   {
     name: "Calzone",
     price: 6,
+    logo: "../items/calzone.jpg",
   },
   {
     name: "Pizza",
     price: 10,
+    logo: "../items/pizza.jpg",
   },
   {
     name: "Big Salad",
     price: 7,
+    logo: "../items/bigsalad.jpg",
   },
 ];
 let cart = {
@@ -93,7 +104,7 @@ function renderAllProducts() {
   products.forEach((product, index) => {
     productsTable.innerHTML += `
       <tr>
-      <td>${product.name}</td>
+      <td>${product.name}<img src='${product.logo}' id="items"/></td>
       <td>$${product.price}</td>
       <td><button class="btn btn-success" onclick="addToCart(${index})">Add to cart</button></td>
       </tr>
@@ -126,7 +137,7 @@ function renderAllCartItems() {
       </tr>
       `;
   });
-  totalPriceElement.innerText = `Total is: ${totalPrice}`;
+  totalPriceElement.innerText = `Total is: $${totalPrice}`;
 }
 function addToCart(productIndex) {
   console.log(productIndex);
@@ -208,6 +219,12 @@ function addActiveClassWhenInViewport() {
 document.addEventListener("scroll", () => {
   addActiveClassWhenInViewport();
 });
+
+homeButton.onclick = function (e) {
+  e.preventDefault();
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 createNavLinks();
 

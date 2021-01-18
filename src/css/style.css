@@ -3,11 +3,12 @@
 body {
   margin: 0;
   font-family: "Merriweather", serif;
+  background-color: rgb(117, 99, 233);
 }
 .landing__container {
   margin: 10px;
   position: absolute;
-  top: 55%;
+  top: 48%;
   left: 35%;
   transform: translate(-50%, -50%);
   background-color: #fff;
@@ -135,4 +136,19 @@ th {
 
 td {
   font-family: "Courgette", cursive;
+}
+
+#top {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  border-radius: 10px;
+  color: #fff;
+  border: solid #000 4px;
+}
+
+#items {
+  width: 60px;
+  height: 50px;
 }

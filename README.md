@@ -2,4 +2,4 @@
 
 ![Larry David](larry.jpg)
 
-This was my first major project, it was a restaurant simulated app. As a massive fan of Seinfeld i built a fake Seinfeld restaurant book app using Javascript that is integrated with Firbase Realtime DB.
+A SPA a tribute to Seinfeld my fave show, some scrolling affects between wections, responsive Bootstrap table and built like a crud app.
