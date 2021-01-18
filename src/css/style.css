@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Courgette&family=Potta+One&display=swap");
+
 body {
   margin: 0;
   font-family: "Merriweather", serif;
@@ -17,53 +19,78 @@ body {
 .navbar__menu {
   position: relative;
   height: 85px;
-  width: 100%;
+  width: 90%;
   margin: 10px;
+  transform: skewX(9deg);
 }
 
 #title {
-  position: absolute;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
   height: 85px;
-  width: 80%;
+
   background-color: #66b066;
 }
 h3 {
-  position: absolute;
+  position: relative;
   font-size: 35px;
-  left: 20px;
-  top: -10px;
+  left: 2%;
+  top: 20%;
+  font-family: "Potta One", cursive;
+}
+.icons {
+  position: relative;
+  left: 50px;
+  top: 12px;
+  height: 62px;
+}
+.fa {
+  padding: 10px;
+  font-size: 30px;
+
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
 }
 
-.navbar__menu ul {
-  margin: 0;
-  text-align: center;
-  width: 20%;
-  height: 85px;
-  position: absolute;
-  right: 0;
+.fa:hover,
+img:hover {
+  opacity: 0.8;
+  transform: scale(1.25);
+}
+
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55acee;
+  color: white;
+}
+.fa-instagram {
+  background: red;
+  color: white;
 }
 
 .navbar__menu li {
   display: inline-block;
-  margin: 10px;
-  height: 50px;
-  position: relative;
-  left: -16px;
-  color: #fff;
 
-  /* top: 20px; */
+  color: #fff;
+}
+iframe {
+  position: absolute;
+  left: 68%;
 }
 
 #navbar__list {
-  background: linear-gradient(to right, dodgerblue, slategray, maroon);
-}
-
-.page__header {
-  background: #fff;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 5;
+  position: absolute;
+  background: linear-gradient(to right, dodgerblue, slategray, gold);
+  display: inline-block;
+  width: 15%;
+  right: 0;
+  height: 85px;
 }
 
 .your-active-class {
@@ -75,6 +102,20 @@ section {
   min-height: 98vh;
   margin: 10px;
 }
+#nav-section1,
+#nav-section2 {
+  position: relative;
+}
+#nav-section1 {
+  left: -5px;
+  height: 85px;
+}
+#nav-section2 {
+  left: 18px;
+  top: -14px;
+  height: 50px;
+}
+
 #section1 {
   background: url("../pictures/superman.jpg");
   background-repeat: no-repeat;
@@ -87,4 +128,11 @@ section {
 }
 .table-responsive {
   height: 90%;
+}
+th {
+  font-family: "Audiowide", cursive;
+}
+
+td {
+  font-family: "Courgette", cursive;
 }

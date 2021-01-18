@@ -4,8 +4,10 @@
 /**Global Variables */
 const sections = document.querySelectorAll("section");
 console.log(sections.length);
-// const homeButton = document.getElementById("button");
+const homeButton = document.getElementById("button");
 const navBar = document.querySelector("#navbar__list");
+const sec1 = document.getElementById("section1");
+const sec2 = document.getElementById("section2");
 
 const products = [
   {
@@ -73,7 +75,7 @@ const createNavLinks = () => {
       liElements.innerHTML = '<i class="fa fa-home" style="font-size:50px"</i>';
     }
     if (liElements.id == "nav-section2") {
-      liElements.innerHTML = '<img src="../icons/cart.svg"/>';
+      liElements.innerHTML = '<img src="../icons/cart.svg" style="left:10px"/>';
     }
     navBar.appendChild(liElements);
     liElements.addEventListener("click", function () {
@@ -207,12 +209,6 @@ document.addEventListener("scroll", () => {
   addActiveClassWhenInViewport();
 });
 
-//click button, scrolls to top of html doc
-// homeButton.onclick = function (e) {
-//   e.preventDefault();
-
-//   window.scrollTo({ top: 0, behavior: "smooth" });
-// };
 createNavLinks();
 
 renderAllProducts();
