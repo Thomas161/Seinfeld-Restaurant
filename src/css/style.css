@@ -39,6 +39,31 @@ h3 {
   left: 2%;
   top: 20%;
   font-family: "Potta One", cursive;
+  animation-name: example;
+  animation-duration: 2.5s;
+
+  color: #fff;
+}
+
+@keyframes example {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(0.2);
+  }
+  40% {
+    transform: scale(0.4);
+  }
+  60% {
+    transform: scale(0.6);
+  }
+  80% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 .icons {
   position: relative;

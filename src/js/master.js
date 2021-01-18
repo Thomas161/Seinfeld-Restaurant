@@ -133,7 +133,7 @@ function renderAllCartItems() {
       <td>$${cartItem.price}</td>
       <td>${cartItem.quantity}</td>
       <td>$${cartItem.total}</td>
-      <td><button class="btn btn-danger" onclick="removeFromCart('${cartItem.name}')">Remove to cart</button></td>
+      <td><button class="btn btn-danger" onclick="removeFromCart('${cartItem.name}')">Remove from cart</button></td>
       </tr>
       `;
   });
