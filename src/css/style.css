@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Courgette&family=Potta+One&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@800&display=swap");
 body {
   margin: 0;
   font-family: "Merriweather", serif;
@@ -9,7 +9,7 @@ body {
   margin: 10px;
   position: absolute;
   top: 48%;
-  left: 35%;
+  left: 30%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   width: 40%;
@@ -151,4 +151,11 @@ td {
 #items {
   width: 60px;
   height: 50px;
+  border-radius: 12px;
+}
+
+#total-price {
+  position: absolute;
+  left: 15px;
+  font-family: "Cinzel", serif;
 }

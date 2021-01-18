@@ -3,7 +3,7 @@
 
 /**Global Variables */
 const sections = document.querySelectorAll("section");
-console.log(sections.length);
+// console.log(sections.length);
 const homeButton = document.getElementById("top");
 const navBar = document.querySelector("#navbar__list");
 const sec1 = document.getElementById("section1");
@@ -75,13 +75,13 @@ let cart = {
 const createNavLinks = () => {
   [...sections].forEach((sec) => {
     let liElements = document.createElement("li");
-    console.log(liElements);
+    // console.log(liElements);
     let cl, ids;
     cl = liElements.className.add = "menu__link";
-    console.log(cl); //menu__link
+    // console.log(cl); //menu__link
     ids = liElements.id = "nav-" + sec.id;
-    console.log(ids); //nav-section1-4
-    console.log(liElements.id); //section 1-4
+    // console.log(ids); //nav-section1-4
+    // console.log(liElements.id); //section 1-4
     if (liElements.id == "nav-section1") {
       liElements.innerHTML = '<i class="fa fa-home" style="font-size:50px"</i>';
     }
@@ -90,7 +90,7 @@ const createNavLinks = () => {
     }
     navBar.appendChild(liElements);
     liElements.addEventListener("click", function () {
-      console.log("clicked");
+      // console.log("clicked");
       sec.scrollIntoView({
         behavior: "smooth",
       });
@@ -104,7 +104,7 @@ function renderAllProducts() {
   products.forEach((product, index) => {
     productsTable.innerHTML += `
       <tr>
-      <td>${product.name}<img src='${product.logo}' id="items"/></td>
+      <td>${product.name} <img src='${product.logo}' id="items"/></td>
       <td>$${product.price}</td>
       <td><button class="btn btn-success" onclick="addToCart(${index})">Add to cart</button></td>
       </tr>
@@ -133,7 +133,7 @@ function renderAllCartItems() {
       <td>$${cartItem.price}</td>
       <td>${cartItem.quantity}</td>
       <td>$${cartItem.total}</td>
-      <td><button class="btn btn-danger" onclick="removeFromCart(${cartItem.name})">Remove to cart</button></td>
+      <td><button class="btn btn-danger" onclick="removeFromCart('${cartItem.name}')">Remove to cart</button></td>
       </tr>
       `;
   });
@@ -197,7 +197,7 @@ function removeFromCart(productName) {
 /**Add active class when it is in viewport */
 function addActiveClassWhenInViewport() {
   window.addEventListener("scroll", (event) => {
-    console.log("Type of event fired when scrolled", event.type);
+    // console.log("Type of event fired when scrolled", event.type);
 
     for (let i = 0; i < sections.length; i++) {
       console.log(sections[i].getBoundingClientRect());
@@ -231,4 +231,5 @@ createNavLinks();
 renderAllProducts();
 renderAllCartItems();
 addActiveClassWhenInViewport();
+
 // });
