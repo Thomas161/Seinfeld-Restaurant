@@ -5,6 +5,7 @@
 const sections = document.querySelectorAll("section");
 // console.log(sections.length);
 const homeButton = document.getElementById("top");
+const homeButton2 = document.getElementById("topHome");
 const navBar = document.querySelector("#navbar__list");
 const sec1 = document.getElementById("section1");
 const sec2 = document.getElementById("section2");
@@ -221,6 +222,11 @@ document.addEventListener("scroll", () => {
 });
 
 homeButton.onclick = function (e) {
+  e.preventDefault();
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+homeButton2.onclick = function (e) {
   e.preventDefault();
 
   window.scrollTo({ top: 0, behavior: "smooth" });

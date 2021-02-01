@@ -172,6 +172,15 @@ td {
   color: #fff;
   border: solid #000 4px;
 }
+#topHome {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  border-radius: 10px;
+  color: #fff;
+  border: solid black 4px;
+}
 
 #items {
   width: 60px;
@@ -183,4 +192,64 @@ td {
   position: absolute;
   left: 15px;
   font-family: "Cinzel", serif;
+}
+
+.containerSvg {
+  position: absolute;
+  background-color: rgb(31, 29, 29);
+  left: 100px;
+  top: 50px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 50px rgb(0, 0, 0), inset 20px 0 80px rgb(0, 70, 177),
+    inset -20px 0 80px rgb(44, 139, 44), inset 20px 0 300px #ed4,
+    inset -20px 0 300px slategray, 0 0 50px rgb(22, 21, 21),
+    -10px 0 80px rgb(0, 22, 22), 10px 0 80px rgb(175, 150, 5);
+}
+
+#section3 {
+  background-color: coral;
+}
+
+#woman {
+  animation: fly 5s infinite alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes fly {
+  from {
+    translate: translateY(99px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+#sun {
+  transform-origin: center;
+
+  animation: zoom 5s infinite alternate;
+  opacity: 0.85;
+  stroke-dasharray: 100;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.5);
+  }
+}
+
+#cape {
+  transform-origin: center;
+  stroke-dasharray: 100;
+  animation: dash 10s infinite alternate;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
 }
