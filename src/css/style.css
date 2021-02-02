@@ -172,6 +172,16 @@ td {
   color: #fff;
   border: solid #000 4px;
 }
+
+#bottom {
+  position: absolute;
+  bottom: 20;
+  right: 0;
+  margin: 10px;
+  border-radius: 10px;
+  color: #fff;
+  border: solid #000 4px;
+}
 #topHome {
   position: absolute;
   bottom: 0;

@@ -6,6 +6,7 @@ const sections = document.querySelectorAll("section");
 // console.log(sections.length);
 const homeButton = document.getElementById("top");
 const homeButton2 = document.getElementById("topHome");
+const bottomButton = document.getElementById("bottom");
 const navBar = document.querySelector("#navbar__list");
 const sec1 = document.getElementById("section1");
 const sec2 = document.getElementById("section2");
@@ -226,6 +227,13 @@ homeButton.onclick = function (e) {
 
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
+
+bottomButton.onclick = function (e) {
+  e.preventDefault();
+
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+};
+
 homeButton2.onclick = function (e) {
   e.preventDefault();
 
