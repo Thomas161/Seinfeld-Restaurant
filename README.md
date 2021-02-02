@@ -1,5 +1,3 @@
-# Mock Restaurant
+### Shopping Cart in Vanlla JS
 
-![Larry David](larry.jpg)
-
-Favourite Show!
+Seinfeld is my favourite Show!
