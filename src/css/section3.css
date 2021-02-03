@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap");
 #bottom {
   position: absolute;
   bottom: 20;
@@ -20,10 +21,11 @@
 .containerSvgAndAudio {
   position: absolute;
   display: grid;
-  grid-template-areas: "superWoman audioFiles";
+  grid-template-areas: "superWoman audioFiles seinfeld";
   background-color: rgb(31, 29, 29);
   left: 50%;
   top: 50%;
+  width: 90%;
   transform: translate(-50%, -50%);
   border-radius: 12px;
 }
@@ -42,6 +44,53 @@ svg {
   position: relative;
   background-color: cornsilk;
   margin: 8px;
+}
+.seinfeldList {
+  position: relative;
+  grid-area: seinfeld;
+  background-color: beige;
+  border-radius: 10px;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  letter-spacing: 1px;
+  margin: 11px;
+  color: #fff;
+  font-family: "UnifrakturCook", cursive;
+  text-align: center;
+  border-radius: 10px;
+}
+#bus {
+  background-color: darkcyan;
+}
+#letter {
+  background-color: rgb(194, 194, 65);
+}
+#handy {
+  background-color: rgb(207, 207, 27);
+}
+#bris {
+  background-color: rgb(146, 74, 146);
+}
+#conv {
+  background-color: rgb(42, 134, 42);
+}
+#stall {
+  background-color: darkcyan;
+}
+#fire {
+  background-color: rgb(183, 101, 46);
+}
+#slice {
+  background-color: gold;
+}
+#library {
+  background-color: rgb(30, 30, 133);
+}
+#merv {
+  background-color: orange;
 }
 
 #woman {

@@ -185,3 +185,19 @@ td {
   left: 15px;
   font-family: "Cinzel", serif;
 }
+
+.upArrow {
+  transform: rotate(225deg);
+  border: solid gold;
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.downArrow {
+  transform: rotate(45deg);
+  border: solid gold;
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  padding: 3px;
+}
