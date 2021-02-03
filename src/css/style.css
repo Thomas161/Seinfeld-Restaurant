@@ -173,3 +173,15 @@ td {
   color: #fff;
   border: solid #000 4px;
 }
+
+#items {
+  width: 60px;
+  height: 50px;
+  border-radius: 12px;
+}
+
+#total-price {
+  position: absolute;
+  left: 15px;
+  font-family: "Cinzel", serif;
+}
