@@ -165,7 +165,7 @@ function renderAllCartItems() {
       </tr>
       `;
   });
-  totalPriceElement.innerText = `Total is: $${totalPrice}`;
+  totalPriceElement.innerText = `Total : $${totalPrice}`;
 }
 function addToCart(productIndex) {
   console.log(productIndex);
