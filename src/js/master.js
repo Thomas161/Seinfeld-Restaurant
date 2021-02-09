@@ -85,10 +85,13 @@ const createNavLinks = () => {
     // console.log(ids); //nav-section1-4
     // console.log(liElements.id); //section 1-4
     if (liElements.id == "nav-section1") {
-      liElements.innerHTML = '<i class="fa fa-home" style="font-size:50px"</i>';
+      liElements.innerHTML = '<i class="fa fa-home"</i>';
     }
     if (liElements.id == "nav-section2") {
-      liElements.innerHTML = '<img src="../icons/cart.svg" style="left:10px"/>';
+      liElements.innerHTML = '<img src="../icons/cart.svg" id="shopping"/>';
+    }
+    if (liElements.id == "nav-section3") {
+      liElements.innerHTML = "<p>3</p>";
     }
     navBar.appendChild(liElements);
     liElements.addEventListener("click", function () {
