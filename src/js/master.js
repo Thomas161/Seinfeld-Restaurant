@@ -73,6 +73,28 @@ let cart = {
   totalPrice: 0,
 };
 
+const digiClock = () => {
+  let date = new Date();
+  let hour = date.getHours();
+  let min = date.getMinutes();
+  let seconds = date.getSeconds();
+
+  hour = updateTime(hour);
+  min = updateTime(min);
+  seconds = updateTime(seconds);
+  document.getElementById("clock").innerHTML =
+    hour + " : " + min + " : " + seconds;
+
+  setTimeout(() => {
+    digiClock();
+  }, 1000);
+};
+
+function updateTime(time) {
+  if (time < 10) return "0" + time;
+  else return time;
+}
+digiClock();
 /**Dynamically built nav */
 const createNavLinks = () => {
   [...sections].forEach((sec) => {
