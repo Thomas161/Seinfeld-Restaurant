@@ -85,7 +85,7 @@ body {
   font-size: 16px;
   color: cornflowerblue;
 
-  width: 78px;
+  width: 91px;
   height: 26px;
 }
 h3 {
@@ -217,6 +217,10 @@ iframe {
   margin: 4em 0;
 }
 
+#navbar__list li:hover {
+  background-color: lawngreen;
+}
+
 #nav-section1,
 #nav-section2,
 #nav-section3 {
@@ -224,7 +228,7 @@ iframe {
 }
 
 .your-active-class {
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 section {

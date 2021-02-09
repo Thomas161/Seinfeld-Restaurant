@@ -234,7 +234,6 @@ function addActiveClassWhenInViewport() {
 
       if (top <= 150 && bottom >= 150) {
         console.log("In viewport");
-
         sections[i].classList.add("your-active-class");
       } else {
         console.log("Not in viewport");
