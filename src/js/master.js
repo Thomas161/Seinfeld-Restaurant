@@ -110,7 +110,8 @@ const createNavLinks = () => {
       liElements.innerHTML = '<i class="fa fa-home"</i>';
     }
     if (liElements.id == "nav-section2") {
-      liElements.innerHTML = '<img src="../icons/cart.svg" id="shopping"/>';
+      liElements.innerHTML =
+        '<img src="../icons/cart.svg" id="shopping"/><span id="basketTotal">0</span>';
     }
     if (liElements.id == "nav-section3") {
       liElements.innerHTML =
@@ -142,6 +143,8 @@ function renderAllProducts() {
 function renderAllCartItems() {
   const cartItemsTable = document.getElementById("cart-items");
   const totalPriceElement = document.getElementById("total-price");
+  let inBasket = document.getElementById("basketTotal");
+  let baskTotal = 0;
   let totalPrice = 0;
   cartItemsTable.innerHTML = "";
   if (cart.items.length === 0) {
@@ -155,6 +158,7 @@ function renderAllCartItems() {
   }
   cart.items.forEach((cartItem, index) => {
     totalPrice += cartItem.total;
+    baskTotal += cartItem.quantity;
     cartItemsTable.innerHTML += `
       <tr>
       <td>${cartItem.name}</td>
@@ -166,6 +170,7 @@ function renderAllCartItems() {
       `;
   });
   totalPriceElement.innerText = `Total : $${totalPrice}`;
+  inBasket.innerText = `${baskTotal}`;
 }
 function addToCart(productIndex) {
   console.log(productIndex);
@@ -180,6 +185,9 @@ function addToCart(productIndex) {
         quantity: item.quantity + 1,
         total: (item.quantity + 1) * item.price,
       };
+      localStorage.setItem("newCartItem", JSON.stringify(newItem));
+      console.log(localStorage.getItem("newCartItem"));
+
       return [...state, newItem];
     }
     return [...state, item];
@@ -208,6 +216,7 @@ function removeFromCart(productName) {
         total: (item.quantity - 1) * item.price,
       };
       if (newItem.quantity > 0) {
+        localStorage.getItem("newCartItem");
         return [...state, newItem];
       } else {
         return state;
