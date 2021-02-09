@@ -91,7 +91,8 @@ const createNavLinks = () => {
       liElements.innerHTML = '<img src="../icons/cart.svg" id="shopping"/>';
     }
     if (liElements.id == "nav-section3") {
-      liElements.innerHTML = "<p>3</p>";
+      liElements.innerHTML =
+        '<img src="../pictures/larry_david.jpeg" id="larry"/>';
     }
     navBar.appendChild(liElements);
     liElements.addEventListener("click", function () {
