@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap");
+
+#section3 {
+  background: url("../pictures/dots.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 #bottom {
   position: absolute;
   bottom: 20;
@@ -29,9 +36,37 @@
   transform: translate(-50%, -50%);
   border-radius: 12px;
 }
+.shade {
+  animation: slide 6s ease-in-out infinite alternate;
+  background-image: linear-gradient(
+    -60deg,
+    rgba(233, 22, 187, 0.656) 50%,
+    gold 50%
+  );
+  bottom: 0;
+  left: -25%;
+  opacity: 0.8;
+  position: fixed;
+  right: -25%;
+  top: 0;
+  z-index: -1;
+}
+.shade-2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 7s;
+}
 
-#section3 {
-  background-color: coral;
+.shade-3 {
+  animation-duration: 7s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(10%);
+  }
 }
 
 svg {
@@ -178,7 +213,7 @@ audio {
   left: 0;
   bottom: 0;
   right: 0;
-  border: 2px solid rgb(216, 2, 134);
+  border: 3px solid rgb(210, 182, 23);
   cursor: pointer;
   box-shadow: inset 0 0 0 0 #d80286;
   -webkit-transition: ease-out 0.4s;
@@ -195,7 +230,7 @@ audio {
   left: 0;
   bottom: 0;
   right: 0;
-  border: 2px solid rgb(216, 2, 134);
+  border: 3px solid rgb(189, 79, 35);
   cursor: pointer;
   box-shadow: inset 0 0 0 0 #d80286;
   -webkit-transition: ease-out 0.4s;
@@ -211,7 +246,7 @@ audio {
   left: 0;
   bottom: 0;
   right: 0;
-  border: 2px solid rgb(216, 2, 134);
+  border: 3px solid rgb(221, 197, 59);
   cursor: pointer;
   box-shadow: inset 0 0 0 0 #d80286;
   -webkit-transition: ease-out 0.4s;
@@ -227,7 +262,7 @@ audio {
   left: 0;
   bottom: 0;
   right: 0;
-  border: 2px solid rgb(216, 2, 134);
+  border: 3px solid rgb(189, 79, 35);
   cursor: pointer;
   box-shadow: inset 0 0 0 0 #d80286;
   -webkit-transition: ease-out 0.4s;
