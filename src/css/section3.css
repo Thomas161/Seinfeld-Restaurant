@@ -4,8 +4,10 @@
   background: url("../pictures/dots.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 100%;
-  height: 100%;
+  width: 85%;
+  min-height: 98vh;
+  margin: 10px;
+  position: relative;
 }
 
 #bottom {
@@ -37,38 +39,6 @@
   width: 90%;
   transform: translate(-50%, -50%);
   border-radius: 12px;
-}
-.shade {
-  animation: slide 6s ease-in-out infinite alternate;
-  background-image: linear-gradient(
-    -60deg,
-    rgba(233, 22, 187, 0.656) 50%,
-    gold 50%
-  );
-  bottom: 0;
-  left: -25%;
-  opacity: 0.8;
-  position: fixed;
-  right: -25%;
-  top: 0;
-  z-index: -1;
-}
-.shade-2 {
-  animation-direction: alternate-reverse;
-  animation-duration: 7s;
-}
-
-.shade-3 {
-  animation-duration: 7s;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(-10%);
-  }
-  100% {
-    transform: translateX(10%);
-  }
 }
 
 svg {

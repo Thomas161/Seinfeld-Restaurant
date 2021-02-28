@@ -19,13 +19,23 @@ body {
   font-family: "Roboto" cursive;
   border-radius: 15px;
 }
+/* header {
+  position: fixed;
+} */
 .navbar__menu {
   position: relative;
   height: 85px;
   width: 90%;
   margin: 10px;
   transform: skewX(9deg);
+  background: linear-gradient(gold, maroon);
 }
+
+/* .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+} */
 
 #title {
   position: absolute;
@@ -149,7 +159,7 @@ img:hover {
 iframe {
   position: absolute;
   left: 60%;
-  top: 4%;
+  top: 0;
 }
 
 #navbar__list {
@@ -190,6 +200,22 @@ section {
   min-height: 98vh;
   margin: 10px;
   width: 85%;
+}
+#quotes {
+  position: absolute;
+  width: 170px;
+  height: 200px;
+  text-align: center;
+  right: 5%;
+  bottom: 50%;
+  background: repeating-radial-gradient(ellipse, transparent 109px, gold);
+}
+
+#demo {
+  position: relative;
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 2.5px 2.5px black;
 }
 
 #section1 {

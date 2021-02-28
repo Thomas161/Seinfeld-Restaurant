@@ -10,6 +10,9 @@ const bottomButton = document.getElementById("bottom");
 const navBar = document.querySelector("#navbar__list");
 const sec1 = document.getElementById("section1");
 const sec2 = document.getElementById("section2");
+let xhttp = new XMLHttpRequest();
+// let header = document.getElementById("navbar-upper");
+// let sticky = header.offsetTop;
 
 const products = [
   {
@@ -125,12 +128,20 @@ const createNavLinks = () => {
   });
 };
 
-setTimeout(cb, 3000);
+$.ajax({
+  url: "https://seinfeld-quotes.herokuapp.com/quotes",
+  dataType: "JSON",
+  method: "GET",
+})
+  .then((res) => {
+    document.getElementById("demo").innerHTML = `"${res.quotes[1].quote}"`;
+    console.log("Response text is ", res.quotes[1].quote); //entire list of quotes
+  })
+  .catch((err) => {
+    console.log("error", err);
+  });
 
-// b.style.height = "100%";
-// let b = document.getElementById("#section3");
-// b.style.display = "none";
-// b.style.height = "0%";
+setTimeout(cb, 3000);
 
 function cb() {
   const hamburgerIcon = document.querySelector(".burger-nav");
@@ -141,7 +152,12 @@ function cb() {
 
     if (!isOpen) {
       hamburgerIcon.classList.add("open");
-      location.href = "index2.html";
+
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth",
+      });
+
       isOpen = true;
     } else {
       hamburgerIcon.classList.remove("open");
@@ -297,6 +313,17 @@ homeButton2.onclick = function (e) {
 
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
+// window.onscroll = function () {
+//   stickyHeader();
+// };
+
+// function stickyHeader() {
+//   if (window.pageYOffset > sticky) {
+//     header.classList.add("sticky");
+//   } else {
+//     header.classList.remove("sticky");
+//   }
+// }
 
 createNavLinks();
 
