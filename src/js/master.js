@@ -95,6 +95,7 @@ function updateTime(time) {
   else return time;
 }
 digiClock();
+
 /**Dynamically built nav */
 const createNavLinks = () => {
   [...sections].forEach((sec) => {
@@ -115,7 +116,7 @@ const createNavLinks = () => {
     }
     if (liElements.id == "nav-section3") {
       liElements.innerHTML =
-        '<img src="../pictures/larry_david.jpeg" id="larry"/>';
+        '<div class="burger-wrapper"><div class="burger-nav"></div></div>';
     }
     navBar.appendChild(liElements);
     liElements.addEventListener("click", function () {
@@ -126,6 +127,24 @@ const createNavLinks = () => {
     });
   });
 };
+
+setTimeout(cb, 3000);
+
+function cb() {
+  const hamburgerIcon = document.querySelector(".burger-nav");
+  let isOpen = false;
+  hamburgerIcon.addEventListener("click", (event) => {
+    console.log(event.target);
+
+    if (!isOpen) {
+      hamburgerIcon.classList.add("open");
+      isOpen = true;
+    } else {
+      hamburgerIcon.classList.remove("open");
+      isOpen = false;
+    }
+  });
+}
 
 function renderAllProducts() {
   const productsTable = document.getElementById("products");

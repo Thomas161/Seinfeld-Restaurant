@@ -1,4 +1,5 @@
 @import "./section3.css";
+@import "./burger.css";
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Courgette&family=Potta+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@800&display=swap");
 body {
@@ -175,13 +176,13 @@ iframe {
 #navbar__list li {
   position: relative;
   display: inline-block;
-  margin-bottom: 6em;
+
   background-color: coral;
   width: 100%;
   height: 63px;
   text-align: center;
   margin: auto;
-  padding-right: 0.6em;
+
   margin: 4em 0;
 }
 
@@ -190,9 +191,11 @@ iframe {
 }
 
 #nav-section1,
-#nav-section2,
-#nav-section3 {
+#nav-section2 {
   margin-bottom: 5em;
+}
+#navbar__list li:nth-child(3):not(.not-section3) {
+  background-color: transparent;
 }
 
 .your-active-class {
