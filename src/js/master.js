@@ -127,17 +127,25 @@ const createNavLinks = () => {
 
 setTimeout(cb, 3000);
 
+// b.style.height = "100%";
+// let b = document.getElementById("#section3");
+// b.style.display = "none";
+// b.style.height = "0%";
+
 function cb() {
   const hamburgerIcon = document.querySelector(".burger-nav");
+
   let isOpen = false;
   hamburgerIcon.addEventListener("click", (event) => {
     console.log(event.target);
 
     if (!isOpen) {
       hamburgerIcon.classList.add("open");
+      location.href = "index2.html";
       isOpen = true;
     } else {
       hamburgerIcon.classList.remove("open");
+
       isOpen = false;
     }
   });
