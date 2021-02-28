@@ -4,6 +4,8 @@
   background: url("../pictures/dots.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
+  height: 0;
 }
 
 #bottom {

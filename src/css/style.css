@@ -28,16 +28,17 @@ body {
 }
 
 #title {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  height: 85px;
+  position: absolute;
 
+  height: 85px;
+  width: 17%;
+  animation-name: example;
+  animation-duration: 0.9s;
   background-color: #66b066;
 }
 .clock-container {
   position: absolute;
-  left: 85%;
+  left: 80%;
   top: 10%;
   width: 175px;
   height: 40px;
@@ -58,42 +59,29 @@ body {
   height: 26px;
 }
 h3 {
-  position: relative;
-  font-size: 35px;
+  position: absolute;
+  font-size: 33px;
   left: 2%;
-  top: 20%;
   font-family: "Potta One", cursive;
-  animation-name: example;
-  animation-duration: 2.5s;
 
   color: #fff;
 }
 
 @keyframes example {
   0% {
-    transform: scale(0);
+    transform: translateY(-20px);
   }
-  20% {
-    transform: scale(0.2);
-  }
-  40% {
-    transform: scale(0.4);
-  }
-  60% {
-    transform: scale(0.6);
-  }
-  80% {
-    transform: scale(0.8);
-  }
+
   100% {
-    transform: scale(1);
+    transform: translateY(0px);
   }
 }
 .icons {
-  position: relative;
-  left: 50px;
-  top: 12px;
-  height: 62px;
+  position: absolute;
+  left: 20%;
+  top: 10%;
+  height: 85px;
+  width: 17%;
 }
 .fa {
   padding: 10px;
@@ -160,7 +148,8 @@ img:hover {
 }
 iframe {
   position: absolute;
-  left: 68%;
+  left: 60%;
+  top: 4%;
 }
 
 #navbar__list {
@@ -186,20 +175,14 @@ iframe {
   margin: 4em 0;
 }
 
-#navbar__list li:hover {
-  background-color: rgb(114, 156, 71);
-}
-
 #nav-section1,
 #nav-section2 {
   margin-bottom: 5em;
 }
-#navbar__list li:nth-child(3):not(.not-section3) {
-  background-color: transparent;
-}
 
 .your-active-class {
   border-radius: 5px;
+  background: rgb(53, 151, 53);
 }
 
 section {

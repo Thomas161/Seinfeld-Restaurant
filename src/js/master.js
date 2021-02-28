@@ -114,10 +114,7 @@ const createNavLinks = () => {
       liElements.innerHTML =
         '<img src="../icons/cart.svg" id="shopping"/><span id="basketTotal">0</span>';
     }
-    if (liElements.id == "nav-section3") {
-      liElements.innerHTML =
-        '<div class="burger-wrapper"><div class="burger-nav"></div></div>';
-    }
+
     navBar.appendChild(liElements);
     liElements.addEventListener("click", function () {
       // console.log("clicked");

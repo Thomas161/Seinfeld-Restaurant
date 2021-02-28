@@ -2,6 +2,8 @@
   position: relative;
   width: 80px;
   height: 50px;
+  left: 38%;
+  top: 17%;
   cursor: pointer;
   border: firebrick solid 5px;
   background-color: transparent;
@@ -42,7 +44,7 @@
   transform: translateY(10px);
 }
 
-/*.burger-nav.open {
+.burger-nav.open {
   transform: translateX(-50px);
   background: transparent;
 }
@@ -53,4 +55,4 @@
 
 .burger-nav.open::after {
   transform: rotate(-45deg) translate(35px, 35px);
-} */
+}
