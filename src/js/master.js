@@ -115,7 +115,11 @@ const createNavLinks = () => {
     }
     if (liElements.id == "nav-section2") {
       liElements.innerHTML =
-        '<img src="../icons/cart.svg" id="shopping"/><span id="basketTotal">0</span>';
+        '<span id="basketTotal">0</span><img src="../icons/cart.svg" id="shopping"/>';
+    }
+    if (liElements.id == "section3") {
+      liElements.innerHTML =
+        '<div class="burger-wrapper"><div class="burger-nav"></div></div>';
     }
 
     navBar.appendChild(liElements);
@@ -135,6 +139,7 @@ $.ajax({
 })
   .then((res) => {
     for (let i = 0; i < res.quotes.length; i++) {
+      console.log(res[i]);
       document.getElementById("demo").innerHTML = `"${res[i]}"`;
       console.log("Response text is ", res.quotes[1].quote); //entire list of quotes
       // console.log("Response text is ", res.quotes); //entire list of quotes
@@ -165,6 +170,7 @@ function cb() {
     } else {
       hamburgerIcon.classList.remove("open");
 
+      window.scrollTo({ top: 0, behavior: "smooth" });
       isOpen = false;
     }
   });
