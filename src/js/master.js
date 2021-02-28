@@ -134,8 +134,11 @@ $.ajax({
   method: "GET",
 })
   .then((res) => {
-    document.getElementById("demo").innerHTML = `"${res.quotes[1].quote}"`;
-    console.log("Response text is ", res.quotes[1].quote); //entire list of quotes
+    for (let i = 0; i < res.quotes.length; i++) {
+      document.getElementById("demo").innerHTML = `"${res[i]}"`;
+      console.log("Response text is ", res.quotes[1].quote); //entire list of quotes
+      // console.log("Response text is ", res.quotes); //entire list of quotes
+    }
   })
   .catch((err) => {
     console.log("error", err);
