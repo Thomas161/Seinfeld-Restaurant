@@ -1,5 +1,6 @@
 const express = require("express");
 const { auth, requiresAuth } = require("express-openid-connect");
+const path = require("path");
 const app = express();
 require("dotenv").config();
 
@@ -16,7 +17,27 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? "Logged in" : "logged out");
+  res.send(
+    req.oidc.isAuthenticated()
+      ? res.redirect("/home")
+      : //   ? res.sendFile(
+        //       path.resolve(
+        //         "/Users/tommydates/Desktop/Seinfeld-Restaurant/src/html/index.html"
+        //   )
+        // )
+        "logged out"
+  );
+});
+
+app.get("/home", (req, res, next) => {
+  try {
+    console.log("request good");
+    res.sendFile(path.join(__dirname, "html"));
+  } catch (err) {
+    console.log("error", err);
+  } finally {
+    next();
+  }
 });
 
 app.get("/profile", requiresAuth(), (req, res) => {
