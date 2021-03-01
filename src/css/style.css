@@ -206,7 +206,8 @@ section {
 }
 #quotes {
   position: absolute;
-  width: 170px;
+  overflow-y: auto;
+  width: 200px;
   height: 200px;
   text-align: center;
   right: 5%;
@@ -216,8 +217,9 @@ section {
 
 #demo {
   position: relative;
+  margin: 5px;
   color: #fff;
-  font-size: 20px;
+  font-size: 1vw;
   text-shadow: 2.5px 2.5px black;
 }
 

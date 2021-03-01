@@ -133,21 +133,30 @@ const createNavLinks = () => {
 };
 
 $.ajax({
-  url: "https://seinfeld-quotes.herokuapp.com/quotes",
+  url: "../api/api.json",
   dataType: "JSON",
   method: "GET",
 })
   .then((res) => {
-    for (let i = 0; i < res.quotes.length; i++) {
-      console.log(res[i]);
-      document.getElementById("demo").innerHTML = `"${res[i]}"`;
-      console.log("Response text is ", res.quotes[1].quote); //entire list of quotes
-      // console.log("Response text is ", res.quotes); //entire list of quotes
+    for (let i = res.quotes.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * i);
+      let temp = res.quotes[i];
+      res.quotes[i] = res.quotes[j];
+      res.quotes[j] = temp;
+      setInterval(
+        (document.getElementById("demo").innerHTML = `"${temp}"`),
+        3000
+      );
+
+      console.log(res);
     }
   })
   .catch((err) => {
     console.log("error", err);
   });
+
+// console.log("Response text is ", res.quotes[1].quote); //entire list of quotes
+// console.log("Response text is ", res.quotes); //entire list of quotes
 
 setTimeout(cb, 3000);
 
