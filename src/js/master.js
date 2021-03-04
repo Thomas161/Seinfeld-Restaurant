@@ -139,46 +139,51 @@ $.ajax({
 })
   .then((res) => {
     console.log(res);
+
+    // function shuffleArr() {
     for (let i = res.quotes.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * i);
       let temp = res.quotes[i];
       res.quotes[i] = res.quotes[j];
       res.quotes[j] = temp;
       console.log(temp);
-
-      //failed example 1.
-
-      setInterval(updateQuotes, 2000);
-
-      function updateQuotes() {
-        const quoteUpdate = document.getElementById("demo");
-        let i = 0;
-        if (i < 30) {
-          quoteUpdate.innerHTML = temp;
-        }
-        i++;
-      }
-      //failed example 2.
-      // const quoteUpdate = document.getElementById("demo");
-      // setInterval(() => {
-      //   let i = 0;
-      //   if (i < 30) {
-      //     quoteUpdate.innerHTML = temp;
-      //     i++;
-      //   }
-      // }, 1000);
-
-      // failed example 3.
-      // const quoteUpdate = document.getElementById("demo");
-      // quoteUpdate.addEventListener("load", (event) => {
-      //   console.log(event.target);
-      //   setInterval(quoteUpdate.innerHTML = temp, 3000);
-      // });
+      document.getElementById("demo").innerHTML = temp;
+      // }
     }
+    // setTimeout(shuffleArr, 2500);
   })
   .catch((err) => {
     console.log("error", err);
   });
+
+//failed example 1.
+
+// setInterval(updateQuotes, 2000);
+
+// function updateQuotes() {
+//   const quoteUpdate
+//   let i = 0;
+//   if (i < 30) {
+//     quoteUpdate.innerHTML = temp;
+//   }
+//   i++;
+// }
+//failed example 2.
+// const quoteUpdate = document.getElementById("demo");
+// setInterval(() => {
+//   let i = 0;
+//   if (i < 30) {
+//     quoteUpdate.innerHTML = temp;
+//     i++;
+//   }
+// }, 1000);
+
+// failed example 3.
+// const quoteUpdate = document.getElementById("demo");
+// quoteUpdate.addEventListener("load", (event) => {
+//   console.log(event.target);
+//   setInterval(quoteUpdate.innerHTML = temp, 3000);
+// });
 
 setTimeout(cb, 3000);
 
